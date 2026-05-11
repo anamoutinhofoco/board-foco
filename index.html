@@ -90,23 +90,32 @@
     .filt-btn{background:transparent;border:1px solid rgba(21,101,192,0.2);border-radius:20px;padding:5px 13px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;color:#5a6e8a;cursor:pointer;transition:all 0.15s;}
     .filt-btn:hover{background:#EBF2FF;color:#1565C0;}
     .filt-btn.on{background:#1565C0;color:#fff;border-color:#1565C0;}
-    .dem-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);margin-bottom:10px;}
-    .dem-table th{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;background:#1565C0;padding:10px 14px;text-align:left;}
-    .dem-table td{font-size:13px;padding:11px 14px;border-bottom:1px solid rgba(0,53,128,0.08);color:#2a3a5a;vertical-align:middle;}
-    .dem-table tr:last-child td{border-bottom:none;}
-    .dem-table tr:nth-child(even) td{background:#F4F7FB;}
-    .dem-table tr.concluida td{opacity:0.55;}
-    .dem-table tr:hover td{background:#EBF2FF;cursor:pointer;}
-    .prio{font-size:16px;line-height:1;}
+    /* CARDS DEMANDAS */
+    .dem-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:12px;}
+    .dem-card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:18px 20px;cursor:pointer;transition:box-shadow 0.15s,transform 0.15s;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;}
+    .dem-card:hover{box-shadow:0 6px 24px rgba(0,53,128,0.13);transform:translateY(-2px);}
+    .dem-card.concluida{opacity:0.55;}
+    .dem-card-accent{position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
+    .dem-card-accent.prio-r{background:#C62828;}
+    .dem-card-accent.prio-y{background:#F9A825;}
+    .dem-card-accent.prio-g{background:#2E7D32;}
+    .dem-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+    .dem-card-cliente{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#1565C0;}
+    .dem-card-desc{font-size:13.5px;font-weight:600;color:#002055;line-height:1.5;}
+    .dem-card-desc.riscado{text-decoration:line-through;color:#90a4c0;}
+    .dem-card-obs{font-size:12px;color:#5a6e8a;line-height:1.5;border-top:1px solid rgba(0,53,128,0.07);padding-top:8px;}
+    .dem-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+    .prio{font-size:15px;line-height:1;}
     .status-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.5px;border-radius:20px;padding:3px 10px;white-space:nowrap;}
     .st-aberto{background:#FFF3E0;color:#E65100;}
     .st-andamento{background:#E3F2FD;color:#1565C0;}
     .st-aguardando{background:#F3E5F5;color:#6A1B9A;}
     .st-concluido{background:#E8F5E9;color:#2E7D32;}
-    .prazo-ok{color:#2a3a5a;}
-    .prazo-late{color:#C62828;font-weight:700;}
-    .prazo-soon{color:#E65100;font-weight:700;}
-    .dem-section-title{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;margin:20px 0 8px;display:flex;align-items:center;gap:8px;}
+    .dem-prazo{font-size:11px;font-weight:700;display:flex;align-items:center;gap:4px;}
+    .prazo-ok{color:#5a6e8a;}
+    .prazo-late{color:#C62828;}
+    .prazo-soon{color:#E65100;}
+    .dem-section-title{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;margin:20px 0 10px;display:flex;align-items:center;gap:8px;}
     .dem-section-title::after{content:'';flex:1;height:1px;background:rgba(0,53,128,0.1);}
     .empty-dem{background:#fff;border-radius:14px;border:1px solid rgba(0,53,128,0.12);padding:40px;text-align:center;color:#5a6e8a;font-size:13.5px;}
 
@@ -592,50 +601,55 @@ function App() {
             <div className="empty-dem">Nenhuma demanda ainda. Clique em <strong>Nova Demanda</strong> para começar.</div>
           ):(<>
             {ativas.length>0&&(
-              <table className="dem-table">
-                <thead><tr>
-                  <th style={{width:36}}>P</th>
-                  <th style={{width:140}}>Cliente / Projeto</th>
-                  <th>Descrição</th>
-                  <th style={{width:130}}>Status</th>
-                  <th style={{width:100}}>Prazo</th>
-                  <th style={{width:36}}></th>
-                </tr></thead>
-                <tbody>
-                  {ativas.map(d=>(
-                    <tr key={d.id} onClick={()=>openEditDem(d)}>
-                      <td className="ctr"><span className="prio">{d.prioridade}</span></td>
-                      <td style={{fontWeight:600,color:"#002055"}}>{d.cliente||<span style={{color:"#90a4c0",fontStyle:"italic"}}>—</span>}</td>
-                      <td>
-                        <div style={{fontWeight:600}}>{d.descricao}</div>
-                        {d.obs&&<div style={{fontSize:12,color:"#5a6e8a",marginTop:2}}>{d.obs}</div>}
-                      </td>
-                      <td><span className={`status-badge ${STATUS_CLASS[d.status]||""}`}>{d.status}</span></td>
-                      <td className={prazoClass(d.prazo,d.status)}>{formatPrazo(d.prazo)}</td>
-                      <td><button className="icon-btn" onClick={e=>{e.stopPropagation();openEditDem(d);}}>
-                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 1.5l2 2-7.5 7.5H1.5v-2L9 1.5z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/></svg>
-                      </button></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="dem-grid">
+                {ativas.map(d=>{
+                  const pc=d.prioridade==="🔴"?"prio-r":d.prioridade==="🟡"?"prio-y":"prio-g";
+                  const pc2=prazoClass(d.prazo,d.status);
+                  return (
+                    <div key={d.id} className="dem-card" onClick={()=>openEditDem(d)}>
+                      <div className={`dem-card-accent ${pc}`}/>
+                      <div className="dem-card-top">
+                        <div>
+                          {d.cliente&&<div className="dem-card-cliente">{d.cliente}</div>}
+                          <div className="dem-card-desc">{d.descricao}</div>
+                        </div>
+                        <span className="prio">{d.prioridade}</span>
+                      </div>
+                      {d.obs&&<div className="dem-card-obs">{d.obs}</div>}
+                      <div className="dem-card-footer">
+                        <span className={`status-badge ${STATUS_CLASS[d.status]||""}`}>{d.status}</span>
+                        {d.prazo&&(
+                          <span className={`dem-prazo ${pc2}`}>
+                            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>
+                            {formatPrazo(d.prazo)}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             )}
             {concluidas.length>0&&(<>
               <div className="dem-section-title">Concluídas ({concluidas.length})</div>
-              <table className="dem-table">
-                <tbody>
-                  {concluidas.map(d=>(
-                    <tr key={d.id} className="concluida" onClick={()=>openEditDem(d)}>
-                      <td style={{width:36}} className="ctr"><span className="prio">{d.prioridade}</span></td>
-                      <td style={{width:140,fontWeight:600,color:"#002055"}}>{d.cliente||"—"}</td>
-                      <td><span style={{textDecoration:"line-through"}}>{d.descricao}</span></td>
-                      <td style={{width:130}}><span className={`status-badge ${STATUS_CLASS[d.status]}`}>{d.status}</span></td>
-                      <td style={{width:100}}>{formatPrazo(d.prazo)}</td>
-                      <td style={{width:36}}></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="dem-grid">
+                {concluidas.map(d=>(
+                  <div key={d.id} className="dem-card concluida" onClick={()=>openEditDem(d)}>
+                    <div className="dem-card-accent prio-g"/>
+                    <div className="dem-card-top">
+                      <div>
+                        {d.cliente&&<div className="dem-card-cliente">{d.cliente}</div>}
+                        <div className="dem-card-desc riscado">{d.descricao}</div>
+                      </div>
+                      <span className="prio">{d.prioridade}</span>
+                    </div>
+                    <div className="dem-card-footer">
+                      <span className={`status-badge ${STATUS_CLASS[d.status]}`}>{d.status}</span>
+                      {d.prazo&&<span className="dem-prazo prazo-ok">{formatPrazo(d.prazo)}</span>}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </>)}
           </>)}
         </>)}
