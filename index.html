@@ -407,14 +407,16 @@ function App() {
     finally{setSaving(false);}
   };
 
-  const demandasFiltradas=demandas.filter(d=>{
+  const historicoList=demandas.filter(d=>d.status==="Concluído");
+  const demandasAtivas=demandas.filter(d=>d.status!=="Concluído");
+  const demandasFiltradas=demandasAtivas.filter(d=>{
     if(filtStatus!=="todos"&&d.status!==filtStatus) return false;
     if(filtPrio!=="todos"&&d.prioridade!==filtPrio) return false;
     return true;
   });
-  const ativas=demandasFiltradas.filter(d=>d.status!=="Concluído");
-  const concluidas=demandasFiltradas.filter(d=>d.status==="Concluído");
-  const demAbertasCount=demandas.filter(d=>d.status!=="Concluído").length;
+  const ativas=demandasFiltradas;
+  const demAbertasCount=demandasAtivas.length;
+  const histCount=historicoList.length;
 
   return (
     <div className="app">
@@ -451,6 +453,7 @@ function App() {
             {id:"metas",label:"Metas da Semana",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
             {id:"reunioes",label:"Reuniões",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
             {id:"demandas",label:"Demandas",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3h10M2 7h7M2 11h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,count:demAbertasCount},
+            {id:"historico",label:"Histórico",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a6 6 0 1 0 0 12A6 6 0 0 0 7 1z" stroke="currentColor" strokeWidth="1.4"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>},
           ].map(t=>(
             <button key={t.id} className={`tab${activeTab===t.id?" active":""}`} onClick={()=>setActiveTab(t.id)}>
               {t.icon}{t.label}
@@ -579,12 +582,51 @@ function App() {
           )}
         </>)}
 
+        {/* ══ HISTÓRICO ══ */}
+        {activeTab==="historico"&&(
+          <>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
+              <div className="badge" style={{margin:0}}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a6 6 0 1 0 0 12A6 6 0 0 0 7 1z" stroke="#1565C0" strokeWidth="1.4"/><path d="M7 4v3l2 1.5" stroke="#1565C0" strokeWidth="1.4" strokeLinecap="round"/></svg>
+                Histórico de Demandas
+              </div>
+              <span style={{fontSize:13,color:"#5a6e8a",fontWeight:600}}>{histCount} {histCount===1?"demanda concluída":"demandas concluídas"}</span>
+            </div>
+            {historicoList.length===0?(
+              <div className="empty-dem">Nenhuma demanda concluída ainda.</div>
+            ):(
+              <div className="dem-grid">
+                {historicoList.map(d=>{
+                  const pc=d.prioridade==="🔴"?"prio-r":d.prioridade==="🟡"?"prio-y":"prio-g";
+                  return (
+                    <div key={d.id} className="dem-card concluida" onClick={()=>openEditDem(d)}>
+                      <div className={`dem-card-accent ${pc}`}/>
+                      <div className="dem-card-top">
+                        <div>
+                          {d.cliente&&<div className="dem-card-cliente">{d.cliente}</div>}
+                          <div className="dem-card-desc riscado">{d.descricao}</div>
+                        </div>
+                        <span className="prio">{d.prioridade}</span>
+                      </div>
+                      {d.obs&&<div className="dem-card-obs">{d.obs}</div>}
+                      <div className="dem-card-footer">
+                        <span className={`status-badge ${STATUS_CLASS[d.status]}`}>{d.status}</span>
+                        {d.prazo&&<span className="dem-prazo prazo-ok"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>{formatPrazo(d.prazo)}</span>}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </>
+        )}
+
         {/* ══ DEMANDAS ══ */}
         {activeTab==="demandas"&&(<>
           <div className="dem-toolbar">
             <div className="dem-filters">
               <button className={`filt-btn${filtStatus==="todos"?" on":""}`} onClick={()=>setFiltStatus("todos")}>Todos</button>
-              {STATUS_LIST.map(s=>(
+              {STATUS_LIST.filter(s=>s!=="Concluído").map(s=>(
                 <button key={s} className={`filt-btn${filtStatus===s?" on":""}`} onClick={()=>setFiltStatus(filtStatus===s?"todos":s)}>{s}</button>
               ))}
               <span style={{width:1,background:"rgba(0,53,128,0.12)",margin:"0 4px",alignSelf:"stretch",display:"inline-block"}}/>
@@ -630,27 +672,7 @@ function App() {
                 })}
               </div>
             )}
-            {concluidas.length>0&&(<>
-              <div className="dem-section-title">Concluídas ({concluidas.length})</div>
-              <div className="dem-grid">
-                {concluidas.map(d=>(
-                  <div key={d.id} className="dem-card concluida" onClick={()=>openEditDem(d)}>
-                    <div className="dem-card-accent prio-g"/>
-                    <div className="dem-card-top">
-                      <div>
-                        {d.cliente&&<div className="dem-card-cliente">{d.cliente}</div>}
-                        <div className="dem-card-desc riscado">{d.descricao}</div>
-                      </div>
-                      <span className="prio">{d.prioridade}</span>
-                    </div>
-                    <div className="dem-card-footer">
-                      <span className={`status-badge ${STATUS_CLASS[d.status]}`}>{d.status}</span>
-                      {d.prazo&&<span className="dem-prazo prazo-ok">{formatPrazo(d.prazo)}</span>}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </>)}
+
           </>)}
         </>)}
       </>)}
