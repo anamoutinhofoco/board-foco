@@ -218,18 +218,27 @@ function parseDemandas(rows) {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 // Decide se um analista pode marcar o check de uma meta
+function normalizeResp(r) {
+  if (!r) return "Todos";
+  const s = r.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  if (s==="todos") return "Todos";
+  if (s==="vinicius") return "Vinícius";
+  if (s==="mavi") return "Mavi";
+  if (s==="ana") return "Ana";
+  return r.trim();
+}
 function podeMarcar(responsavel, who) {
-  const r = responsavel||"Todos";
+  const r = normalizeResp(responsavel);
   if (r === "Todos") return true;
   if (who === "vinicius" && r === "Vinícius") return true;
   if (who === "mavi" && r === "Mavi") return true;
   return false;
 }
-
 function respClass(r) {
-  if (!r||r==="Todos") return "resp-todos";
-  if (r==="Vinícius") return "resp-vinicius";
-  if (r==="Mavi") return "resp-mavi";
+  const n = normalizeResp(r);
+  if (n==="Todos") return "resp-todos";
+  if (n==="Vinícius") return "resp-vinicius";
+  if (n==="Mavi") return "resp-mavi";
   return "resp-ana";
 }
 
