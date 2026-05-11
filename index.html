@@ -492,7 +492,7 @@ function App() {
                   {semanaAtual.metas.map(m=>{
                     const vinOk=podeMarcar(m.responsavel,"vinicius");
                     const mavOk=podeMarcar(m.responsavel,"mavi");
-                    const allDone=(vinOk?m.vinicius:true)&&(mavOk?m.mavi:true);
+                    const allDone=(vinOk&&mavOk)?(m.vinicius&&m.mavi):vinOk?m.vinicius:mavOk?m.mavi:false;
                     return (
                       <tr key={m.id}>
                         <td><span className={allDone?"done":""}>{m.texto}</span></td>
