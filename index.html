@@ -12,72 +12,140 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     body{background:#EAEAEA;font-family:'Nunito Sans',sans-serif;min-height:100vh;}
-    .app{max-width:1100px;margin:0 auto;padding:40px 32px 64px;}
-    .header{background:#002055;border-radius:16px;padding:32px 40px;margin-bottom:40px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;}
+    .app{max-width:1150px;margin:0 auto;padding:40px 32px 64px;}
+
+    /* HEADER */
+    .header{background:#002055;border-radius:16px;padding:28px 40px;margin-bottom:32px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;}
     .header-arc{position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:28px solid rgba(0,87,217,0.35);pointer-events:none;}
     .header-arc2{position:absolute;bottom:-30px;right:60px;width:90px;height:90px;border-radius:50%;border:14px solid rgba(21,101,192,0.25);pointer-events:none;}
     .header-sq{position:absolute;top:-12px;left:-12px;width:52px;height:52px;background:#fff;border-radius:8px;opacity:0.08;pointer-events:none;}
-    .h-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:28px;color:#fff;letter-spacing:-0.5px;}
-    .h-sub{font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);margin-top:4px;}
+    .h-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:26px;color:#fff;letter-spacing:-0.5px;}
+    .h-sub{font-size:13px;font-weight:600;color:rgba(255,255,255,0.5);margin-top:3px;}
     .logo-wrap{display:flex;gap:6px;align-items:flex-start;}
     .lsq{width:16px;height:16px;background:rgba(255,255,255,0.22);border-radius:3px;}
     .lsq2{width:16px;height:16px;background:rgba(255,255,255,0.1);border-radius:3px;margin-left:-8px;margin-top:-8px;}
+
+    /* TABS */
+    .tabs{display:flex;gap:4px;margin-bottom:28px;background:#fff;border-radius:12px;padding:5px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.08);width:fit-content;}
+    .tab{padding:9px 22px;border-radius:8px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#5a6e8a;cursor:pointer;border:none;background:transparent;transition:all 0.15s;display:flex;align-items:center;gap:7px;white-space:nowrap;}
+    .tab:hover{color:#1565C0;background:#F4F7FB;}
+    .tab.active{background:#1565C0;color:#fff;}
+    .tab-badge{background:rgba(255,255,255,0.25);border-radius:10px;padding:1px 7px;font-size:11px;font-weight:800;}
+    .tab.active .tab-badge{background:rgba(255,255,255,0.25);}
+    .tab:not(.active) .tab-badge{background:#EBF2FF;color:#1565C0;}
+
+    /* BADGE */
     .badge{display:inline-flex;align-items:center;gap:7px;background:#EBF2FF;color:#1565C0;font-weight:800;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;border-radius:6px;padding:5px 12px;margin-bottom:16px;}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;}
-    @media(max-width:720px){.grid{grid-template-columns:1fr;}.app{padding:20px 16px 48px;}}
-    .card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:24px 28px;}
-    .card-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;color:#002055;margin-bottom:3px;}
-    .card-date{font-size:12px;font-weight:600;color:#1565C0;margin-bottom:16px;}
-    .sec{font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#1565C0;margin-bottom:7px;margin-top:14px;}
-    .items{list-style:none;display:flex;flex-direction:column;gap:6px;}
-    .items li{font-size:13.5px;color:#2a3a5a;display:flex;gap:9px;align-items:flex-start;line-height:1.5;}
+
+    /* GRID */
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:40px;}
+    @media(max-width:760px){.grid{grid-template-columns:1fr;}.app{padding:20px 16px 48px;}.tabs{width:100%;}.tab{flex:1;justify-content:center;padding:9px 10px;font-size:12px;}}
+
+    /* CARDS */
+    .card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:22px 26px;}
+    .card-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;color:#002055;margin-bottom:3px;}
+    .card-date{font-size:12px;font-weight:600;color:#1565C0;margin-bottom:14px;}
+    .sec{font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#1565C0;margin-bottom:6px;margin-top:12px;}
+    .items{list-style:none;display:flex;flex-direction:column;gap:5px;}
+    .items li{font-size:13px;color:#2a3a5a;display:flex;gap:8px;align-items:flex-start;line-height:1.5;}
     .arr{color:#1565C0;font-weight:700;flex-shrink:0;}
-    .div{height:1px;background:rgba(0,53,128,0.12);margin:12px 0;}
-    .meta-card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:28px 32px;margin-bottom:40px;}
-    .meta-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:22px;gap:16px;flex-wrap:wrap;}
-    .meta-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;color:#002055;}
+    .divider{height:1px;background:rgba(0,53,128,0.12);margin:10px 0;}
+
+    /* META CARD */
+    .meta-card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:26px 30px;margin-bottom:36px;}
+    .meta-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;gap:16px;flex-wrap:wrap;}
+    .meta-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#002055;}
     .meta-week{font-size:13px;font-weight:600;color:#1565C0;margin-top:3px;}
-    .prog-area{display:flex;gap:20px;flex-wrap:wrap;}
-    .prog{background:#EBF2FF;border-radius:10px;padding:11px 16px;min-width:108px;}
-    .prog-name{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#1565C0;margin-bottom:4px;}
-    .prog-track{background:rgba(21,101,192,0.15);border-radius:6px;height:6px;width:110px;margin-bottom:3px;}
+    .week-nav{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(0,53,128,0.08);}
+    .week-lbl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;margin-right:4px;}
+    .week-btn{background:transparent;border:1px solid rgba(21,101,192,0.2);border-radius:20px;padding:4px 13px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;color:#5a6e8a;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:5px;}
+    .week-btn:hover{background:#EBF2FF;color:#1565C0;border-color:#1565C0;}
+    .week-btn.active{background:#1565C0;color:#fff;border-color:#1565C0;}
+    .current-dot{width:6px;height:6px;background:currentColor;border-radius:50%;opacity:0.7;}
+    .hist-banner{background:#F4F7FB;border:1px solid rgba(0,53,128,0.1);border-radius:10px;padding:9px 14px;margin-bottom:16px;font-size:13px;color:#5a6e8a;display:flex;align-items:center;gap:8px;}
+    .prog-area{display:flex;gap:16px;flex-wrap:wrap;}
+    .prog{background:#EBF2FF;border-radius:10px;padding:10px 15px;min-width:104px;}
+    .prog-name{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#1565C0;margin-bottom:3px;}
+    .prog-track{background:rgba(21,101,192,0.15);border-radius:6px;height:6px;width:106px;margin-bottom:3px;}
     .prog-fill{background:#1565C0;border-radius:6px;height:6px;transition:width 0.4s;}
-    .prog-pct{font-size:18px;font-weight:800;color:#002055;}
+    .prog-fill.hist{background:#90a4c0;}
+    .prog-pct{font-size:17px;font-weight:800;color:#002055;}
     .prog-frac{font-size:11px;font-weight:600;color:#5a6e8a;margin-top:1px;}
-    .tbl{width:100%;border-collapse:collapse;margin-top:6px;}
-    .tbl th{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;background:#1565C0;padding:10px 14px;text-align:left;}
-    .tbl th:nth-child(2),.tbl th:nth-child(3){text-align:center;width:100px;}
-    .tbl td{font-size:13.5px;padding:11px 14px;border-bottom:1px solid rgba(0,53,128,0.12);color:#2a3a5a;vertical-align:middle;}
+    .tbl{width:100%;border-collapse:collapse;margin-top:4px;}
+    .tbl th{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;background:#1565C0;padding:9px 13px;text-align:left;}
+    .tbl th.ctr{text-align:center;width:90px;}
+    .tbl td{font-size:13px;padding:10px 13px;border-bottom:1px solid rgba(0,53,128,0.12);color:#2a3a5a;vertical-align:middle;}
     .tbl tr:nth-child(even) td{background:#F4F7FB;}
     .tbl tr:last-child td{border-bottom:none;}
     .tbl td.ctr{text-align:center;}
     .chk-w{display:flex;align-items:center;justify-content:center;}
-    .chk{width:22px;height:22px;border-radius:6px;border:2px solid rgba(0,53,128,0.12);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;flex-shrink:0;user-select:none;}
+    .chk{width:21px;height:21px;border-radius:6px;border:2px solid rgba(0,53,128,0.12);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;flex-shrink:0;user-select:none;}
     .chk.on{background:#1565C0;border-color:#1565C0;}
+    .chk.on.hist-chk{background:#90a4c0;border-color:#90a4c0;}
+    .chk.readonly{cursor:default;}
     .done{text-decoration:line-through;color:#90a4c0;}
+
+    /* ── DEMANDAS ── */
+    .dem-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
+    .dem-filters{display:flex;gap:6px;flex-wrap:wrap;}
+    .filt-btn{background:transparent;border:1px solid rgba(21,101,192,0.2);border-radius:20px;padding:5px 13px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;color:#5a6e8a;cursor:pointer;transition:all 0.15s;}
+    .filt-btn:hover{background:#EBF2FF;color:#1565C0;}
+    .filt-btn.on{background:#1565C0;color:#fff;border-color:#1565C0;}
+    .dem-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);margin-bottom:10px;}
+    .dem-table th{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;background:#1565C0;padding:10px 14px;text-align:left;}
+    .dem-table td{font-size:13px;padding:11px 14px;border-bottom:1px solid rgba(0,53,128,0.08);color:#2a3a5a;vertical-align:middle;}
+    .dem-table tr:last-child td{border-bottom:none;}
+    .dem-table tr:nth-child(even) td{background:#F4F7FB;}
+    .dem-table tr.concluida td{opacity:0.55;}
+    .dem-table tr:hover td{background:#EBF2FF;cursor:pointer;}
+    .prio{font-size:16px;line-height:1;}
+    .status-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.5px;border-radius:20px;padding:3px 10px;white-space:nowrap;}
+    .st-aberto{background:#FFF3E0;color:#E65100;}
+    .st-andamento{background:#E3F2FD;color:#1565C0;}
+    .st-aguardando{background:#F3E5F5;color:#6A1B9A;}
+    .st-concluido{background:#E8F5E9;color:#2E7D32;}
+    .prazo-ok{color:#2a3a5a;}
+    .prazo-late{color:#C62828;font-weight:700;}
+    .prazo-soon{color:#E65100;font-weight:700;}
+    .dem-section-title{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;margin:20px 0 8px;display:flex;align-items:center;gap:8px;}
+    .dem-section-title::after{content:'';flex:1;height:1px;background:rgba(0,53,128,0.1);}
+    .empty-dem{background:#fff;border-radius:14px;border:1px solid rgba(0,53,128,0.12);padding:40px;text-align:center;color:#5a6e8a;font-size:13.5px;}
+
+    /* BUTTONS */
     .btn{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:#fff;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;transition:background 0.15s;}
     .btn:hover{background:#003580;}
     .btn:disabled{opacity:0.5;cursor:not-allowed;}
     .ghost{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#1565C0;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;border:1px solid rgba(21,101,192,0.3);border-radius:7px;padding:7px 14px;cursor:pointer;transition:all 0.15s;}
     .ghost:hover{background:#EBF2FF;}
+    .icon-btn{background:transparent;border:none;cursor:pointer;padding:4px;border-radius:6px;color:#5a6e8a;transition:all 0.15s;display:inline-flex;align-items:center;}
+    .icon-btn:hover{background:#EBF2FF;color:#1565C0;}
+
+    /* MODAL */
     .modal-bg{position:fixed;inset:0;background:rgba(0,32,85,0.3);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px;}
-    .modal{background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,32,85,0.18);padding:36px 36px 28px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;}
-    .modal-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#002055;margin-bottom:20px;}
+    .modal{background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,32,85,0.18);padding:34px 34px 26px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;}
+    .modal-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:19px;color:#002055;margin-bottom:18px;}
     .lbl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#1565C0;margin-bottom:5px;display:block;}
-    .inp{width:100%;border:1px solid rgba(0,53,128,0.12);border-radius:8px;padding:9px 12px;font-family:'Nunito Sans',sans-serif;font-size:13.5px;color:#002055;background:#F9FBFF;margin-bottom:14px;outline:none;}
+    .inp{width:100%;border:1px solid rgba(0,53,128,0.12);border-radius:8px;padding:9px 12px;font-family:'Nunito Sans',sans-serif;font-size:13px;color:#002055;background:#F9FBFF;margin-bottom:13px;outline:none;}
     .inp:focus{border-color:#1565C0;}
+    .inp-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
     .form-row{display:flex;gap:10px;justify-content:flex-end;margin-top:8px;}
     .cancel{background:transparent;border:1px solid rgba(0,53,128,0.12);border-radius:8px;padding:9px 18px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#5a6e8a;cursor:pointer;}
+    .del-btn{background:transparent;border:1px solid rgba(198,40,40,0.25);border-radius:8px;padding:9px 16px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#C62828;cursor:pointer;margin-right:auto;}
+    .del-btn:hover{background:#FFEBEE;}
+
+    /* AUTH */
     .auth-box{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:40px;text-align:center;margin-bottom:32px;}
     .auth-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#002055;margin-bottom:10px;}
     .auth-sub{font-size:13.5px;color:#5a6e8a;margin-bottom:24px;line-height:1.6;}
+
+    /* MISC */
     .toast{position:fixed;bottom:28px;right:28px;background:#002055;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:10px;box-shadow:0 4px 20px rgba(0,32,85,0.25);z-index:200;animation:fadeUp 0.2s ease;}
     @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-    .empty{background:#fff;border-radius:14px;border:1px solid rgba(0,53,128,0.12);padding:36px;text-align:center;color:#5a6e8a;font-size:13.5px;margin-bottom:40px;}
-    .spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;}
+    .spin{display:inline-block;width:15px;height:15px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;}
     @keyframes spin{to{transform:rotate(360deg);}}
     .loading{text-align:center;padding:60px 0;color:#1565C0;font-weight:600;font-size:14px;}
     .loading-spin{display:inline-block;width:24px;height:24px;border:3px solid rgba(21,101,192,0.2);border-top-color:#1565C0;border-radius:50%;animation:spin 0.7s linear infinite;margin-right:10px;vertical-align:middle;}
+    select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6e8a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
   </style>
 </head>
 <body>
@@ -91,195 +159,260 @@ const SHEETS_BASE      = "https://sheets.googleapis.com/v4/spreadsheets";
 
 const { useState, useEffect, useCallback } = React;
 
-// ── Sheets helpers ─────────────────────────────────────────────────────────
+const PRIORIDADE = { "🔴": "🔴 Urgente", "🟡": "🟡 Média", "🟢": "🟢 Baixa" };
+const STATUS_LIST = ["Aberto","Em andamento","Aguardando","Concluído"];
+const STATUS_CLASS = { "Aberto":"st-aberto", "Em andamento":"st-andamento", "Aguardando":"st-aguardando", "Concluído":"st-concluido" };
+
+// ── Sheets helpers ──────────────────────────────────────────────────────────
 async function sheetsGet(token, range) {
-  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
+  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}`,
+    { headers: { Authorization: `Bearer ${token}` } });
   if (!r.ok) throw new Error(await r.text());
   return (await r.json()).values || [];
 }
 async function sheetsUpdate(token, range, values) {
   const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}?valueInputOption=RAW`, {
-    method: "PUT",
-    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ range, majorDimension: "ROWS", values })
+    method:"PUT", headers:{ Authorization:`Bearer ${token}`, "Content-Type":"application/json" },
+    body: JSON.stringify({ range, majorDimension:"ROWS", values })
   });
   if (!r.ok) throw new Error(await r.text());
 }
 async function sheetsAppend(token, range, values) {
   const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, {
-    method: "POST",
-    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ range, majorDimension: "ROWS", values })
+    method:"POST", headers:{ Authorization:`Bearer ${token}`, "Content-Type":"application/json" },
+    body: JSON.stringify({ range, majorDimension:"ROWS", values })
+  });
+  if (!r.ok) throw new Error(await r.text());
+}
+async function sheetsClear(token, range) {
+  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}:clear`, {
+    method:"POST", headers:{ Authorization:`Bearer ${token}` }
   });
   if (!r.ok) throw new Error(await r.text());
 }
 
-function parseMetas(rows) {
-  if (!rows.length) return { semana: "", descricao: "", metas: [] };
+// ── Parsers ─────────────────────────────────────────────────────────────────
+function parseTodasSemanas(rows) {
+  if (!rows.length) return [];
   const data = rows.slice(1).filter(r => r[2]);
-  return {
-    semana: data[0]?.[0] || "",
-    descricao: data[0]?.[1] || "",
-    metas: data.map((r, i) => ({
-      id: `m${i}`, row: i + 2,
-      texto: r[2] || "",
-      vinicius: r[3] === "TRUE",
-      mavi: r[4] === "TRUE",
-    }))
-  };
+  const map = new Map();
+  data.forEach((r,i) => {
+    const s = r[0]||"";
+    if (!map.has(s)) map.set(s,{semana:s,descricao:r[1]||"",metas:[]});
+    map.get(s).metas.push({ id:`m${i}`,row:i+2,texto:r[2]||"",vinicius:r[3]==="TRUE",mavi:r[4]==="TRUE" });
+  });
+  return Array.from(map.values()).reverse();
 }
 function parseReunioes(rows) {
   if (!rows.length) return [];
-  return rows.slice(1).filter(r => r[2]).map((r, i) => ({
-    id: r[0] || String(i), row: i + 2,
-    date: r[1] || "", title: r[2] || "",
-    pauta: (r[3] || "").split("|").map(s => s.trim()).filter(Boolean),
-    combinados: (r[4] || "").split("|").map(s => s.trim()).filter(Boolean),
+  return rows.slice(1).filter(r=>r[2]).map((r,i)=>({
+    id:r[0]||String(i), row:i+2, date:r[1]||"", title:r[2]||"",
+    pauta:(r[3]||"").split("|").map(s=>s.trim()).filter(Boolean),
+    combinados:(r[4]||"").split("|").map(s=>s.trim()).filter(Boolean),
+  }));
+}
+function parseDemandas(rows) {
+  if (!rows.length) return [];
+  return rows.slice(1).filter(r=>r[2]).map((r,i)=>({
+    id:r[0]||String(i), row:i+2,
+    cliente:r[1]||"", descricao:r[2]||"", prioridade:r[3]||"🟡",
+    status:r[4]||"Aberto", prazo:r[5]||"", obs:r[6]||"",
   }));
 }
 
-// ── Componentes ────────────────────────────────────────────────────────────
-function Chk({ checked, onChange }) {
+// ── Tiny components ─────────────────────────────────────────────────────────
+function Chk({ checked, onChange, readonly }) {
   return (
-    <div className={`chk${checked ? " on" : ""}`} onClick={onChange} role="checkbox" aria-checked={checked} tabIndex={0}
-      onKeyDown={e => e.key === " " && onChange()}>
-      {checked && (
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-          <polyline points="2,7 5.5,10.5 11,3" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      )}
+    <div className={`chk${checked?" on":""}${checked&&readonly?" hist-chk":""}${readonly?" readonly":""}`}
+      onClick={readonly?undefined:onChange} role="checkbox" aria-checked={checked} tabIndex={readonly?-1:0}
+      onKeyDown={e=>!readonly&&e.key===" "&&onChange()}>
+      {checked&&<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5.5,10.5 11,3" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>}
     </div>
   );
 }
-
 function Modal({ open, onClose, children }) {
   if (!open) return null;
-  return (
-    <div className="modal-bg" onClick={e => e.target === e.currentTarget && onClose()}>
-      <div className="modal">{children}</div>
-    </div>
-  );
+  return <div className="modal-bg" onClick={e=>e.target===e.currentTarget&&onClose()}><div className="modal">{children}</div></div>;
+}
+function Toast({ msg }) { return msg ? <div className="toast">{msg}</div> : null; }
+
+function prazoClass(prazo, status) {
+  if (!prazo || status==="Concluído") return "prazo-ok";
+  const d = new Date(prazo), now = new Date();
+  const diff = (d - now) / 86400000;
+  if (diff < 0) return "prazo-late";
+  if (diff <= 3) return "prazo-soon";
+  return "prazo-ok";
+}
+function formatPrazo(p) {
+  if (!p) return "—";
+  const parts = p.split("-");
+  if (parts.length===3) return `${parts[2]}/${parts[1]}/${parts[0]}`;
+  return p;
 }
 
-function Toast({ msg }) {
-  if (!msg) return null;
-  return <div className="toast">{msg}</div>;
-}
-
-// ── App principal ──────────────────────────────────────────────────────────
+// ── App ──────────────────────────────────────────────────────────────────────
 function App() {
-  const [token, setToken]         = useState(null);
-  const [loading, setLoading]     = useState(false);
-  const [saving, setSaving]       = useState(false);
-  const [toast, setToast]         = useState("");
-  const [meta, setMeta]           = useState({ semana: "", descricao: "", metas: [] });
-  const [meetings, setMeetings]   = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [editing, setEditing]     = useState(null);
-  const [form, setForm]           = useState({ title: "", date: "", pauta: "", combinados: "" });
+  const [token, setToken]           = useState(null);
+  const [loading, setLoading]       = useState(false);
+  const [saving, setSaving]         = useState(false);
+  const [toast, setToast]           = useState("");
+  const [activeTab, setActiveTab]   = useState("metas"); // "metas" | "reunioes" | "demandas"
 
-  const notify = (msg) => { setToast(msg); setTimeout(() => setToast(""), 3000); };
+  // Metas
+  const [semanas, setSemanas]       = useState([]);
+  const [semanaIdx, setSemanaIdx]   = useState(0);
 
-  // Captura token do hash após redirect OAuth
-  useEffect(() => {
-    const hash = window.location.hash;
+  // Reuniões
+  const [meetings, setMeetings]     = useState([]);
+  const [showMeetModal, setShowMeetModal] = useState(false);
+  const [editingMeet, setEditingMeet]     = useState(null);
+  const [meetForm, setMeetForm]           = useState({title:"",date:"",pauta:"",combinados:""});
+
+  // Demandas
+  const [demandas, setDemandas]     = useState([]);
+  const [showDemModal, setShowDemModal] = useState(false);
+  const [editingDem, setEditingDem]     = useState(null);
+  const [demForm, setDemForm]           = useState({cliente:"",descricao:"",prioridade:"🟡",status:"Aberto",prazo:"",obs:""});
+  const [filtStatus, setFiltStatus]     = useState("todos");
+  const [filtPrio, setFiltPrio]         = useState("todos");
+
+  const notify = msg => { setToast(msg); setTimeout(()=>setToast(""),3000); };
+
+  // Auth
+  useEffect(()=>{
+    const hash=window.location.hash;
     if (hash.includes("access_token")) {
-      const p = new URLSearchParams(hash.slice(1));
-      const t = p.get("access_token");
-      if (t) { setToken(t); window.history.replaceState(null, "", window.location.pathname); }
+      const t=new URLSearchParams(hash.slice(1)).get("access_token");
+      if (t){setToken(t);window.history.replaceState(null,"",window.location.pathname);return;}
     }
-    // Tenta recuperar token salvo na sessão
-    const saved = sessionStorage.getItem("foco_token");
-    if (saved && !hash.includes("access_token")) setToken(saved);
-  }, []);
+    const saved=sessionStorage.getItem("foco_token");
+    if (saved) setToken(saved);
+  },[]);
+  useEffect(()=>{ if(token) sessionStorage.setItem("foco_token",token); },[token]);
 
-  useEffect(() => { if (token) sessionStorage.setItem("foco_token", token); }, [token]);
-
-  const signIn = () => {
-    const params = new URLSearchParams({
-      client_id: GOOGLE_CLIENT_ID,
-      redirect_uri: window.location.origin + window.location.pathname,
-      response_type: "token",
-      scope: SCOPES,
-      prompt: "consent",
-    });
-    window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?${params}`;
+  const signIn=()=>{
+    const p=new URLSearchParams({client_id:GOOGLE_CLIENT_ID,redirect_uri:window.location.origin+window.location.pathname,response_type:"token",scope:SCOPES,prompt:"consent"});
+    window.location.href=`https://accounts.google.com/o/oauth2/v2/auth?${p}`;
   };
 
-  const loadAll = useCallback(async (t) => {
+  const loadAll=useCallback(async t=>{
     setLoading(true);
     try {
-      const [mr, rr] = await Promise.all([sheetsGet(t, "metas!A:E"), sheetsGet(t, "reunioes!A:E")]);
-      setMeta(parseMetas(mr));
+      const [mr,rr,dr]=await Promise.all([
+        sheetsGet(t,"metas!A:E"),
+        sheetsGet(t,"reunioes!A:E"),
+        sheetsGet(t,"demandas!A:G"),
+      ]);
+      setSemanas(parseTodasSemanas(mr));
+      setSemanaIdx(0);
       setMeetings(parseReunioes(rr));
-    } catch(e) {
-      if (e.message.includes("401")) { setToken(null); sessionStorage.removeItem("foco_token"); }
-      else notify("Erro ao carregar: " + e.message);
-    } finally { setLoading(false); }
-  }, []);
+      setDemandas(parseDemandas(dr));
+    } catch(e){
+      if(e.message.includes("401")){setToken(null);sessionStorage.removeItem("foco_token");}
+      else notify("Erro ao carregar: "+e.message);
+    } finally{setLoading(false);}
+  },[]);
+  useEffect(()=>{ if(token) loadAll(token); },[token]);
 
-  useEffect(() => { if (token) loadAll(token); }, [token]);
+  // ── Metas ──
+  const semanaAtual=semanas[semanaIdx]||{semana:"",descricao:"",metas:[]};
+  const isCurrentWk=semanaIdx===0;
+  const total=semanaAtual.metas.length;
+  const vinDone=semanaAtual.metas.filter(m=>m.vinicius).length;
+  const mavDone=semanaAtual.metas.filter(m=>m.mavi).length;
+  const vinPct=total?Math.round(vinDone/total*100):0;
+  const mavPct=total?Math.round(mavDone/total*100):0;
 
-  const toggleCheck = async (m, who) => {
-    const nv = !m[who];
-    setMeta(prev => ({ ...prev, metas: prev.metas.map(x => x.id === m.id ? { ...x, [who]: nv } : x) }));
+  const toggleCheck=async(m,who)=>{
+    if(!isCurrentWk) return;
+    const nv=!m[who];
+    setSemanas(prev=>prev.map((s,si)=>si!==0?s:{...s,metas:s.metas.map(x=>x.id===m.id?{...x,[who]:nv}:x)}));
     setSaving(true);
-    try {
-      const col = who === "vinicius" ? "D" : "E";
-      await sheetsUpdate(token, `metas!${col}${m.row}`, [[nv ? "TRUE" : "FALSE"]]);
+    try{
+      await sheetsUpdate(token,`metas!${who==="vinicius"?"D":"E"}${m.row}`,[[nv?"TRUE":"FALSE"]]);
       notify("Salvo ✓");
-    } catch(e) {
-      notify("Erro: " + e.message);
-      setMeta(prev => ({ ...prev, metas: prev.metas.map(x => x.id === m.id ? { ...x, [who]: !nv } : x) }));
-    } finally { setSaving(false); }
+    }catch(e){
+      notify("Erro: "+e.message);
+      setSemanas(prev=>prev.map((s,si)=>si!==0?s:{...s,metas:s.metas.map(x=>x.id===m.id?{...x,[who]:!nv}:x)}));
+    }finally{setSaving(false);}
   };
 
-  const openNew = () => { setEditing(null); setForm({ title:"", date:"", pauta:"", combinados:"" }); setShowModal(true); };
-  const openEdit = (m) => { setEditing(m); setForm({ title:m.title, date:m.date, pauta:m.pauta.join("\n"), combinados:m.combinados.join("\n") }); setShowModal(true); };
-
-  const saveMeeting = async () => {
-    if (!form.title || !form.date) return;
-    const pauta = form.pauta.split("\n").map(s=>s.trim()).filter(Boolean).join(" | ");
-    const comb  = form.combinados.split("\n").map(s=>s.trim()).filter(Boolean).join(" | ");
+  // ── Reuniões ──
+  const openNewMeet=()=>{setEditingMeet(null);setMeetForm({title:"",date:"",pauta:"",combinados:""});setShowMeetModal(true);};
+  const openEditMeet=m=>{setEditingMeet(m);setMeetForm({title:m.title,date:m.date,pauta:m.pauta.join("\n"),combinados:m.combinados.join("\n")});setShowMeetModal(true);};
+  const saveMeeting=async()=>{
+    if(!meetForm.title||!meetForm.date) return;
+    const pauta=meetForm.pauta.split("\n").map(s=>s.trim()).filter(Boolean).join(" | ");
+    const comb=meetForm.combinados.split("\n").map(s=>s.trim()).filter(Boolean).join(" | ");
     setSaving(true);
-    try {
-      if (editing) {
-        await sheetsUpdate(token, `reunioes!A${editing.row}:E${editing.row}`, [[editing.id, form.date, form.title, pauta, comb]]);
-        notify("Reunião atualizada ✓");
-      } else {
-        await sheetsAppend(token, "reunioes!A:E", [[Date.now().toString(), form.date, form.title, pauta, comb]]);
-        notify("Reunião salva ✓");
-      }
-      setShowModal(false);
-      await loadAll(token);
-    } catch(e) { notify("Erro: " + e.message); }
-    finally { setSaving(false); }
+    try{
+      if(editingMeet) await sheetsUpdate(token,`reunioes!A${editingMeet.row}:E${editingMeet.row}`,[[editingMeet.id,meetForm.date,meetForm.title,pauta,comb]]);
+      else await sheetsAppend(token,"reunioes!A:E",[[Date.now().toString(),meetForm.date,meetForm.title,pauta,comb]]);
+      notify(editingMeet?"Reunião atualizada ✓":"Reunião salva ✓");
+      setShowMeetModal(false); await loadAll(token);
+    }catch(e){notify("Erro: "+e.message);}
+    finally{setSaving(false);}
   };
 
-  const total   = meta.metas.length;
-  const vinDone = meta.metas.filter(m => m.vinicius).length;
-  const mavDone = meta.metas.filter(m => m.mavi).length;
-  const vinPct  = total ? Math.round(vinDone/total*100) : 0;
-  const mavPct  = total ? Math.round(mavDone/total*100) : 0;
+  // ── Demandas ──
+  const openNewDem=()=>{setEditingDem(null);setDemForm({cliente:"",descricao:"",prioridade:"🟡",status:"Aberto",prazo:"",obs:""});setShowDemModal(true);};
+  const openEditDem=d=>{setEditingDem(d);setDemForm({cliente:d.cliente,descricao:d.descricao,prioridade:d.prioridade,status:d.status,prazo:d.prazo,obs:d.obs});setShowDemModal(true);};
+  const saveDemanda=async()=>{
+    if(!demForm.descricao) return;
+    const row=[,demForm.cliente,demForm.descricao,demForm.prioridade,demForm.status,demForm.prazo,demForm.obs];
+    setSaving(true);
+    try{
+      if(editingDem){
+        row[0]=editingDem.id;
+        await sheetsUpdate(token,`demandas!A${editingDem.row}:G${editingDem.row}`,[row]);
+        notify("Demanda atualizada ✓");
+      } else {
+        row[0]=Date.now().toString();
+        await sheetsAppend(token,"demandas!A:G",[row]);
+        notify("Demanda salva ✓");
+      }
+      setShowDemModal(false); await loadAll(token);
+    }catch(e){notify("Erro: "+e.message);}
+    finally{setSaving(false);}
+  };
+  const deleteDemanda=async()=>{
+    if(!editingDem||!confirm("Remover esta demanda?")) return;
+    setSaving(true);
+    try{
+      await sheetsUpdate(token,`demandas!A${editingDem.row}:G${editingDem.row}`,[["","","","","","",""]]);
+      notify("Demanda removida");
+      setShowDemModal(false); await loadAll(token);
+    }catch(e){notify("Erro: "+e.message);}
+    finally{setSaving(false);}
+  };
+
+  // Filtros
+  const demandasFiltradas=demandas.filter(d=>{
+    if(filtStatus!=="todos"&&d.status!==filtStatus) return false;
+    if(filtPrio!=="todos"&&d.prioridade!==filtPrio) return false;
+    return true;
+  });
+  const ativas=demandasFiltradas.filter(d=>d.status!=="Concluído");
+  const concluidas=demandasFiltradas.filter(d=>d.status==="Concluído");
+  const abertas=demandas.filter(d=>d.status!=="Concluído").length;
+
+  // Tab counts
+  const demAbertasCount=demandas.filter(d=>d.status!=="Concluído").length;
 
   return (
     <div className="app">
       {/* HEADER */}
       <div className="header">
-        <div className="header-sq"/>
-        <div className="header-arc"/>
-        <div className="header-arc2"/>
+        <div className="header-sq"/><div className="header-arc"/><div className="header-arc2"/>
         <div>
           <div className="h-title">Board do Time</div>
-          <div className="h-sub">Foco Marketing — reuniões, combinados e metas semanais</div>
+          <div className="h-sub">Foco Marketing — reuniões, combinados, metas e demandas</div>
         </div>
         <div className="logo-wrap"><div className="lsq"/><div className="lsq2"/></div>
       </div>
 
-      {/* AUTH */}
-      {!token && (
+      {!token&&(
         <div className="auth-box">
           <div className="auth-title">Conectar ao Google Sheets</div>
           <div className="auth-sub">Autorize o acesso para que o board leia e salve<br/>os dados diretamente na sua planilha.</div>
@@ -295,127 +428,264 @@ function App() {
         </div>
       )}
 
-      {token && loading && (
-        <div className="loading">
-          <span className="loading-spin"/> Carregando dados da planilha...
-        </div>
-      )}
+      {token&&loading&&<div className="loading"><span className="loading-spin"/>Carregando...</div>}
 
-      {token && !loading && (
-        <>
-          {/* METAS */}
-          <div className="badge">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#1565C0" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/></svg>
+      {token&&!loading&&(<>
+        {/* TABS */}
+        <div className="tabs">
+          <button className={`tab${activeTab==="metas"?" active":""}`} onClick={()=>setActiveTab("metas")}>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
             Metas da Semana
-          </div>
+          </button>
+          <button className={`tab${activeTab==="reunioes"?" active":""}`} onClick={()=>setActiveTab("reunioes")}>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+            Reuniões
+          </button>
+          <button className={`tab${activeTab==="demandas"?" active":""}`} onClick={()=>setActiveTab("demandas")}>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3h10M2 7h7M2 11h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+            Demandas
+            {demAbertasCount>0&&<span className="tab-badge">{demAbertasCount}</span>}
+          </button>
+        </div>
+
+        {/* ══ ABA METAS ══ */}
+        {activeTab==="metas"&&(
           <div className="meta-card">
+            {semanas.length>1&&(
+              <div className="week-nav">
+                <span className="week-lbl">Semana:</span>
+                {semanas.map((s,i)=>(
+                  <button key={s.semana} className={`week-btn${semanaIdx===i?" active":""}`} onClick={()=>setSemanaIdx(i)}>
+                    {s.semana}{i===0&&<span className="current-dot"/>}
+                  </button>
+                ))}
+              </div>
+            )}
+            {!isCurrentWk&&(
+              <div className="hist-banner">
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#5a6e8a" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="#5a6e8a" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                Histórico da semana <strong style={{margin:"0 4px"}}>{semanaAtual.semana}</strong> — somente leitura.
+              </div>
+            )}
             <div className="meta-hd">
               <div>
-                <div className="meta-title">Semana {meta.semana}</div>
-                <div className="meta-week">{meta.descricao}</div>
+                <div className="meta-title">Semana {semanaAtual.semana}</div>
+                <div className="meta-week">{semanaAtual.descricao}</div>
               </div>
               <div className="prog-area">
                 {[{name:"Vinícius",pct:vinPct,done:vinDone},{name:"Mavi",pct:mavPct,done:mavDone}].map(p=>(
                   <div className="prog" key={p.name}>
                     <div className="prog-name">{p.name}</div>
-                    <div className="prog-track"><div className="prog-fill" style={{width:`${p.pct}%`}}/></div>
+                    <div className="prog-track"><div className={`prog-fill${!isCurrentWk?" hist":""}`} style={{width:`${p.pct}%`}}/></div>
                     <div className="prog-pct">{p.pct}%</div>
                     <div className="prog-frac">{p.done} de {total} concluídas</div>
                   </div>
                 ))}
               </div>
             </div>
-
-            {meta.metas.length === 0 ? (
-              <div style={{textAlign:"center",padding:"20px 0",color:"#5a6e8a",fontSize:13.5}}>
-                Nenhuma meta encontrada. Adicione na aba <strong>metas</strong> da planilha.
-              </div>
-            ) : (
+            {semanaAtual.metas.length===0?(
+              <div style={{textAlign:"center",padding:"20px 0",color:"#5a6e8a",fontSize:13}}>Nenhuma meta. Adicione na aba <strong>metas</strong> da planilha.</div>
+            ):(
               <table className="tbl">
-                <thead><tr><th>Meta</th><th>Vinícius</th><th>Mavi</th></tr></thead>
+                <thead><tr><th>Meta</th><th className="ctr">Vinícius</th><th className="ctr">Mavi</th></tr></thead>
                 <tbody>
-                  {meta.metas.map(m=>(
+                  {semanaAtual.metas.map(m=>(
                     <tr key={m.id}>
                       <td><span className={m.vinicius&&m.mavi?"done":""}>{m.texto}</span></td>
                       {["vinicius","mavi"].map(who=>(
-                        <td key={who} className="ctr">
-                          <div className="chk-w">
-                            <Chk checked={m[who]} onChange={()=>toggleCheck(m,who)}/>
-                          </div>
-                        </td>
+                        <td key={who} className="ctr"><div className="chk-w"><Chk checked={m[who]} onChange={()=>toggleCheck(m,who)} readonly={!isCurrentWk}/></div></td>
                       ))}
                     </tr>
                   ))}
                 </tbody>
               </table>
             )}
-
-            <div style={{marginTop:16,display:"flex",gap:10,justifyContent:"flex-end"}}>
+            <div style={{marginTop:14,display:"flex",gap:8,justifyContent:"flex-end"}}>
               <button className="ghost" onClick={()=>loadAll(token)} disabled={saving}>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6a5 5 0 1 0 1-3" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/><path d="M1 2v3h3" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 Atualizar
               </button>
-              <button className="ghost" onClick={()=>{setToken(null);sessionStorage.removeItem("foco_token");}}>
-                Sair
+              <button className="ghost" onClick={()=>{setToken(null);sessionStorage.removeItem("foco_token");}}>Sair</button>
+            </div>
+          </div>
+        )}
+
+        {/* ══ ABA REUNIÕES ══ */}
+        {activeTab==="reunioes"&&(
+          <>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
+              <div className="badge" style={{margin:0}}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="#1565C0" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                Últimas Reuniões
+              </div>
+              <button className="btn" onClick={openNewMeet} disabled={saving}>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+                Nova Reunião
               </button>
             </div>
-          </div>
-
-          {/* REUNIÕES */}
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:12}}>
-            <div className="badge" style={{margin:0}}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="#1565C0" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/></svg>
-              Últimas Reuniões
-            </div>
-            <button className="btn" onClick={openNew} disabled={saving}>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
-              Nova Reunião
-            </button>
-          </div>
-
-          {meetings.length === 0 ? (
-            <div className="empty">Nenhuma reunião registrada. Clique em <strong>Nova Reunião</strong> para começar.</div>
-          ) : (
-            <div className="grid">
-              {meetings.map(m=>(
-                <div className="card" key={m.id}>
-                  <div className="card-title">{m.title}</div>
-                  <div className="card-date">→ {m.date}</div>
-                  <div className="div"/>
-                  <div className="sec">Pauta</div>
-                  <ul className="items">{m.pauta.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
-                  <div className="div"/>
-                  <div className="sec">Combinados</div>
-                  <ul className="items">{m.combinados.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
-                  <div style={{marginTop:16}}>
-                    <button className="ghost" onClick={()=>openEdit(m)}>
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
-                      Editar
-                    </button>
+            {meetings.length===0?(
+              <div className="empty-dem">Nenhuma reunião ainda. Clique em <strong>Nova Reunião</strong>.</div>
+            ):(
+              <div className="grid">
+                {meetings.map(m=>(
+                  <div className="card" key={m.id}>
+                    <div className="card-title">{m.title}</div>
+                    <div className="card-date">→ {m.date}</div>
+                    <div className="divider"/>
+                    <div className="sec">Pauta</div>
+                    <ul className="items">{m.pauta.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
+                    <div className="divider"/>
+                    <div className="sec">Combinados</div>
+                    <ul className="items">{m.combinados.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
+                    <div style={{marginTop:14}}>
+                      <button className="ghost" onClick={()=>openEditMeet(m)}>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+                        Editar
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </>
-      )}
+                ))}
+              </div>
+            )}
+          </>
+        )}
 
-      {/* MODAL */}
-      <Modal open={showModal} onClose={()=>setShowModal(false)}>
-        <div className="modal-title">{editing?"Editar Reunião":"Nova Reunião"}</div>
+        {/* ══ ABA DEMANDAS ══ */}
+        {activeTab==="demandas"&&(
+          <>
+            <div className="dem-toolbar">
+              <div className="dem-filters">
+                <button className={`filt-btn${filtStatus==="todos"?" on":""}`} onClick={()=>setFiltStatus("todos")}>Todos</button>
+                {STATUS_LIST.map(s=>(
+                  <button key={s} className={`filt-btn${filtStatus===s?" on":""}`} onClick={()=>setFiltStatus(filtStatus===s?"todos":s)}>{s}</button>
+                ))}
+                <span style={{width:1,background:"rgba(0,53,128,0.12)",margin:"0 4px",alignSelf:"stretch",display:"inline-block"}}/>
+                <button className={`filt-btn${filtPrio==="todos"?" on":""}`} onClick={()=>setFiltPrio("todos")}>Todas prioridades</button>
+                {Object.keys(PRIORIDADE).map(p=>(
+                  <button key={p} className={`filt-btn${filtPrio===p?" on":""}`} onClick={()=>setFiltPrio(filtPrio===p?"todos":p)}>{p}</button>
+                ))}
+              </div>
+              <button className="btn" onClick={openNewDem} disabled={saving}>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+                Nova Demanda
+              </button>
+            </div>
+
+            {ativas.length===0&&concluidas.length===0?(
+              <div className="empty-dem">Nenhuma demanda ainda. Clique em <strong>Nova Demanda</strong> para começar.</div>
+            ):(
+              <>
+                {ativas.length>0&&(
+                  <table className="dem-table">
+                    <thead>
+                      <tr>
+                        <th style={{width:36}}>P</th>
+                        <th style={{width:140}}>Cliente / Projeto</th>
+                        <th>Descrição</th>
+                        <th style={{width:130}}>Status</th>
+                        <th style={{width:100}}>Prazo</th>
+                        <th style={{width:36}}></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ativas.map(d=>(
+                        <tr key={d.id} onClick={()=>openEditDem(d)}>
+                          <td className="ctr"><span className="prio">{d.prioridade}</span></td>
+                          <td style={{fontWeight:600,color:"#002055"}}>{d.cliente||<span style={{color:"#90a4c0",fontStyle:"italic"}}>—</span>}</td>
+                          <td>
+                            <div style={{fontWeight:600,marginBottom:d.obs?2:0}}>{d.descricao}</div>
+                            {d.obs&&<div style={{fontSize:12,color:"#5a6e8a",marginTop:2}}>{d.obs}</div>}
+                          </td>
+                          <td><span className={`status-badge ${STATUS_CLASS[d.status]||""}`}>{d.status}</span></td>
+                          <td className={prazoClass(d.prazo,d.status)}>{formatPrazo(d.prazo)}</td>
+                          <td>
+                            <button className="icon-btn" onClick={e=>{e.stopPropagation();openEditDem(d);}}>
+                              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 1.5l2 2-7.5 7.5H1.5v-2L9 1.5z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+
+                {concluidas.length>0&&(
+                  <>
+                    <div className="dem-section-title">Concluídas ({concluidas.length})</div>
+                    <table className="dem-table">
+                      <tbody>
+                        {concluidas.map(d=>(
+                          <tr key={d.id} className="concluida" onClick={()=>openEditDem(d)}>
+                            <td style={{width:36}} className="ctr"><span className="prio">{d.prioridade}</span></td>
+                            <td style={{width:140,fontWeight:600,color:"#002055"}}>{d.cliente||"—"}</td>
+                            <td><span style={{textDecoration:"line-through"}}>{d.descricao}</span></td>
+                            <td style={{width:130}}><span className={`status-badge ${STATUS_CLASS[d.status]}`}>{d.status}</span></td>
+                            <td style={{width:100}}>{formatPrazo(d.prazo)}</td>
+                            <td style={{width:36}}></td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )}
+              </>
+            )}
+          </>
+        )}
+      </>)}
+
+      {/* MODAL REUNIÃO */}
+      <Modal open={showMeetModal} onClose={()=>setShowMeetModal(false)}>
+        <div className="modal-title">{editingMeet?"Editar Reunião":"Nova Reunião"}</div>
         <label className="lbl">Título</label>
-        <input className="inp" value={form.title} onChange={e=>setForm(f=>({...f,title:e.target.value}))} placeholder="Ex: Alinhamento semanal"/>
+        <input className="inp" value={meetForm.title} onChange={e=>setMeetForm(f=>({...f,title:e.target.value}))} placeholder="Ex: Alinhamento semanal"/>
         <label className="lbl">Data</label>
-        <input className="inp" value={form.date} onChange={e=>setForm(f=>({...f,date:e.target.value}))} placeholder="Ex: 06/05/2025"/>
+        <input className="inp" value={meetForm.date} onChange={e=>setMeetForm(f=>({...f,date:e.target.value}))} placeholder="Ex: 06/05/2025"/>
         <label className="lbl">Pauta (uma por linha)</label>
-        <textarea className="inp" rows={4} value={form.pauta} onChange={e=>setForm(f=>({...f,pauta:e.target.value}))} placeholder={"Item 1\nItem 2"} style={{resize:"vertical"}}/>
-        <label className="lbl">Combinados (um por linha)</label>
-        <textarea className="inp" rows={4} value={form.combinados} onChange={e=>setForm(f=>({...f,combinados:e.target.value}))} placeholder={"Combinado 1\nCombinado 2"} style={{resize:"vertical"}}/>
+        <textarea className="inp" rows={4} value={meetForm.pauta} onChange={e=>setMeetForm(f=>({...f,pauta:e.target.value}))} placeholder={"Item 1\nItem 2"} style={{resize:"vertical"}}/>
+        <label className="lbl">Combinados (uma por linha)</label>
+        <textarea className="inp" rows={4} value={meetForm.combinados} onChange={e=>setMeetForm(f=>({...f,combinados:e.target.value}))} placeholder={"Combinado 1\nCombinado 2"} style={{resize:"vertical"}}/>
         <div className="form-row">
-          <button className="cancel" onClick={()=>setShowModal(false)}>Cancelar</button>
-          <button className="btn" onClick={saveMeeting} disabled={saving}>
-            {saving ? <><span className="spin"/> Salvando...</> : "Salvar na planilha"}
-          </button>
+          <button className="cancel" onClick={()=>setShowMeetModal(false)}>Cancelar</button>
+          <button className="btn" onClick={saveMeeting} disabled={saving}>{saving?<><span className="spin"/>Salvando...</>:"Salvar"}</button>
+        </div>
+      </Modal>
+
+      {/* MODAL DEMANDA */}
+      <Modal open={showDemModal} onClose={()=>setShowDemModal(false)}>
+        <div className="modal-title">{editingDem?"Editar Demanda":"Nova Demanda"}</div>
+        <div className="inp-row">
+          <div>
+            <label className="lbl">Cliente / Projeto</label>
+            <input className="inp" value={demForm.cliente} onChange={e=>setDemForm(f=>({...f,cliente:e.target.value}))} placeholder="Ex: Cliente X"/>
+          </div>
+          <div>
+            <label className="lbl">Prazo</label>
+            <input className="inp" type="date" value={demForm.prazo} onChange={e=>setDemForm(f=>({...f,prazo:e.target.value}))}/>
+          </div>
+        </div>
+        <label className="lbl">Descrição da demanda</label>
+        <input className="inp" value={demForm.descricao} onChange={e=>setDemForm(f=>({...f,descricao:e.target.value}))} placeholder="Ex: Entregar relatório mensal"/>
+        <div className="inp-row">
+          <div>
+            <label className="lbl">Prioridade</label>
+            <select className="inp" value={demForm.prioridade} onChange={e=>setDemForm(f=>({...f,prioridade:e.target.value}))}>
+              {Object.entries(PRIORIDADE).map(([k,v])=><option key={k} value={k}>{v}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="lbl">Status</label>
+            <select className="inp" value={demForm.status} onChange={e=>setDemForm(f=>({...f,status:e.target.value}))}>
+              {STATUS_LIST.map(s=><option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
+        </div>
+        <label className="lbl">Observação (opcional)</label>
+        <textarea className="inp" rows={3} value={demForm.obs} onChange={e=>setDemForm(f=>({...f,obs:e.target.value}))} placeholder="Contexto, dependências, próximos passos..." style={{resize:"vertical"}}/>
+        <div className="form-row">
+          {editingDem&&<button className="del-btn" onClick={deleteDemanda}>Remover</button>}
+          <button className="cancel" onClick={()=>setShowDemModal(false)}>Cancelar</button>
+          <button className="btn" onClick={saveDemanda} disabled={saving}>{saving?<><span className="spin"/>Salvando...</>:"Salvar"}</button>
         </div>
       </Modal>
 
