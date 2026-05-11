@@ -13,8 +13,6 @@
     *{box-sizing:border-box;margin:0;padding:0;}
     body{background:#EAEAEA;font-family:'Nunito Sans',sans-serif;min-height:100vh;}
     .app{max-width:1150px;margin:0 auto;padding:40px 32px 64px;}
-
-    /* HEADER */
     .header{background:#002055;border-radius:16px;padding:28px 40px;margin-bottom:32px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;}
     .header-arc{position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:28px solid rgba(0,87,217,0.35);pointer-events:none;}
     .header-arc2{position:absolute;bottom:-30px;right:60px;width:90px;height:90px;border-radius:50%;border:14px solid rgba(21,101,192,0.25);pointer-events:none;}
@@ -24,24 +22,15 @@
     .logo-wrap{display:flex;gap:6px;align-items:flex-start;}
     .lsq{width:16px;height:16px;background:rgba(255,255,255,0.22);border-radius:3px;}
     .lsq2{width:16px;height:16px;background:rgba(255,255,255,0.1);border-radius:3px;margin-left:-8px;margin-top:-8px;}
-
-    /* TABS */
     .tabs{display:flex;gap:4px;margin-bottom:28px;background:#fff;border-radius:12px;padding:5px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.08);width:fit-content;}
     .tab{padding:9px 22px;border-radius:8px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#5a6e8a;cursor:pointer;border:none;background:transparent;transition:all 0.15s;display:flex;align-items:center;gap:7px;white-space:nowrap;}
     .tab:hover{color:#1565C0;background:#F4F7FB;}
     .tab.active{background:#1565C0;color:#fff;}
-    .tab-badge{background:rgba(255,255,255,0.25);border-radius:10px;padding:1px 7px;font-size:11px;font-weight:800;}
-    .tab.active .tab-badge{background:rgba(255,255,255,0.25);}
-    .tab:not(.active) .tab-badge{background:#EBF2FF;color:#1565C0;}
-
-    /* BADGE */
+    .tab-badge{border-radius:10px;padding:1px 7px;font-size:11px;font-weight:800;background:#EBF2FF;color:#1565C0;}
+    .tab.active .tab-badge{background:rgba(255,255,255,0.25);color:#fff;}
     .badge{display:inline-flex;align-items:center;gap:7px;background:#EBF2FF;color:#1565C0;font-weight:800;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;border-radius:6px;padding:5px 12px;margin-bottom:16px;}
-
-    /* GRID */
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:40px;}
-    @media(max-width:760px){.grid{grid-template-columns:1fr;}.app{padding:20px 16px 48px;}.tabs{width:100%;}.tab{flex:1;justify-content:center;padding:9px 10px;font-size:12px;}}
-
-    /* CARDS */
+    @media(max-width:760px){.grid{grid-template-columns:1fr;}.app{padding:20px 16px 48px;}.tabs{width:100%;}.tab{flex:1;justify-content:center;padding:9px 8px;font-size:11px;}}
     .card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:22px 26px;}
     .card-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;color:#002055;margin-bottom:3px;}
     .card-date{font-size:12px;font-weight:600;color:#1565C0;margin-bottom:14px;}
@@ -50,8 +39,6 @@
     .items li{font-size:13px;color:#2a3a5a;display:flex;gap:8px;align-items:flex-start;line-height:1.5;}
     .arr{color:#1565C0;font-weight:700;flex-shrink:0;}
     .divider{height:1px;background:rgba(0,53,128,0.12);margin:10px 0;}
-
-    /* META CARD */
     .meta-card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:26px 30px;margin-bottom:36px;}
     .meta-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;gap:16px;flex-wrap:wrap;}
     .meta-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#002055;}
@@ -71,6 +58,8 @@
     .prog-fill.hist{background:#90a4c0;}
     .prog-pct{font-size:17px;font-weight:800;color:#002055;}
     .prog-frac{font-size:11px;font-weight:600;color:#5a6e8a;margin-top:1px;}
+
+    /* TABELA METAS */
     .tbl{width:100%;border-collapse:collapse;margin-top:4px;}
     .tbl th{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;background:#1565C0;padding:9px 13px;text-align:left;}
     .tbl th.ctr{text-align:center;width:90px;}
@@ -78,14 +67,24 @@
     .tbl tr:nth-child(even) td{background:#F4F7FB;}
     .tbl tr:last-child td{border-bottom:none;}
     .tbl td.ctr{text-align:center;}
+
+    /* responsável tag */
+    .resp-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;}
+    .resp-todos{background:#EBF2FF;color:#1565C0;}
+    .resp-vinicius{background:#E3F2FD;color:#0277BD;}
+    .resp-mavi{background:#F3E5F5;color:#6A1B9A;}
+    .resp-ana{background:#FFF3E0;color:#E65100;}
+
+    /* CHECKBOX */
     .chk-w{display:flex;align-items:center;justify-content:center;}
     .chk{width:21px;height:21px;border-radius:6px;border:2px solid rgba(0,53,128,0.12);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;flex-shrink:0;user-select:none;}
     .chk.on{background:#1565C0;border-color:#1565C0;}
     .chk.on.hist-chk{background:#90a4c0;border-color:#90a4c0;}
-    .chk.readonly{cursor:default;}
+    .chk.readonly{cursor:default;opacity:0.35;background:#f0f0f0;border-color:rgba(0,53,128,0.08);}
+    .chk.readonly.on{background:#b0bec5;border-color:#b0bec5;opacity:0.5;}
     .done{text-decoration:line-through;color:#90a4c0;}
 
-    /* ── DEMANDAS ── */
+    /* DEMANDAS */
     .dem-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
     .dem-filters{display:flex;gap:6px;flex-wrap:wrap;}
     .filt-btn{background:transparent;border:1px solid rgba(21,101,192,0.2);border-radius:20px;padding:5px 13px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;color:#5a6e8a;cursor:pointer;transition:all 0.15s;}
@@ -119,8 +118,6 @@
     .ghost:hover{background:#EBF2FF;}
     .icon-btn{background:transparent;border:none;cursor:pointer;padding:4px;border-radius:6px;color:#5a6e8a;transition:all 0.15s;display:inline-flex;align-items:center;}
     .icon-btn:hover{background:#EBF2FF;color:#1565C0;}
-
-    /* MODAL */
     .modal-bg{position:fixed;inset:0;background:rgba(0,32,85,0.3);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px;}
     .modal{background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,32,85,0.18);padding:34px 34px 26px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;}
     .modal-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:19px;color:#002055;margin-bottom:18px;}
@@ -132,13 +129,9 @@
     .cancel{background:transparent;border:1px solid rgba(0,53,128,0.12);border-radius:8px;padding:9px 18px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#5a6e8a;cursor:pointer;}
     .del-btn{background:transparent;border:1px solid rgba(198,40,40,0.25);border-radius:8px;padding:9px 16px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#C62828;cursor:pointer;margin-right:auto;}
     .del-btn:hover{background:#FFEBEE;}
-
-    /* AUTH */
     .auth-box{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:40px;text-align:center;margin-bottom:32px;}
     .auth-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#002055;margin-bottom:10px;}
     .auth-sub{font-size:13.5px;color:#5a6e8a;margin-bottom:24px;line-height:1.6;}
-
-    /* MISC */
     .toast{position:fixed;bottom:28px;right:28px;background:#002055;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:10px;box-shadow:0 4px 20px rgba(0,32,85,0.25);z-index:200;animation:fadeUp 0.2s ease;}
     @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
     .spin{display:inline-block;width:15px;height:15px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;}
@@ -157,52 +150,54 @@ const SPREADSHEET_ID   = "1Sg687w5m7jfFoLtik7d6pVGUGgN4AUFHbDHsAKwFrsk";
 const SCOPES           = "https://www.googleapis.com/auth/spreadsheets";
 const SHEETS_BASE      = "https://sheets.googleapis.com/v4/spreadsheets";
 
+const RESPONSAVEIS     = ["Todos","Vinícius","Mavi","Ana"];
+const PRIORIDADE       = {"🔴":"🔴 Urgente","🟡":"🟡 Média","🟢":"🟢 Baixa"};
+const STATUS_LIST      = ["Aberto","Em andamento","Aguardando","Concluído"];
+const STATUS_CLASS     = {"Aberto":"st-aberto","Em andamento":"st-andamento","Aguardando":"st-aguardando","Concluído":"st-concluido"};
+
 const { useState, useEffect, useCallback } = React;
 
-const PRIORIDADE = { "🔴": "🔴 Urgente", "🟡": "🟡 Média", "🟢": "🟢 Baixa" };
-const STATUS_LIST = ["Aberto","Em andamento","Aguardando","Concluído"];
-const STATUS_CLASS = { "Aberto":"st-aberto", "Em andamento":"st-andamento", "Aguardando":"st-aguardando", "Concluído":"st-concluido" };
-
-// ── Sheets helpers ──────────────────────────────────────────────────────────
+// ── Sheets ──────────────────────────────────────────────────────────────────
 async function sheetsGet(token, range) {
   const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}`,
-    { headers: { Authorization: `Bearer ${token}` } });
+    {headers:{Authorization:`Bearer ${token}`}});
   if (!r.ok) throw new Error(await r.text());
   return (await r.json()).values || [];
 }
 async function sheetsUpdate(token, range, values) {
-  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}?valueInputOption=RAW`, {
-    method:"PUT", headers:{ Authorization:`Bearer ${token}`, "Content-Type":"application/json" },
-    body: JSON.stringify({ range, majorDimension:"ROWS", values })
-  });
+  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}?valueInputOption=RAW`,
+    {method:"PUT",headers:{Authorization:`Bearer ${token}`,"Content-Type":"application/json"},
+     body:JSON.stringify({range,majorDimension:"ROWS",values})});
   if (!r.ok) throw new Error(await r.text());
 }
 async function sheetsAppend(token, range, values) {
-  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, {
-    method:"POST", headers:{ Authorization:`Bearer ${token}`, "Content-Type":"application/json" },
-    body: JSON.stringify({ range, majorDimension:"ROWS", values })
-  });
-  if (!r.ok) throw new Error(await r.text());
-}
-async function sheetsClear(token, range) {
-  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}:clear`, {
-    method:"POST", headers:{ Authorization:`Bearer ${token}` }
-  });
+  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,
+    {method:"POST",headers:{Authorization:`Bearer ${token}`,"Content-Type":"application/json"},
+     body:JSON.stringify({range,majorDimension:"ROWS",values})});
   if (!r.ok) throw new Error(await r.text());
 }
 
-// ── Parsers ─────────────────────────────────────────────────────────────────
+// ── Parsers ──────────────────────────────────────────────────────────────────
+// Planilha metas: A=semana B=descricao C=meta D=vinicius E=mavi F=responsavel
 function parseTodasSemanas(rows) {
   if (!rows.length) return [];
   const data = rows.slice(1).filter(r => r[2]);
   const map = new Map();
-  data.forEach((r,i) => {
+  data.forEach((r, i) => {
     const s = r[0]||"";
     if (!map.has(s)) map.set(s,{semana:s,descricao:r[1]||"",metas:[]});
-    map.get(s).metas.push({ id:`m${i}`,row:i+2,texto:r[2]||"",vinicius:r[3]==="TRUE",mavi:r[4]==="TRUE" });
+    const resp = (r[5]||"Todos").trim();
+    map.get(s).metas.push({
+      id:`m${i}`, row:i+2,
+      texto:r[2]||"",
+      vinicius:r[3]==="TRUE",
+      mavi:r[4]==="TRUE",
+      responsavel:resp,
+    });
   });
   return Array.from(map.values()).reverse();
 }
+
 function parseReunioes(rows) {
   if (!rows.length) return [];
   return rows.slice(1).filter(r=>r[2]).map((r,i)=>({
@@ -211,6 +206,7 @@ function parseReunioes(rows) {
     combinados:(r[4]||"").split("|").map(s=>s.trim()).filter(Boolean),
   }));
 }
+
 function parseDemandas(rows) {
   if (!rows.length) return [];
   return rows.slice(1).filter(r=>r[2]).map((r,i)=>({
@@ -220,66 +216,74 @@ function parseDemandas(rows) {
   }));
 }
 
-// ── Tiny components ─────────────────────────────────────────────────────────
-function Chk({ checked, onChange, readonly }) {
-  return (
-    <div className={`chk${checked?" on":""}${checked&&readonly?" hist-chk":""}${readonly?" readonly":""}`}
-      onClick={readonly?undefined:onChange} role="checkbox" aria-checked={checked} tabIndex={readonly?-1:0}
-      onKeyDown={e=>!readonly&&e.key===" "&&onChange()}>
-      {checked&&<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5.5,10.5 11,3" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-    </div>
-  );
+// ── Helpers ──────────────────────────────────────────────────────────────────
+// Decide se um analista pode marcar o check de uma meta
+function podeMarcar(responsavel, who) {
+  const r = responsavel||"Todos";
+  if (r === "Todos") return true;
+  if (who === "vinicius" && r === "Vinícius") return true;
+  if (who === "mavi" && r === "Mavi") return true;
+  return false;
 }
-function Modal({ open, onClose, children }) {
-  if (!open) return null;
-  return <div className="modal-bg" onClick={e=>e.target===e.currentTarget&&onClose()}><div className="modal">{children}</div></div>;
+
+function respClass(r) {
+  if (!r||r==="Todos") return "resp-todos";
+  if (r==="Vinícius") return "resp-vinicius";
+  if (r==="Mavi") return "resp-mavi";
+  return "resp-ana";
 }
-function Toast({ msg }) { return msg ? <div className="toast">{msg}</div> : null; }
 
 function prazoClass(prazo, status) {
-  if (!prazo || status==="Concluído") return "prazo-ok";
-  const d = new Date(prazo), now = new Date();
-  const diff = (d - now) / 86400000;
-  if (diff < 0) return "prazo-late";
-  if (diff <= 3) return "prazo-soon";
+  if (!prazo||status==="Concluído") return "prazo-ok";
+  const diff=(new Date(prazo)-new Date())/86400000;
+  if (diff<0) return "prazo-late";
+  if (diff<=3) return "prazo-soon";
   return "prazo-ok";
 }
 function formatPrazo(p) {
   if (!p) return "—";
-  const parts = p.split("-");
-  if (parts.length===3) return `${parts[2]}/${parts[1]}/${parts[0]}`;
-  return p;
+  const pts=p.split("-");
+  return pts.length===3?`${pts[2]}/${pts[1]}/${pts[0]}`:p;
 }
 
-// ── App ──────────────────────────────────────────────────────────────────────
+// ── Components ───────────────────────────────────────────────────────────────
+function Chk({checked, onChange, readonly}) {
+  return (
+    <div className={`chk${checked?" on":""}${checked&&readonly?" hist-chk":""}${readonly?" readonly":""}`}
+      onClick={readonly?undefined:onChange} role="checkbox" aria-checked={checked}
+      tabIndex={readonly?-1:0} onKeyDown={e=>!readonly&&e.key===" "&&onChange()}>
+      {checked&&<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5.5,10.5 11,3" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+    </div>
+  );
+}
+function Modal({open,onClose,children}) {
+  if (!open) return null;
+  return <div className="modal-bg" onClick={e=>e.target===e.currentTarget&&onClose()}><div className="modal">{children}</div></div>;
+}
+function Toast({msg}) { return msg?<div className="toast">{msg}</div>:null; }
+
+// ── App ───────────────────────────────────────────────────────────────────────
 function App() {
-  const [token, setToken]           = useState(null);
-  const [loading, setLoading]       = useState(false);
-  const [saving, setSaving]         = useState(false);
-  const [toast, setToast]           = useState("");
-  const [activeTab, setActiveTab]   = useState("metas"); // "metas" | "reunioes" | "demandas"
-
-  // Metas
-  const [semanas, setSemanas]       = useState([]);
-  const [semanaIdx, setSemanaIdx]   = useState(0);
-
-  // Reuniões
-  const [meetings, setMeetings]     = useState([]);
-  const [showMeetModal, setShowMeetModal] = useState(false);
-  const [editingMeet, setEditingMeet]     = useState(null);
-  const [meetForm, setMeetForm]           = useState({title:"",date:"",pauta:"",combinados:""});
-
-  // Demandas
-  const [demandas, setDemandas]     = useState([]);
-  const [showDemModal, setShowDemModal] = useState(false);
-  const [editingDem, setEditingDem]     = useState(null);
-  const [demForm, setDemForm]           = useState({cliente:"",descricao:"",prioridade:"🟡",status:"Aberto",prazo:"",obs:""});
-  const [filtStatus, setFiltStatus]     = useState("todos");
-  const [filtPrio, setFiltPrio]         = useState("todos");
+  const [token,setToken]               = useState(null);
+  const [loading,setLoading]           = useState(false);
+  const [saving,setSaving]             = useState(false);
+  const [toast,setToast]               = useState("");
+  const [activeTab,setActiveTab]       = useState("metas");
+  const [semanas,setSemanas]           = useState([]);
+  const [semanaIdx,setSemanaIdx]       = useState(0);
+  const [meetings,setMeetings]         = useState([]);
+  const [showMeetModal,setShowMeetModal] = useState(false);
+  const [editingMeet,setEditingMeet]   = useState(null);
+  const [meetForm,setMeetForm]         = useState({title:"",date:"",pauta:"",combinados:""});
+  const [demandas,setDemandas]         = useState([]);
+  const [showDemModal,setShowDemModal] = useState(false);
+  const [editingDem,setEditingDem]     = useState(null);
+  const [demForm,setDemForm]           = useState({cliente:"",descricao:"",prioridade:"🟡",status:"Aberto",prazo:"",obs:""});
+  const [filtStatus,setFiltStatus]     = useState("todos");
+  const [filtPrio,setFiltPrio]         = useState("todos");
 
   const notify = msg => { setToast(msg); setTimeout(()=>setToast(""),3000); };
 
-  // Auth
   useEffect(()=>{
     const hash=window.location.hash;
     if (hash.includes("access_token")) {
@@ -300,7 +304,7 @@ function App() {
     setLoading(true);
     try {
       const [mr,rr,dr]=await Promise.all([
-        sheetsGet(t,"metas!A:E"),
+        sheetsGet(t,"metas!A:F"),
         sheetsGet(t,"reunioes!A:E"),
         sheetsGet(t,"demandas!A:G"),
       ]);
@@ -315,17 +319,21 @@ function App() {
   },[]);
   useEffect(()=>{ if(token) loadAll(token); },[token]);
 
-  // ── Metas ──
-  const semanaAtual=semanas[semanaIdx]||{semana:"",descricao:"",metas:[]};
-  const isCurrentWk=semanaIdx===0;
-  const total=semanaAtual.metas.length;
-  const vinDone=semanaAtual.metas.filter(m=>m.vinicius).length;
-  const mavDone=semanaAtual.metas.filter(m=>m.mavi).length;
-  const vinPct=total?Math.round(vinDone/total*100):0;
-  const mavPct=total?Math.round(mavDone/total*100):0;
+  // ── Metas ────────────────────────────────────────────────────────────────
+  const semanaAtual = semanas[semanaIdx]||{semana:"",descricao:"",metas:[]};
+  const isCurrentWk = semanaIdx===0;
+  const total       = semanaAtual.metas.length;
+
+  // Progresso: conta só metas onde cada um é responsável
+  const vinTotal  = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"vinicius")).length;
+  const mavTotal  = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"mavi")).length;
+  const vinDone   = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"vinicius")&&m.vinicius).length;
+  const mavDone   = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"mavi")&&m.mavi).length;
+  const vinPct    = vinTotal?Math.round(vinDone/vinTotal*100):0;
+  const mavPct    = mavTotal?Math.round(mavDone/mavTotal*100):0;
 
   const toggleCheck=async(m,who)=>{
-    if(!isCurrentWk) return;
+    if (!isCurrentWk||!podeMarcar(m.responsavel,who)) return;
     const nv=!m[who];
     setSemanas(prev=>prev.map((s,si)=>si!==0?s:{...s,metas:s.metas.map(x=>x.id===m.id?{...x,[who]:nv}:x)}));
     setSaving(true);
@@ -338,7 +346,7 @@ function App() {
     }finally{setSaving(false);}
   };
 
-  // ── Reuniões ──
+  // ── Reuniões ─────────────────────────────────────────────────────────────
   const openNewMeet=()=>{setEditingMeet(null);setMeetForm({title:"",date:"",pauta:"",combinados:""});setShowMeetModal(true);};
   const openEditMeet=m=>{setEditingMeet(m);setMeetForm({title:m.title,date:m.date,pauta:m.pauta.join("\n"),combinados:m.combinados.join("\n")});setShowMeetModal(true);};
   const saveMeeting=async()=>{
@@ -355,23 +363,17 @@ function App() {
     finally{setSaving(false);}
   };
 
-  // ── Demandas ──
+  // ── Demandas ─────────────────────────────────────────────────────────────
   const openNewDem=()=>{setEditingDem(null);setDemForm({cliente:"",descricao:"",prioridade:"🟡",status:"Aberto",prazo:"",obs:""});setShowDemModal(true);};
   const openEditDem=d=>{setEditingDem(d);setDemForm({cliente:d.cliente,descricao:d.descricao,prioridade:d.prioridade,status:d.status,prazo:d.prazo,obs:d.obs});setShowDemModal(true);};
   const saveDemanda=async()=>{
     if(!demForm.descricao) return;
-    const row=[,demForm.cliente,demForm.descricao,demForm.prioridade,demForm.status,demForm.prazo,demForm.obs];
+    const row=[null,demForm.cliente,demForm.descricao,demForm.prioridade,demForm.status,demForm.prazo,demForm.obs];
     setSaving(true);
     try{
-      if(editingDem){
-        row[0]=editingDem.id;
-        await sheetsUpdate(token,`demandas!A${editingDem.row}:G${editingDem.row}`,[row]);
-        notify("Demanda atualizada ✓");
-      } else {
-        row[0]=Date.now().toString();
-        await sheetsAppend(token,"demandas!A:G",[row]);
-        notify("Demanda salva ✓");
-      }
+      if(editingDem){row[0]=editingDem.id;await sheetsUpdate(token,`demandas!A${editingDem.row}:G${editingDem.row}`,[row]);}
+      else{row[0]=Date.now().toString();await sheetsAppend(token,"demandas!A:G",[row]);}
+      notify(editingDem?"Demanda atualizada ✓":"Demanda salva ✓");
       setShowDemModal(false); await loadAll(token);
     }catch(e){notify("Erro: "+e.message);}
     finally{setSaving(false);}
@@ -387,7 +389,6 @@ function App() {
     finally{setSaving(false);}
   };
 
-  // Filtros
   const demandasFiltradas=demandas.filter(d=>{
     if(filtStatus!=="todos"&&d.status!==filtStatus) return false;
     if(filtPrio!=="todos"&&d.prioridade!==filtPrio) return false;
@@ -395,14 +396,10 @@ function App() {
   });
   const ativas=demandasFiltradas.filter(d=>d.status!=="Concluído");
   const concluidas=demandasFiltradas.filter(d=>d.status==="Concluído");
-  const abertas=demandas.filter(d=>d.status!=="Concluído").length;
-
-  // Tab counts
   const demAbertasCount=demandas.filter(d=>d.status!=="Concluído").length;
 
   return (
     <div className="app">
-      {/* HEADER */}
       <div className="header">
         <div className="header-sq"/><div className="header-arc"/><div className="header-arc2"/>
         <div>
@@ -431,24 +428,20 @@ function App() {
       {token&&loading&&<div className="loading"><span className="loading-spin"/>Carregando...</div>}
 
       {token&&!loading&&(<>
-        {/* TABS */}
         <div className="tabs">
-          <button className={`tab${activeTab==="metas"?" active":""}`} onClick={()=>setActiveTab("metas")}>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
-            Metas da Semana
-          </button>
-          <button className={`tab${activeTab==="reunioes"?" active":""}`} onClick={()=>setActiveTab("reunioes")}>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
-            Reuniões
-          </button>
-          <button className={`tab${activeTab==="demandas"?" active":""}`} onClick={()=>setActiveTab("demandas")}>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3h10M2 7h7M2 11h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
-            Demandas
-            {demAbertasCount>0&&<span className="tab-badge">{demAbertasCount}</span>}
-          </button>
+          {[
+            {id:"metas",label:"Metas da Semana",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
+            {id:"reunioes",label:"Reuniões",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
+            {id:"demandas",label:"Demandas",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3h10M2 7h7M2 11h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,count:demAbertasCount},
+          ].map(t=>(
+            <button key={t.id} className={`tab${activeTab===t.id?" active":""}`} onClick={()=>setActiveTab(t.id)}>
+              {t.icon}{t.label}
+              {t.count>0&&<span className="tab-badge">{t.count}</span>}
+            </button>
+          ))}
         </div>
 
-        {/* ══ ABA METAS ══ */}
+        {/* ══ METAS ══ */}
         {activeTab==="metas"&&(
           <div className="meta-card">
             {semanas.length>1&&(
@@ -473,12 +466,12 @@ function App() {
                 <div className="meta-week">{semanaAtual.descricao}</div>
               </div>
               <div className="prog-area">
-                {[{name:"Vinícius",pct:vinPct,done:vinDone},{name:"Mavi",pct:mavPct,done:mavDone}].map(p=>(
+                {[{name:"Vinícius",pct:vinPct,done:vinDone,tot:vinTotal},{name:"Mavi",pct:mavPct,done:mavDone,tot:mavTotal}].map(p=>(
                   <div className="prog" key={p.name}>
                     <div className="prog-name">{p.name}</div>
                     <div className="prog-track"><div className={`prog-fill${!isCurrentWk?" hist":""}`} style={{width:`${p.pct}%`}}/></div>
                     <div className="prog-pct">{p.pct}%</div>
-                    <div className="prog-frac">{p.done} de {total} concluídas</div>
+                    <div className="prog-frac">{p.done} de {p.tot} concluídas</div>
                   </div>
                 ))}
               </div>
@@ -487,16 +480,36 @@ function App() {
               <div style={{textAlign:"center",padding:"20px 0",color:"#5a6e8a",fontSize:13}}>Nenhuma meta. Adicione na aba <strong>metas</strong> da planilha.</div>
             ):(
               <table className="tbl">
-                <thead><tr><th>Meta</th><th className="ctr">Vinícius</th><th className="ctr">Mavi</th></tr></thead>
+                <thead>
+                  <tr>
+                    <th>Meta</th>
+                    <th style={{width:110}}>Responsável</th>
+                    <th className="ctr">Vinícius</th>
+                    <th className="ctr">Mavi</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  {semanaAtual.metas.map(m=>(
-                    <tr key={m.id}>
-                      <td><span className={m.vinicius&&m.mavi?"done":""}>{m.texto}</span></td>
-                      {["vinicius","mavi"].map(who=>(
-                        <td key={who} className="ctr"><div className="chk-w"><Chk checked={m[who]} onChange={()=>toggleCheck(m,who)} readonly={!isCurrentWk}/></div></td>
-                      ))}
-                    </tr>
-                  ))}
+                  {semanaAtual.metas.map(m=>{
+                    const vinOk=podeMarcar(m.responsavel,"vinicius");
+                    const mavOk=podeMarcar(m.responsavel,"mavi");
+                    const allDone=(vinOk?m.vinicius:true)&&(mavOk?m.mavi:true);
+                    return (
+                      <tr key={m.id}>
+                        <td><span className={allDone?"done":""}>{m.texto}</span></td>
+                        <td><span className={`resp-tag ${respClass(m.responsavel)}`}>{m.responsavel||"Todos"}</span></td>
+                        <td className="ctr">
+                          <div className="chk-w">
+                            <Chk checked={m.vinicius} onChange={()=>toggleCheck(m,"vinicius")} readonly={!isCurrentWk||!vinOk}/>
+                          </div>
+                        </td>
+                        <td className="ctr">
+                          <div className="chk-w">
+                            <Chk checked={m.mavi} onChange={()=>toggleCheck(m,"mavi")} readonly={!isCurrentWk||!mavOk}/>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             )}
@@ -510,128 +523,113 @@ function App() {
           </div>
         )}
 
-        {/* ══ ABA REUNIÕES ══ */}
-        {activeTab==="reunioes"&&(
-          <>
-            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
-              <div className="badge" style={{margin:0}}>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="#1565C0" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/></svg>
-                Últimas Reuniões
-              </div>
-              <button className="btn" onClick={openNewMeet} disabled={saving}>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
-                Nova Reunião
-              </button>
+        {/* ══ REUNIÕES ══ */}
+        {activeTab==="reunioes"&&(<>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
+            <div className="badge" style={{margin:0}}>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="#1565C0" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/></svg>
+              Últimas Reuniões
             </div>
-            {meetings.length===0?(
-              <div className="empty-dem">Nenhuma reunião ainda. Clique em <strong>Nova Reunião</strong>.</div>
-            ):(
-              <div className="grid">
-                {meetings.map(m=>(
-                  <div className="card" key={m.id}>
-                    <div className="card-title">{m.title}</div>
-                    <div className="card-date">→ {m.date}</div>
-                    <div className="divider"/>
-                    <div className="sec">Pauta</div>
-                    <ul className="items">{m.pauta.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
-                    <div className="divider"/>
-                    <div className="sec">Combinados</div>
-                    <ul className="items">{m.combinados.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
-                    <div style={{marginTop:14}}>
-                      <button className="ghost" onClick={()=>openEditMeet(m)}>
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
-                        Editar
-                      </button>
-                    </div>
+            <button className="btn" onClick={openNewMeet} disabled={saving}>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+              Nova Reunião
+            </button>
+          </div>
+          {meetings.length===0?(
+            <div className="empty-dem">Nenhuma reunião ainda. Clique em <strong>Nova Reunião</strong>.</div>
+          ):(
+            <div className="grid">
+              {meetings.map(m=>(
+                <div className="card" key={m.id}>
+                  <div className="card-title">{m.title}</div>
+                  <div className="card-date">→ {m.date}</div>
+                  <div className="divider"/>
+                  <div className="sec">Pauta</div>
+                  <ul className="items">{m.pauta.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
+                  <div className="divider"/>
+                  <div className="sec">Combinados</div>
+                  <ul className="items">{m.combinados.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
+                  <div style={{marginTop:14}}>
+                    <button className="ghost" onClick={()=>openEditMeet(m)}>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+                      Editar
+                    </button>
                   </div>
-                ))}
-              </div>
-            )}
-          </>
-        )}
-
-        {/* ══ ABA DEMANDAS ══ */}
-        {activeTab==="demandas"&&(
-          <>
-            <div className="dem-toolbar">
-              <div className="dem-filters">
-                <button className={`filt-btn${filtStatus==="todos"?" on":""}`} onClick={()=>setFiltStatus("todos")}>Todos</button>
-                {STATUS_LIST.map(s=>(
-                  <button key={s} className={`filt-btn${filtStatus===s?" on":""}`} onClick={()=>setFiltStatus(filtStatus===s?"todos":s)}>{s}</button>
-                ))}
-                <span style={{width:1,background:"rgba(0,53,128,0.12)",margin:"0 4px",alignSelf:"stretch",display:"inline-block"}}/>
-                <button className={`filt-btn${filtPrio==="todos"?" on":""}`} onClick={()=>setFiltPrio("todos")}>Todas prioridades</button>
-                {Object.keys(PRIORIDADE).map(p=>(
-                  <button key={p} className={`filt-btn${filtPrio===p?" on":""}`} onClick={()=>setFiltPrio(filtPrio===p?"todos":p)}>{p}</button>
-                ))}
-              </div>
-              <button className="btn" onClick={openNewDem} disabled={saving}>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
-                Nova Demanda
-              </button>
+                </div>
+              ))}
             </div>
+          )}
+        </>)}
 
-            {ativas.length===0&&concluidas.length===0?(
-              <div className="empty-dem">Nenhuma demanda ainda. Clique em <strong>Nova Demanda</strong> para começar.</div>
-            ):(
-              <>
-                {ativas.length>0&&(
-                  <table className="dem-table">
-                    <thead>
-                      <tr>
-                        <th style={{width:36}}>P</th>
-                        <th style={{width:140}}>Cliente / Projeto</th>
-                        <th>Descrição</th>
-                        <th style={{width:130}}>Status</th>
-                        <th style={{width:100}}>Prazo</th>
-                        <th style={{width:36}}></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {ativas.map(d=>(
-                        <tr key={d.id} onClick={()=>openEditDem(d)}>
-                          <td className="ctr"><span className="prio">{d.prioridade}</span></td>
-                          <td style={{fontWeight:600,color:"#002055"}}>{d.cliente||<span style={{color:"#90a4c0",fontStyle:"italic"}}>—</span>}</td>
-                          <td>
-                            <div style={{fontWeight:600,marginBottom:d.obs?2:0}}>{d.descricao}</div>
-                            {d.obs&&<div style={{fontSize:12,color:"#5a6e8a",marginTop:2}}>{d.obs}</div>}
-                          </td>
-                          <td><span className={`status-badge ${STATUS_CLASS[d.status]||""}`}>{d.status}</span></td>
-                          <td className={prazoClass(d.prazo,d.status)}>{formatPrazo(d.prazo)}</td>
-                          <td>
-                            <button className="icon-btn" onClick={e=>{e.stopPropagation();openEditDem(d);}}>
-                              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 1.5l2 2-7.5 7.5H1.5v-2L9 1.5z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/></svg>
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                )}
-
-                {concluidas.length>0&&(
-                  <>
-                    <div className="dem-section-title">Concluídas ({concluidas.length})</div>
-                    <table className="dem-table">
-                      <tbody>
-                        {concluidas.map(d=>(
-                          <tr key={d.id} className="concluida" onClick={()=>openEditDem(d)}>
-                            <td style={{width:36}} className="ctr"><span className="prio">{d.prioridade}</span></td>
-                            <td style={{width:140,fontWeight:600,color:"#002055"}}>{d.cliente||"—"}</td>
-                            <td><span style={{textDecoration:"line-through"}}>{d.descricao}</span></td>
-                            <td style={{width:130}}><span className={`status-badge ${STATUS_CLASS[d.status]}`}>{d.status}</span></td>
-                            <td style={{width:100}}>{formatPrazo(d.prazo)}</td>
-                            <td style={{width:36}}></td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </>
-                )}
-              </>
+        {/* ══ DEMANDAS ══ */}
+        {activeTab==="demandas"&&(<>
+          <div className="dem-toolbar">
+            <div className="dem-filters">
+              <button className={`filt-btn${filtStatus==="todos"?" on":""}`} onClick={()=>setFiltStatus("todos")}>Todos</button>
+              {STATUS_LIST.map(s=>(
+                <button key={s} className={`filt-btn${filtStatus===s?" on":""}`} onClick={()=>setFiltStatus(filtStatus===s?"todos":s)}>{s}</button>
+              ))}
+              <span style={{width:1,background:"rgba(0,53,128,0.12)",margin:"0 4px",alignSelf:"stretch",display:"inline-block"}}/>
+              {Object.keys(PRIORIDADE).map(p=>(
+                <button key={p} className={`filt-btn${filtPrio===p?" on":""}`} onClick={()=>setFiltPrio(filtPrio===p?"todos":p)}>{p}</button>
+              ))}
+            </div>
+            <button className="btn" onClick={openNewDem} disabled={saving}>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+              Nova Demanda
+            </button>
+          </div>
+          {ativas.length===0&&concluidas.length===0?(
+            <div className="empty-dem">Nenhuma demanda ainda. Clique em <strong>Nova Demanda</strong> para começar.</div>
+          ):(<>
+            {ativas.length>0&&(
+              <table className="dem-table">
+                <thead><tr>
+                  <th style={{width:36}}>P</th>
+                  <th style={{width:140}}>Cliente / Projeto</th>
+                  <th>Descrição</th>
+                  <th style={{width:130}}>Status</th>
+                  <th style={{width:100}}>Prazo</th>
+                  <th style={{width:36}}></th>
+                </tr></thead>
+                <tbody>
+                  {ativas.map(d=>(
+                    <tr key={d.id} onClick={()=>openEditDem(d)}>
+                      <td className="ctr"><span className="prio">{d.prioridade}</span></td>
+                      <td style={{fontWeight:600,color:"#002055"}}>{d.cliente||<span style={{color:"#90a4c0",fontStyle:"italic"}}>—</span>}</td>
+                      <td>
+                        <div style={{fontWeight:600}}>{d.descricao}</div>
+                        {d.obs&&<div style={{fontSize:12,color:"#5a6e8a",marginTop:2}}>{d.obs}</div>}
+                      </td>
+                      <td><span className={`status-badge ${STATUS_CLASS[d.status]||""}`}>{d.status}</span></td>
+                      <td className={prazoClass(d.prazo,d.status)}>{formatPrazo(d.prazo)}</td>
+                      <td><button className="icon-btn" onClick={e=>{e.stopPropagation();openEditDem(d);}}>
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 1.5l2 2-7.5 7.5H1.5v-2L9 1.5z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+                      </button></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             )}
-          </>
-        )}
+            {concluidas.length>0&&(<>
+              <div className="dem-section-title">Concluídas ({concluidas.length})</div>
+              <table className="dem-table">
+                <tbody>
+                  {concluidas.map(d=>(
+                    <tr key={d.id} className="concluida" onClick={()=>openEditDem(d)}>
+                      <td style={{width:36}} className="ctr"><span className="prio">{d.prioridade}</span></td>
+                      <td style={{width:140,fontWeight:600,color:"#002055"}}>{d.cliente||"—"}</td>
+                      <td><span style={{textDecoration:"line-through"}}>{d.descricao}</span></td>
+                      <td style={{width:130}}><span className={`status-badge ${STATUS_CLASS[d.status]}`}>{d.status}</span></td>
+                      <td style={{width:100}}>{formatPrazo(d.prazo)}</td>
+                      <td style={{width:36}}></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>)}
+          </>)}
+        </>)}
       </>)}
 
       {/* MODAL REUNIÃO */}
@@ -640,7 +638,7 @@ function App() {
         <label className="lbl">Título</label>
         <input className="inp" value={meetForm.title} onChange={e=>setMeetForm(f=>({...f,title:e.target.value}))} placeholder="Ex: Alinhamento semanal"/>
         <label className="lbl">Data</label>
-        <input className="inp" value={meetForm.date} onChange={e=>setMeetForm(f=>({...f,date:e.target.value}))} placeholder="Ex: 06/05/2025"/>
+        <input className="inp" value={meetForm.date} onChange={e=>setMeetForm(f=>({...f,date:e.target.value}))} placeholder="Ex: 11/05/2025"/>
         <label className="lbl">Pauta (uma por linha)</label>
         <textarea className="inp" rows={4} value={meetForm.pauta} onChange={e=>setMeetForm(f=>({...f,pauta:e.target.value}))} placeholder={"Item 1\nItem 2"} style={{resize:"vertical"}}/>
         <label className="lbl">Combinados (uma por linha)</label>
@@ -655,30 +653,22 @@ function App() {
       <Modal open={showDemModal} onClose={()=>setShowDemModal(false)}>
         <div className="modal-title">{editingDem?"Editar Demanda":"Nova Demanda"}</div>
         <div className="inp-row">
-          <div>
-            <label className="lbl">Cliente / Projeto</label>
-            <input className="inp" value={demForm.cliente} onChange={e=>setDemForm(f=>({...f,cliente:e.target.value}))} placeholder="Ex: Cliente X"/>
-          </div>
-          <div>
-            <label className="lbl">Prazo</label>
-            <input className="inp" type="date" value={demForm.prazo} onChange={e=>setDemForm(f=>({...f,prazo:e.target.value}))}/>
-          </div>
+          <div><label className="lbl">Cliente / Projeto</label>
+          <input className="inp" value={demForm.cliente} onChange={e=>setDemForm(f=>({...f,cliente:e.target.value}))} placeholder="Ex: Cliente X"/></div>
+          <div><label className="lbl">Prazo</label>
+          <input className="inp" type="date" value={demForm.prazo} onChange={e=>setDemForm(f=>({...f,prazo:e.target.value}))}/></div>
         </div>
         <label className="lbl">Descrição da demanda</label>
         <input className="inp" value={demForm.descricao} onChange={e=>setDemForm(f=>({...f,descricao:e.target.value}))} placeholder="Ex: Entregar relatório mensal"/>
         <div className="inp-row">
-          <div>
-            <label className="lbl">Prioridade</label>
-            <select className="inp" value={demForm.prioridade} onChange={e=>setDemForm(f=>({...f,prioridade:e.target.value}))}>
-              {Object.entries(PRIORIDADE).map(([k,v])=><option key={k} value={k}>{v}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="lbl">Status</label>
-            <select className="inp" value={demForm.status} onChange={e=>setDemForm(f=>({...f,status:e.target.value}))}>
-              {STATUS_LIST.map(s=><option key={s} value={s}>{s}</option>)}
-            </select>
-          </div>
+          <div><label className="lbl">Prioridade</label>
+          <select className="inp" value={demForm.prioridade} onChange={e=>setDemForm(f=>({...f,prioridade:e.target.value}))}>
+            {Object.entries(PRIORIDADE).map(([k,v])=><option key={k} value={k}>{v}</option>)}
+          </select></div>
+          <div><label className="lbl">Status</label>
+          <select className="inp" value={demForm.status} onChange={e=>setDemForm(f=>({...f,status:e.target.value}))}>
+            {STATUS_LIST.map(s=><option key={s} value={s}>{s}</option>)}
+          </select></div>
         </div>
         <label className="lbl">Observação (opcional)</label>
         <textarea className="inp" rows={3} value={demForm.obs} onChange={e=>setDemForm(f=>({...f,obs:e.target.value}))} placeholder="Contexto, dependências, próximos passos..." style={{resize:"vertical"}}/>
