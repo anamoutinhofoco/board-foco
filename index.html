@@ -208,22 +208,72 @@
     .trein-card-footer{margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,53,128,0.08);display:flex;align-items:center;justify-content:flex-end;}
 
     /* LANÇAMENTOS */
-    .lanc-list{display:flex;flex-direction:column;gap:14px;margin-bottom:24px;}
-    .lanc-card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:22px 26px;}
-    .lanc-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
-    .lanc-card-nome{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;color:#002055;}
-    .lanc-status-badge{font-size:11px;font-weight:800;letter-spacing:0.5px;border-radius:20px;padding:4px 12px;}
+    @media(max-width:600px){.meet-q-answers{grid-template-columns:1fr;}}
+    .lanc-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:24px;align-items:start;}
+    .lanc-col{background:#fff;border-radius:16px;box-shadow:0 2px 16px rgba(0,53,128,0.07);border:1px solid rgba(0,53,128,0.12);overflow:hidden;}
+    .lanc-col-header{padding:18px 20px 14px;border-bottom:3px solid #1565C0;position:relative;}
+    .lanc-col-tipo{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;display:flex;align-items:center;gap:6px;}
+    .lanc-col-nome{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;color:#002055;line-height:1.2;margin-bottom:8px;}
+    .lanc-col-meta{font-size:11.5px;color:#5a6e8a;font-weight:600;font-style:italic;}
+    .lanc-progress-wrap{margin-top:10px;}
+    .lanc-progress-labels{display:flex;justify-content:space-between;margin-bottom:4px;}
+    .lanc-progress-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;}
+    .lanc-progress-pct{font-size:10px;font-weight:800;color:#1565C0;}
+    .lanc-progress-bar{background:rgba(21,101,192,0.12);border-radius:6px;height:5px;}
+    .lanc-progress-fill{background:#1565C0;border-radius:6px;height:5px;transition:width 0.4s;}
+    .lanc-col-body{padding:16px 20px 20px;}
+    /* status badge */
+    .lanc-status-badge{font-size:10px;font-weight:800;letter-spacing:0.5px;border-radius:20px;padding:3px 10px;display:inline-block;}
     .lst-planejamento{background:#E3F2FD;color:#0277BD;}
     .lst-producao{background:#FFF3E0;color:#E65100;}
     .lst-lancamento{background:#FCE4EC;color:#C62828;}
     .lst-pos{background:#E8F5E9;color:#2E7D32;}
     .lst-encerrado{background:#EEEEEE;color:#616161;}
-    .lanc-checklist{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;}
-    @media(max-width:600px){.lanc-checklist{grid-template-columns:1fr;}.meet-q-answers{grid-template-columns:1fr;}}
-    .lanc-check-item{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#2a3a5a;background:#F4F7FB;border-radius:7px;padding:7px 10px;}
-    .lanc-check-item .chk{width:18px;height:18px;flex-shrink:0;}
-    .lanc-obs{font-size:12.5px;color:#5a6e8a;line-height:1.6;border-top:1px solid rgba(0,53,128,0.08);padding-top:10px;}
-    .lanc-actions{display:flex;gap:8px;flex-wrap:wrap;}
+    /* gargalo */
+    .lanc-gargalo{background:#FFF8E1;border:1px solid #FFD54F;border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+    .lanc-gargalo-empty{background:#F4F7FB;border:1px dashed rgba(0,53,128,0.2);border-radius:10px;padding:10px 14px;margin-bottom:14px;cursor:pointer;transition:all 0.15s;}
+    .lanc-gargalo-empty:hover{border-color:#1565C0;background:#EBF2FF;}
+    .lanc-gargalo-title{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#F9A825;margin-bottom:4px;display:flex;align-items:center;gap:5px;}
+    .lanc-gargalo-desc{font-size:12.5px;color:#5a4c00;line-height:1.5;margin-bottom:6px;}
+    .lanc-gargalo-setor{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;border-radius:10px;padding:2px 8px;}
+    .setor-design{background:#FCE4EC;color:#C62828;}
+    .setor-copy{background:#EDE7F6;color:#4527A0;}
+    .setor-trafego{background:#E3F2FD;color:#0277BD;}
+    .setor-op{background:#E8F5E9;color:#2E7D32;}
+    .setor-cliente{background:#FFF3E0;color:#E65100;}
+    .setor-todos{background:#EBF2FF;color:#1565C0;}
+    /* checklist fases */
+    .lanc-fase{margin-bottom:12px;}
+    .lanc-fase-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 0;user-select:none;}
+    .lanc-fase-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#1565C0;}
+    .lanc-fase-pct{font-size:10px;font-weight:700;color:#5a6e8a;}
+    .lanc-fase-chevron{color:#5a6e8a;transition:transform 0.2s;font-size:10px;}
+    .lanc-fase-items{display:flex;flex-direction:column;gap:4px;overflow:hidden;max-height:0;transition:max-height 0.3s ease;}
+    .lanc-fase-items.open{max-height:2000px;}
+    .lanc-cl-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#2a3a5a;padding:5px 6px;border-radius:6px;cursor:pointer;transition:background 0.1s;}
+    .lanc-cl-item:hover{background:#F4F7FB;}
+    .lanc-cl-item.checked .lanc-cl-text{text-decoration:line-through;color:#90a4c0;}
+    .lanc-cl-chk{width:16px;height:16px;border-radius:4px;border:2px solid rgba(0,53,128,0.15);background:#fff;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
+    .lanc-cl-item.checked .lanc-cl-chk{background:#1565C0;border-color:#1565C0;}
+    .lanc-cl-text{flex:1;line-height:1.4;}
+    .lanc-cl-setor{font-size:9px;font-weight:800;text-transform:uppercase;border-radius:8px;padding:1px 6px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+    /* tipo accent colors */
+    .tipo-semente .lanc-col-header{border-bottom-color:#2E7D32;}
+    .tipo-semente .lanc-fase-title{color:#2E7D32;}
+    .tipo-semente .lanc-progress-fill{background:#2E7D32;}
+    .tipo-semente .lanc-progress-pct{color:#2E7D32;}
+    .tipo-semente .lanc-cl-item.checked .lanc-cl-chk{background:#2E7D32;border-color:#2E7D32;}
+    .tipo-interno .lanc-col-header{border-bottom-color:#0277BD;}
+    .tipo-relampago .lanc-col-header{border-bottom-color:#C62828;}
+    .tipo-relampago .lanc-fase-title{color:#C62828;}
+    .tipo-relampago .lanc-progress-fill{background:#C62828;}
+    .tipo-relampago .lanc-progress-pct{color:#C62828;}
+    .tipo-relampago .lanc-cl-item.checked .lanc-cl-chk{background:#C62828;border-color:#C62828;}
+    .tipo-perpetuo .lanc-col-header{border-bottom-color:#6A1B9A;}
+    .tipo-perpetuo .lanc-fase-title{color:#6A1B9A;}
+    .tipo-perpetuo .lanc-progress-fill{background:#6A1B9A;}
+    .tipo-perpetuo .lanc-progress-pct{color:#6A1B9A;}
+    .tipo-perpetuo .lanc-cl-item.checked .lanc-cl-chk{background:#6A1B9A;border-color:#6A1B9A;}
   </style>
 </head>
 <body>
@@ -242,15 +292,175 @@ const STATUS_CLASS     = {"Aberto":"st-aberto","Em andamento":"st-andamento","Ag
 const TREIN_PUBLICO    = ["Só analistas","Toda equipe FOCO","Junto com outro setor"];
 const LANC_STATUS_LIST = ["Planejamento","Em produção","Em lançamento","Pós-lançamento","Encerrado"];
 const LANC_STATUS_CLASS= {"Planejamento":"lst-planejamento","Em produção":"lst-producao","Em lançamento":"lst-lancamento","Pós-lançamento":"lst-pos","Encerrado":"lst-encerrado"};
-const LANC_CHECKLIST_ITENS = [
-  "Página de vendas","Copy aprovada","Criativos prontos","Campanha no ar",
-  "E-mails configurados","Grupos/comunidade","Suporte estruturado","Relatório final"
-];
+const SETORES = ["todos","design","copy","trafego","op","cliente"];
+const SETOR_LABELS = {todos:"Todos",design:"Design",copy:"Copy",trafego:"Tráfego",op:"Operações",cliente:"Cliente"};
+const SETOR_CLASS = {todos:"setor-todos",design:"setor-design",copy:"setor-copy",trafego:"setor-trafego",op:"setor-op",cliente:"setor-cliente"};
+
+// Checklists específicos por tipo de lançamento (baseado em treinamento-lancamentos Foco)
+const CL_TIPOS = {
+  semente:{icon:"🌱",label:"Lançamento Semente",color:"#2E7D32",fases:[
+    {t:"📋 Estratégia",i:[
+      {t:"Definir nicho, avatar e dor principal",s:"todos"},
+      {t:"Estruturar oferta e definir preço de lançamento semente",s:"copy"},
+      {t:"Mapear principais objeções do avatar",s:"copy"},
+      {t:"Montar cronograma reverso do evento",s:"todos"},
+      {t:"Definir meta de vendas mínima para validar o produto",s:"todos"}
+    ]},
+    {t:"🎨 Design",i:[
+      {t:"Criar identidade visual mínima alinhada à comunicação do cliente",s:"design"},
+      {t:"Desenvolver LP de inscrição para o evento",s:"design"},
+      {t:"Criar criativos básicos para anúncios (3 variações)",s:"design"},
+      {t:"Aprovar todos os materiais com o cliente antes de publicar",s:"design"}
+    ]},
+    {t:"⚙️ Operações",i:[
+      {t:"Configurar plataforma do evento ao vivo (Zoom, Streamyard etc)",s:"op"},
+      {t:"Integrar LP com e-mail marketing e tags de segmentação",s:"op"},
+      {t:"Configurar checkout da oferta (Hotmart/Kiwify)",s:"op"},
+      {t:"Testar fluxo completo de compra antes do evento",s:"op"},
+      {t:"Preparar página de obrigado e acesso ao produto",s:"op"}
+    ]},
+    {t:"📢 Tráfego",i:[
+      {t:"Subir campanhas de captação com orçamento mínimo de teste",s:"trafego"},
+      {t:"Monitorar CPL diariamente e ajustar criativos",s:"trafego"},
+      {t:"Criar campanha de lembrete para inscritos",s:"trafego"}
+    ]},
+    {t:"✍️ Copy & CRM",i:[
+      {t:"Escrever copy da LP de inscrição",s:"copy"},
+      {t:"Preparar sequência de e-mail pré-evento (mínimo 3)",s:"copy"},
+      {t:"Roteirizar o evento ao vivo (conteúdo + pitch de vendas)",s:"copy"},
+      {t:"Criar e-mail de abertura de carrinho e escassez",s:"copy"}
+    ]},
+    {t:"🏁 Pós-Evento",i:[
+      {t:"Acompanhar conversões nas primeiras 24h",s:"todos"},
+      {t:"Disparar e-mail de recuperação para quem não comprou",s:"copy"},
+      {t:"Recuperar boletos e Pix não pagos",s:"op"},
+      {t:"Debriefing: produto validado? Próximos passos?",s:"todos"}
+    ]}
+  ]},
+  interno:{icon:"🚀",label:"Lançamento Interno",color:"#0277BD",fases:[
+    {t:"📋 Estratégia",i:[
+      {t:"Definir produto de transformação e ticket",s:"todos"},
+      {t:"Definir produto de melhoria para os CPLs (pequena vitória)",s:"copy"},
+      {t:"Mapear avatar, objeções e Big Idea (promessa central)",s:"copy"},
+      {t:"Montar cronograma reverso com datas de todos os setores",s:"todos"},
+      {t:"Definir divisão de verba: ~60% captação / ~30% vendas / ~10% remarketing",s:"trafego"},
+      {t:"Definir meta de leads e meta de faturamento",s:"todos"}
+    ]},
+    {t:"🎨 Design (antes do tráfego)",i:[
+      {t:"Criar identidade visual do evento alinhada ao cliente",s:"design"},
+      {t:"Aprovar identidade com o cliente antes de qualquer execução",s:"design"},
+      {t:"Desenvolver Landing Page de captação",s:"design"},
+      {t:"Criar criativos para anúncios de captação (mínimo 5 variações)",s:"design"},
+      {t:"Aprovar todos os criativos com o cliente",s:"design"},
+      {t:"Desenvolver página de vendas e Thank You Page",s:"design"},
+      {t:"Criar materiais de CPL (thumbnails, capas, stories)",s:"design"}
+    ]},
+    {t:"⚙️ Operações",i:[
+      {t:"Instalar Pixel Meta, Tag Google e API de Conversões",s:"op"},
+      {t:"Configurar UTMs em todos os links",s:"op"},
+      {t:"Publicar LP e testar formulário de inscrição",s:"op"},
+      {t:"Configurar automações de tags e segmentação no e-mail",s:"op"},
+      {t:"Configurar checkout com order bumps e cupons",s:"op"},
+      {t:"Testar compra real antes de abrir carrinho",s:"op"},
+      {t:"Configurar hospedagem dos vídeos dos CPLs",s:"op"}
+    ]},
+    {t:"✍️ Copy",i:[
+      {t:"Roteirizar CPL 1 — Identificação com o avatar",s:"copy"},
+      {t:"Roteirizar CPL 2 — Conteúdo + antecipação",s:"copy"},
+      {t:"Roteirizar CPL 3 — Oferta e abertura de carrinho",s:"copy"},
+      {t:"Escrever sequência completa de e-mails (pré + CPLs + carrinho)",s:"copy"},
+      {t:"Escrever copy da LP de captação",s:"copy"},
+      {t:"Escrever copy da página de vendas",s:"copy"},
+      {t:"Criar headlines e scripts de anúncios",s:"copy"}
+    ]},
+    {t:"📢 Tráfego (após LP aprovada)",i:[
+      {t:"Subir campanhas de captação (frio e lookalike)",s:"trafego"},
+      {t:"Monitorar CPL diariamente e otimizar criativos",s:"trafego"},
+      {t:"Criar campanhas de lembrete para os CPLs",s:"trafego"},
+      {t:"Ativar campanhas de vendas e remarketing na abertura do carrinho",s:"trafego"},
+      {t:"Aumentar verba nos últimos dias de fechamento",s:"trafego"}
+    ]},
+    {t:"🏁 Pós-Lançamento",i:[
+      {t:"Monitorar vendas em tempo real durante o carrinho",s:"todos"},
+      {t:"Recuperar boletos, Pix e cartões recusados",s:"op"},
+      {t:"Disparar e-mails de escassez nas últimas horas",s:"copy"},
+      {t:"Onboarding: enviar acesso ao produto",s:"op"},
+      {t:"Debriefing estratégico: ROAS, CPL real, próximo ciclo",s:"todos"}
+    ]}
+  ]},
+  relampago:{icon:"🔥",label:"Lançamento Relâmpago",color:"#C62828",fases:[
+    {t:"📋 Estratégia",i:[
+      {t:"Definir oferta específica e janela de 2–3 dias",s:"todos"},
+      {t:"Garantir que a oferta não concorra com o próximo lançamento interno",s:"todos"},
+      {t:"Definir canal principal: stories, e-mail ou ambos",s:"copy"}
+    ]},
+    {t:"🎨 Design",i:[
+      {t:"Criar stories de aquecimento e revelação da oferta",s:"design"},
+      {t:"Desenvolver página de vendas simples ou checkout direto",s:"design"},
+      {t:"Criar criativos de remarketing (banners e vídeos curtos)",s:"design"}
+    ]},
+    {t:"✍️ Copy",i:[
+      {t:"Escrever sequência de stories de aquecimento (2–3 dias antes)",s:"copy"},
+      {t:"Criar e-mail de lançamento com a oferta",s:"copy"},
+      {t:"Escrever e-mail de urgência (últimas horas)",s:"copy"},
+      {t:"Copy da página ou link de vendas",s:"copy"}
+    ]},
+    {t:"📢 Tráfego",i:[
+      {t:"Ativar campanha de remarketing para seguidores e lista de e-mail",s:"trafego"},
+      {t:"Aumentar verba nas últimas horas do carrinho",s:"trafego"}
+    ]},
+    {t:"⚙️ Operações",i:[
+      {t:"Configurar checkout e testar compra antes de publicar",s:"op"},
+      {t:"Monitorar vendas durante os dias ativos",s:"op"},
+      {t:"Recuperar boletos e Pix ao fechar",s:"op"}
+    ]}
+  ]},
+  perpetuo:{icon:"♾️",label:"Funil Perpétuo",color:"#6A1B9A",fases:[
+    {t:"📋 Estratégia",i:[
+      {t:"Validar CPL e taxa de conversão em lançamento anterior antes de perpetuar",s:"todos"},
+      {t:"Definir estrutura do funil: isca → aquecimento → pitch → oferta",s:"copy"},
+      {t:"Definir orçamento diário de manutenção",s:"trafego"},
+      {t:"Estabelecer ROAS mínimo aceitável para o funil ser viável",s:"todos"}
+    ]},
+    {t:"🎨 Design",i:[
+      {t:"Criar LP de captura (isca gratuita ou evento gravado)",s:"design"},
+      {t:"Desenvolver página de vendas otimizada para conversão",s:"design"},
+      {t:"Criar bateria inicial de criativos (mínimo 10 variações)",s:"design"},
+      {t:"Estabelecer processo de criação contínua de novos criativos",s:"design"}
+    ]},
+    {t:"⚙️ Automações",i:[
+      {t:"Configurar sequência de e-mail automática pós-inscrição (5–7 e-mails)",s:"op"},
+      {t:"Configurar automações de abandono de carrinho",s:"op"},
+      {t:"Instalar e validar todo o trackeamento",s:"op"},
+      {t:"Configurar checkout com upsell e order bump",s:"op"},
+      {t:"Criar segmentações: comprou / não comprou / abandonou",s:"op"}
+    ]},
+    {t:"✍️ Copy do Funil",i:[
+      {t:"Escrever copy da isca gratuita",s:"copy"},
+      {t:"Roteirizar vídeo/aula de aquecimento do funil",s:"copy"},
+      {t:"Escrever sequência completa de e-mails do funil",s:"copy"},
+      {t:"Escrever copy da página de vendas longa",s:"copy"}
+    ]},
+    {t:"📢 Tráfego Contínuo",i:[
+      {t:"Ativar campanhas de captação para topo de funil",s:"trafego"},
+      {t:"Criar campanha de remarketing para quem entrou e não comprou",s:"trafego"},
+      {t:"Estabelecer rotina semanal de análise e troca de criativos",s:"trafego"},
+      {t:"Pausar criativos com CPL alto e escalar os melhores",s:"trafego"}
+    ]},
+    {t:"📊 Manutenção Semanal",i:[
+      {t:"Analisar CPL, conversão e ROAS da semana",s:"trafego"},
+      {t:"Lançar 2–3 novos criativos (Batalha de Criativos)",s:"design"},
+      {t:"Verificar taxa de abertura e clique dos e-mails automáticos",s:"op"},
+      {t:"Verificar abandono de carrinho e acionar recuperação",s:"op"}
+    ]}
+  ]}
+};
+
 const LANCAMENTOS_INICIAIS = [
-  {id:"l1",nome:"Mentoria Ivan Rollemberg",status:"Em produção",obs:"",checklist:{}},
-  {id:"l2",nome:"E-book Marcela Teixeira",status:"Planejamento",obs:"",checklist:{}},
-  {id:"l3",nome:"E-books Wenderson",status:"Planejamento",obs:"",checklist:{}},
-  {id:"l4",nome:"Convenção Global Human",status:"Em produção",obs:"",checklist:{}},
+  {id:"l1",nome:"Mentoria Ivan Rollemberg",tipo:"interno",status:"Em produção",obs:"Sem investimento em tráfego.",gargalo:"",gargaloSetor:"todos",checklist:{}},
+  {id:"l2",nome:"E-book Marcela Teixeira",tipo:"semente",status:"Planejamento",obs:"Lançamento semente para validação.",gargalo:"",gargaloSetor:"todos",checklist:{}},
+  {id:"l3",nome:"E-books Wenderson",tipo:"relampago",status:"Planejamento",obs:"Relâmpago sem tráfego. Após validação no orgânico, migra para perpétuo com tráfego.",gargalo:"",gargaloSetor:"todos",checklist:{}},
+  {id:"l4",nome:"Convenção Global Human",tipo:"interno",status:"Em produção",obs:"",gargalo:"",gargaloSetor:"todos",checklist:{}},
 ];
 
 const { useState, useEffect, useCallback } = React;
@@ -329,7 +539,8 @@ function parseLancamentos(rows) {
   if (!rows.length) return null;
   const result = rows.slice(1).filter(r=>r[1]).map((r,i)=>({
     id:r[0]||String(i), row:i+2,
-    nome:r[1]||"", status:r[2]||"Planejamento", obs:r[3]||"",
+    nome:r[1]||"", tipo:r[2]||"semente", status:r[3]||"Planejamento", obs:r[4]||"",
+    gargalo:r[5]||"", gargaloSetor:r[6]||"todos",
     checklist: (() => { try { return JSON.parse(r[4]||"{}"); } catch(e){ return {}; } })(),
   }));
   return result.length ? result : null;
@@ -484,7 +695,8 @@ function App() {
   const [lancamentos,setLancamentos]   = useState(LANCAMENTOS_INICIAIS);
   const [showLancModal,setShowLancModal] = useState(false);
   const [editingLanc,setEditingLanc]   = useState(null);
-  const [lancForm,setLancForm]         = useState({nome:"",status:"Planejamento",obs:"",checklist:{}});
+  const [lancForm,setLancForm]         = useState({nome:"",tipo:"semente",status:"Planejamento",obs:"",gargalo:"",gargaloSetor:"todos",checklist:{}});
+  const [fasesAbertas,setFasesAbertas] = useState({});
 
   const notify = msg => { setToast(msg); setTimeout(()=>setToast(""),3000); };
 
@@ -512,7 +724,7 @@ function App() {
         sheetsGet(t,"reunioes!A:F"),
         sheetsGet(t,"demandas!A:G"),
         sheetsGet(t,"treinamentos!A:E").catch(()=>[]),
-        sheetsGet(t,"lancamentos!A:E").catch(()=>[]),
+        sheetsGet(t,"lancamentos!A:G").catch(()=>[]),
       ]);
       setSemanas(parseTodasSemanas(mr));
       setSemanaIdx(0);
@@ -656,23 +868,22 @@ function App() {
   };
 
   // ── Lançamentos ───────────────────────────────────────────────────────────
-  const openNewLanc=()=>{setEditingLanc(null);setLancForm({nome:"",status:"Planejamento",obs:"",checklist:{}});setShowLancModal(true);};
-  const openEditLanc=l=>{setEditingLanc(l);setLancForm({nome:l.nome,status:l.status,obs:l.obs,checklist:{...l.checklist}});setShowLancModal(true);};
+  const openNewLanc=()=>{setEditingLanc(null);setLancForm({nome:"",tipo:"semente",status:"Planejamento",obs:"",gargalo:"",gargaloSetor:"todos",checklist:{}});setShowLancModal(true);};
+  const openEditLanc=l=>{setEditingLanc(l);setLancForm({nome:l.nome,tipo:l.tipo||"semente",status:l.status,obs:l.obs,gargalo:l.gargalo||"",gargaloSetor:l.gargaloSetor||"todos",checklist:{...l.checklist}});setShowLancModal(true);};
   const saveLanc=async()=>{
     if(!lancForm.nome) return;
     const checkJson=JSON.stringify(lancForm.checklist);
-    const row=[null,lancForm.nome,lancForm.status,lancForm.obs,checkJson];
+    const row=[null,lancForm.nome,lancForm.tipo,lancForm.status,lancForm.obs,lancForm.gargalo,lancForm.gargaloSetor,checkJson];
     setSaving(true);
     try{
       if(editingLanc){
         row[0]=editingLanc.id;
-        // Try to save to sheet, fallback to local state
-        await sheetsUpdate(token,`lancamentos!A${editingLanc.row}:E${editingLanc.row}`,[row]).catch(()=>{});
+        await sheetsUpdate(token,`lancamentos!A${editingLanc.row}:H${editingLanc.row}`,[row]).catch(()=>{});
         setLancamentos(prev=>prev.map(l=>l.id===editingLanc.id?{...l,...lancForm}:l));
       } else {
         const newId=Date.now().toString();
         row[0]=newId;
-        await sheetsAppend(token,"lancamentos!A:E",[row]).catch(()=>{});
+        await sheetsAppend(token,"lancamentos!A:H",[row]).catch(()=>{});
         setLancamentos(prev=>[...prev,{id:newId,row:prev.length+2,...lancForm}]);
       }
       notify(editingLanc?"Lançamento atualizado ✓":"Lançamento salvo ✓");
@@ -693,6 +904,31 @@ function App() {
   };
   const toggleLancCheck=(item)=>{
     setLancForm(f=>({...f,checklist:{...f.checklist,[item]:!f.checklist[item]}}));
+  };
+  const toggleFaseAberta=(lancId,faseIdx)=>{
+    const key=lancId+"-"+faseIdx;
+    setFasesAbertas(prev=>({...prev,[key]:!prev[key]}));
+  };
+  const toggleLancCheckDirect=async(lanc,itemKey,val)=>{
+    const newCl={...lanc.checklist,[itemKey]:val};
+    setLancamentos(prev=>prev.map(l=>l.id===lanc.id?{...l,checklist:newCl}:l));
+    const checkJson=JSON.stringify(newCl);
+    // persist to sheet asynchronously
+    if(token&&lanc.row){
+      sheetsUpdate(token,`lancamentos!H${lanc.row}`,[[checkJson]]).catch(()=>{});
+    }
+  };
+  const calcLancProgress=(lanc)=>{
+    const tipo=lanc.tipo||"semente";
+    const clData=CL_TIPOS[tipo];
+    if(!clData) return {total:0,done:0,pct:0};
+    let total=0,done=0;
+    clData.fases.forEach((fase,fi)=>fase.i.forEach((item,ii)=>{
+      total++;
+      const key=fi+"-"+ii;
+      if(lanc.checklist[key]) done++;
+    }));
+    return {total,done,pct:total?Math.round(done/total*100):0};
   };
 
   const historicoList=demandas.filter(d=>d.status==="Concluído");
@@ -1062,42 +1298,97 @@ function App() {
           {lancamentos.length===0?(
             <div className="empty-dem">Nenhum lançamento cadastrado.</div>
           ):(
-            <div className="lanc-list">
+            <div className="lanc-columns">
               {lancamentos.map(l=>{
-                const checkedCount=LANC_CHECKLIST_ITENS.filter(it=>l.checklist[it]).length;
-                const pct=Math.round(checkedCount/LANC_CHECKLIST_ITENS.length*100);
+                const tipo=l.tipo||"semente";
+                const tipoData=CL_TIPOS[tipo]||CL_TIPOS.semente;
+                const {total,done,pct}=calcLancProgress(l);
                 return (
-                  <div key={l.id} className="lanc-card">
-                    <div className="lanc-card-header">
-                      <div className="lanc-card-nome">{l.nome}</div>
-                      <span className={`lanc-status-badge ${LANC_STATUS_CLASS[l.status]||""}`}>{l.status}</span>
-                    </div>
-                    {/* progress bar */}
-                    <div style={{marginBottom:12}}>
-                      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:4}}>
-                        <span style={{fontSize:11,fontWeight:800,textTransform:"uppercase",letterSpacing:"1px",color:"#5a6e8a"}}>Checklist de progresso</span>
-                        <span style={{fontSize:11,fontWeight:800,color:"#1565C0"}}>{checkedCount}/{LANC_CHECKLIST_ITENS.length} — {pct}%</span>
+                  <div key={l.id} className={`lanc-col tipo-${tipo}`}>
+                    {/* HEADER */}
+                    <div className="lanc-col-header">
+                      <div className="lanc-col-tipo" style={{color:tipoData.color}}>
+                        <span>{tipoData.icon}</span>
+                        <span>{tipoData.label}</span>
                       </div>
-                      <div style={{background:"rgba(21,101,192,0.12)",borderRadius:6,height:6}}>
-                        <div style={{background:"#1565C0",borderRadius:6,height:6,width:`${pct}%`,transition:"width 0.4s"}}/>
+                      <div className="lanc-col-nome">{l.nome}</div>
+                      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:6}}>
+                        <span className={`lanc-status-badge ${LANC_STATUS_CLASS[l.status]||""}`}>{l.status}</span>
+                        <button className="ghost" style={{padding:"4px 9px",fontSize:10}} onClick={()=>openEditLanc(l)}>
+                          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+                          Editar
+                        </button>
                       </div>
-                    </div>
-                    <div className="lanc-checklist">
-                      {LANC_CHECKLIST_ITENS.map(it=>(
-                        <div key={it} className="lanc-check-item">
-                          <div className={`chk${l.checklist[it]?" on":""} readonly`} style={{width:16,height:16,flexShrink:0}}>
-                            {l.checklist[it]&&<svg width="10" height="10" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5.5,10.5 11,3" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                          </div>
-                          {it}
+                      {l.obs&&<div className="lanc-col-meta">{l.obs}</div>}
+                      <div className="lanc-progress-wrap">
+                        <div className="lanc-progress-labels">
+                          <span className="lanc-progress-lbl">Progresso geral</span>
+                          <span className="lanc-progress-pct">{done}/{total} — {pct}%</span>
                         </div>
-                      ))}
+                        <div className="lanc-progress-bar">
+                          <div className="lanc-progress-fill" style={{width:pct+"%"}}/>
+                        </div>
+                      </div>
                     </div>
-                    {l.obs&&<div className="lanc-obs">{l.obs}</div>}
-                    <div className="lanc-actions" style={{marginTop:10,paddingTop:10,borderTop:"1px solid rgba(0,53,128,0.08)"}}>
-                      <button className="ghost" style={{padding:"5px 10px",fontSize:11}} onClick={()=>openEditLanc(l)}>
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
-                        Editar / Atualizar
-                      </button>
+
+                    {/* BODY */}
+                    <div className="lanc-col-body">
+
+                      {/* GARGALO */}
+                      {l.gargalo?(
+                        <div className="lanc-gargalo">
+                          <div className="lanc-gargalo-title">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L1 11h10L6 1z" stroke="#F9A825" strokeWidth="1.4" strokeLinejoin="round"/><path d="M6 5v3M6 9.5v.5" stroke="#F9A825" strokeWidth="1.4" strokeLinecap="round"/></svg>
+                            Gargalo atual
+                          </div>
+                          <div className="lanc-gargalo-desc">{l.gargalo}</div>
+                          <span className={`lanc-gargalo-setor ${SETOR_CLASS[l.gargaloSetor||"todos"]}`}>
+                            🔧 {SETOR_LABELS[l.gargaloSetor||"todos"]}
+                          </span>
+                        </div>
+                      ):(
+                        <div className="lanc-gargalo-empty" onClick={()=>openEditLanc(l)}>
+                          <div style={{fontSize:11,color:"#5a6e8a",fontWeight:700,display:"flex",alignItems:"center",gap:5}}>
+                            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                            Registrar gargalo / bloqueio
+                          </div>
+                        </div>
+                      )}
+
+                      {/* CHECKLIST POR FASE */}
+                      {tipoData.fases.map((fase,fi)=>{
+                        const faseKey=l.id+"-"+fi;
+                        const isOpen=fasesAbertas[faseKey]!==false; // default open
+                        const faseDone=fase.i.filter((_,ii)=>l.checklist[fi+"-"+ii]).length;
+                        return (
+                          <div key={fi} className="lanc-fase">
+                            <div className="lanc-fase-header" onClick={()=>toggleFaseAberta(l.id,fi)}>
+                              <span className="lanc-fase-title">{fase.t}</span>
+                              <div style={{display:"flex",alignItems:"center",gap:6}}>
+                                <span className="lanc-fase-pct">{faseDone}/{fase.i.length}</span>
+                                <span className="lanc-fase-chevron" style={{transform:isOpen?"rotate(180deg)":"rotate(0deg)"}}>▼</span>
+                              </div>
+                            </div>
+                            <div className={`lanc-fase-items${isOpen?" open":""}`}>
+                              {fase.i.map((item,ii)=>{
+                                const key=fi+"-"+ii;
+                                const checked=!!l.checklist[key];
+                                return (
+                                  <div key={ii} className={`lanc-cl-item${checked?" checked":""}`}
+                                    onClick={()=>toggleLancCheckDirect(l,key,!checked)}>
+                                    <div className="lanc-cl-chk">
+                                      {checked&&<svg width="9" height="9" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5.5,10.5 11,3" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+                                    </div>
+                                    <span className="lanc-cl-text">{item.t}</span>
+                                    <span className={`lanc-cl-setor ${SETOR_CLASS[item.s]}`}>{SETOR_LABELS[item.s]}</span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                            {fi<tipoData.fases.length-1&&<div style={{height:1,background:"rgba(0,53,128,0.07)",margin:"8px 0"}}/>}
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 );
@@ -1210,27 +1501,40 @@ function App() {
       {/* MODAL LANÇAMENTO */}
       <Modal open={showLancModal} onClose={()=>setShowLancModal(false)}>
         <div className="modal-title">{editingLanc?"Editar Lançamento":"Novo Lançamento"}</div>
+        <label className="lbl">Nome do lançamento</label>
+        <input className="inp" value={lancForm.nome} onChange={e=>setLancForm(f=>({...f,nome:e.target.value}))} placeholder="Ex: Mentoria João Silva"/>
         <div className="inp-row">
-          <div style={{gridColumn:"span 2"}}><label className="lbl">Nome do lançamento</label>
-          <input className="inp" value={lancForm.nome} onChange={e=>setLancForm(f=>({...f,nome:e.target.value}))} placeholder="Ex: Mentoria João Silva"/></div>
+          <div>
+            <label className="lbl">Tipo</label>
+            <select className="inp" value={lancForm.tipo} onChange={e=>setLancForm(f=>({...f,tipo:e.target.value}))}>
+              {Object.entries(CL_TIPOS).map(([k,v])=><option key={k} value={k}>{v.icon} {v.label}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="lbl">Status</label>
+            <select className="inp" value={lancForm.status} onChange={e=>setLancForm(f=>({...f,status:e.target.value}))}>
+              {LANC_STATUS_LIST.map(s=><option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
         </div>
-        <label className="lbl">Status</label>
-        <select className="inp" value={lancForm.status} onChange={e=>setLancForm(f=>({...f,status:e.target.value}))}>
-          {LANC_STATUS_LIST.map(s=><option key={s} value={s}>{s}</option>)}
-        </select>
-        <label className="lbl">Checklist</label>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:13}}>
-          {LANC_CHECKLIST_ITENS.map(it=>(
-            <div key={it} style={{display:"flex",alignItems:"center",gap:8,background:"#F4F7FB",borderRadius:8,padding:"8px 10px",cursor:"pointer"}} onClick={()=>toggleLancCheck(it)}>
-              <div className={`chk${lancForm.checklist[it]?" on":""}`} style={{width:17,height:17,flexShrink:0}}>
-                {lancForm.checklist[it]&&<svg width="10" height="10" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5.5,10.5 11,3" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+        <label className="lbl">Observações / contexto</label>
+        <textarea className="inp" rows={2} value={lancForm.obs} onChange={e=>setLancForm(f=>({...f,obs:e.target.value}))} placeholder="Contexto do lançamento, restrições, observações estratégicas..." style={{resize:"vertical"}}/>
+        <div style={{background:"#FFF8E1",border:"1px solid #FFD54F",borderRadius:10,padding:"12px 14px",marginBottom:13}}>
+          <div style={{fontSize:11,fontWeight:800,textTransform:"uppercase",letterSpacing:1,color:"#F9A825",marginBottom:8,display:"flex",alignItems:"center",gap:5}}>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L1 11h10L6 1z" stroke="#F9A825" strokeWidth="1.4" strokeLinejoin="round"/><path d="M6 5v3M6 9.5v.5" stroke="#F9A825" strokeWidth="1.4" strokeLinecap="round"/></svg>
+            Gargalo atual / bloqueio
+          </div>
+          <textarea className="inp" rows={2} style={{marginBottom:8,resize:"vertical"}} value={lancForm.gargalo} onChange={e=>setLancForm(f=>({...f,gargalo:e.target.value}))} placeholder="Descreva o que está travado ou bloqueando o progresso..."/>
+          <label className="lbl">Setor responsável por desbloquear</label>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6}}>
+            {SETORES.map(s=>(
+              <div key={s} style={{display:"flex",alignItems:"center",gap:6,background:lancForm.gargaloSetor===s?"#EBF2FF":"#F9FBFF",border:`1px solid ${lancForm.gargaloSetor===s?"#1565C0":"rgba(0,53,128,0.1)"}`,borderRadius:8,padding:"7px 10px",cursor:"pointer",transition:"all 0.15s"}}
+                onClick={()=>setLancForm(f=>({...f,gargaloSetor:s}))}>
+                <span className={`lanc-gargalo-setor ${SETOR_CLASS[s]}`} style={{padding:"1px 6px"}}>{SETOR_LABELS[s]}</span>
               </div>
-              <span style={{fontSize:12,color:"#2a3a5a",fontWeight:600}}>{it}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        <label className="lbl">Observações / próximos passos</label>
-        <textarea className="inp" rows={3} value={lancForm.obs} onChange={e=>setLancForm(f=>({...f,obs:e.target.value}))} placeholder="Contexto atual, bloqueios, próximas ações..." style={{resize:"vertical"}}/>
         <div className="form-row">
           {editingLanc&&<button className="del-btn" onClick={deleteLanc}>Remover</button>}
           <button className="cancel" onClick={()=>setShowLancModal(false)}>Cancelar</button>
@@ -1238,7 +1542,7 @@ function App() {
         </div>
       </Modal>
 
-      {/* PAINEL PENDÊNCIAS */}
+            {/* PAINEL PENDÊNCIAS */}
       {showPendencias&&<PendenciasPanel semanas={semanas} onClose={()=>setShowPendencias(false)}/>}
 
       <Toast msg={toast}/>
