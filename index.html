@@ -22,12 +22,21 @@
     .logo-wrap{display:flex;gap:6px;align-items:flex-start;}
     .lsq{width:16px;height:16px;background:rgba(255,255,255,0.22);border-radius:3px;}
     .lsq2{width:16px;height:16px;background:rgba(255,255,255,0.1);border-radius:3px;margin-left:-8px;margin-top:-8px;}
+
+    /* SETUP BANNER */
+    .setup-banner{background:#FFF8E1;border:1.5px solid #FFD54F;border-radius:12px;padding:18px 24px;margin-bottom:24px;display:flex;align-items:flex-start;gap:14px;}
+    .setup-banner-icon{font-size:22px;flex-shrink:0;margin-top:1px;}
+    .setup-banner-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:#5a4000;margin-bottom:4px;}
+    .setup-banner-text{font-size:12.5px;color:#7a6000;line-height:1.6;}
+    .setup-inp{width:100%;border:1px solid rgba(0,53,128,0.15);border-radius:8px;padding:9px 12px;font-family:'Nunito Sans',sans-serif;font-size:13px;color:#002055;background:#fff;margin-top:10px;outline:none;}
+    .setup-inp:focus{border-color:#1565C0;}
+    .setup-save-btn{margin-top:8px;background:#1565C0;color:#fff;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;border:none;border-radius:7px;padding:7px 16px;cursor:pointer;}
+    .setup-save-btn:hover{background:#003580;}
+
     .tabs{display:flex;gap:4px;margin-bottom:28px;background:#fff;border-radius:12px;padding:5px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.08);flex-wrap:wrap;}
     .tab{padding:9px 18px;border-radius:8px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#5a6e8a;cursor:pointer;border:none;background:transparent;transition:all 0.15s;display:flex;align-items:center;gap:7px;white-space:nowrap;}
     .tab:hover{color:#1565C0;background:#F4F7FB;}
     .tab.active{background:#1565C0;color:#fff;}
-    .tab-badge{border-radius:10px;padding:1px 7px;font-size:11px;font-weight:800;background:#EBF2FF;color:#1565C0;}
-    .tab.active .tab-badge{background:rgba(255,255,255,0.25);color:#fff;}
     .badge{display:inline-flex;align-items:center;gap:7px;background:#EBF2FF;color:#1565C0;font-weight:800;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;border-radius:6px;padding:5px 12px;margin-bottom:16px;}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:40px;}
     @media(max-width:760px){.grid{grid-template-columns:1fr;}.app{padding:20px 16px 48px;}.tabs{width:100%;}.tab{flex:1;justify-content:center;padding:9px 6px;font-size:11px;}}
@@ -58,8 +67,6 @@
     .prog-fill.hist{background:#90a4c0;}
     .prog-pct{font-size:17px;font-weight:800;color:#002055;}
     .prog-frac{font-size:11px;font-weight:600;color:#5a6e8a;margin-top:1px;}
-
-    /* TABELA METAS */
     .tbl{width:100%;border-collapse:collapse;margin-top:4px;}
     .tbl th{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;background:#1565C0;padding:9px 13px;text-align:left;}
     .tbl th.ctr{text-align:center;width:90px;}
@@ -67,15 +74,11 @@
     .tbl tr:nth-child(even) td{background:#F4F7FB;}
     .tbl tr:last-child td{border-bottom:none;}
     .tbl td.ctr{text-align:center;}
-
-    /* responsável tag */
     .resp-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;}
     .resp-todos{background:#EBF2FF;color:#1565C0;}
     .resp-vinicius{background:#E3F2FD;color:#0277BD;}
     .resp-mavi{background:#F3E5F5;color:#6A1B9A;}
     .resp-ana{background:#FFF3E0;color:#E65100;}
-
-    /* CHECKBOX */
     .chk-w{display:flex;align-items:center;justify-content:center;}
     .chk{width:21px;height:21px;border-radius:6px;border:2px solid rgba(0,53,128,0.12);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;flex-shrink:0;user-select:none;}
     .chk.on{background:#1565C0;border-color:#1565C0;}
@@ -83,50 +86,11 @@
     .chk.readonly{cursor:default;opacity:0.35;background:#f0f0f0;border-color:rgba(0,53,128,0.08);}
     .chk.readonly.on{background:#b0bec5;border-color:#b0bec5;opacity:0.5;}
     .done{text-decoration:line-through;color:#90a4c0;}
-
-    /* DEMANDAS */
-    .dem-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
-    .dem-filters{display:flex;gap:6px;flex-wrap:wrap;}
-    .filt-btn{background:transparent;border:1px solid rgba(21,101,192,0.2);border-radius:20px;padding:5px 13px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;color:#5a6e8a;cursor:pointer;transition:all 0.15s;}
-    .filt-btn:hover{background:#EBF2FF;color:#1565C0;}
-    .filt-btn.on{background:#1565C0;color:#fff;border-color:#1565C0;}
-    /* CARDS DEMANDAS */
-    .dem-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:12px;}
-    .dem-card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:18px 20px;cursor:pointer;transition:box-shadow 0.15s,transform 0.15s;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;}
-    .dem-card:hover{box-shadow:0 6px 24px rgba(0,53,128,0.13);transform:translateY(-2px);}
-    .dem-card.concluida{opacity:0.55;}
-    .dem-card-accent{position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
-    .dem-card-accent.prio-r{background:#C62828;}
-    .dem-card-accent.prio-y{background:#F9A825;}
-    .dem-card-accent.prio-g{background:#2E7D32;}
-    .dem-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
-    .dem-card-cliente{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#1565C0;}
-    .dem-card-desc{font-size:13.5px;font-weight:600;color:#002055;line-height:1.5;}
-    .dem-card-desc.riscado{text-decoration:line-through;color:#90a4c0;}
-    .dem-card-obs{font-size:12px;color:#5a6e8a;line-height:1.5;border-top:1px solid rgba(0,53,128,0.07);padding-top:8px;}
-    .dem-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
-    .prio{font-size:15px;line-height:1;}
-    .status-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.5px;border-radius:20px;padding:3px 10px;white-space:nowrap;}
-    .st-aberto{background:#FFF3E0;color:#E65100;}
-    .st-andamento{background:#E3F2FD;color:#1565C0;}
-    .st-aguardando{background:#F3E5F5;color:#6A1B9A;}
-    .st-concluido{background:#E8F5E9;color:#2E7D32;}
-    .dem-prazo{font-size:11px;font-weight:700;display:flex;align-items:center;gap:4px;}
-    .prazo-ok{color:#5a6e8a;}
-    .prazo-late{color:#C62828;}
-    .prazo-soon{color:#E65100;}
-    .dem-section-title{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;margin:20px 0 10px;display:flex;align-items:center;gap:8px;}
-    .dem-section-title::after{content:'';flex:1;height:1px;background:rgba(0,53,128,0.1);}
-    .empty-dem{background:#fff;border-radius:14px;border:1px solid rgba(0,53,128,0.12);padding:40px;text-align:center;color:#5a6e8a;font-size:13.5px;}
-
-    /* BUTTONS */
     .btn{display:inline-flex;align-items:center;gap:8px;background:#1565C0;color:#fff;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;transition:background 0.15s;}
     .btn:hover{background:#003580;}
     .btn:disabled{opacity:0.5;cursor:not-allowed;}
     .ghost{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#1565C0;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;border:1px solid rgba(21,101,192,0.3);border-radius:7px;padding:7px 14px;cursor:pointer;transition:all 0.15s;}
     .ghost:hover{background:#EBF2FF;}
-    .icon-btn{background:transparent;border:none;cursor:pointer;padding:4px;border-radius:6px;color:#5a6e8a;transition:all 0.15s;display:inline-flex;align-items:center;}
-    .icon-btn:hover{background:#EBF2FF;color:#1565C0;}
     .modal-bg{position:fixed;inset:0;background:rgba(0,32,85,0.3);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px;}
     .modal{background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,32,85,0.18);padding:34px 34px 26px;width:100%;max-width:580px;max-height:90vh;overflow-y:auto;}
     .modal-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:19px;color:#002055;margin-bottom:18px;}
@@ -138,9 +102,6 @@
     .cancel{background:transparent;border:1px solid rgba(0,53,128,0.12);border-radius:8px;padding:9px 18px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#5a6e8a;cursor:pointer;}
     .del-btn{background:transparent;border:1px solid rgba(198,40,40,0.25);border-radius:8px;padding:9px 16px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#C62828;cursor:pointer;margin-right:auto;}
     .del-btn:hover{background:#FFEBEE;}
-    .auth-box{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:40px;text-align:center;margin-bottom:32px;}
-    .auth-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#002055;margin-bottom:10px;}
-    .auth-sub{font-size:13.5px;color:#5a6e8a;margin-bottom:24px;line-height:1.6;}
     .toast{position:fixed;bottom:28px;right:28px;background:#002055;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:10px;box-shadow:0 4px 20px rgba(0,32,85,0.25);z-index:200;animation:fadeUp 0.2s ease;}
     @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
     .spin{display:inline-block;width:15px;height:15px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;}
@@ -149,7 +110,7 @@
     .loading-spin{display:inline-block;width:24px;height:24px;border:3px solid rgba(21,101,192,0.2);border-top-color:#1565C0;border-radius:50%;animation:spin 0.7s linear infinite;margin-right:10px;vertical-align:middle;}
     select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6e8a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
 
-    /* REUNIÕES — campos estruturados */
+    /* REUNIÕES */
     .meet-type-sel{display:flex;gap:8px;margin-bottom:16px;}
     .meet-type-btn{flex:1;padding:10px;border-radius:8px;border:1.5px solid rgba(21,101,192,0.2);background:transparent;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;color:#5a6e8a;cursor:pointer;transition:all 0.15s;text-align:center;}
     .meet-type-btn.active{background:#1565C0;color:#fff;border-color:#1565C0;}
@@ -162,8 +123,6 @@
     .person-inp{width:100%;border:1px solid rgba(0,53,128,0.1);border-radius:6px;padding:7px 10px;font-family:'Nunito Sans',sans-serif;font-size:13px;color:#002055;background:#F9FBFF;margin-bottom:6px;outline:none;resize:vertical;}
     .person-inp:last-child{margin-bottom:0;}
     .person-inp:focus{border-color:#1565C0;}
-
-    /* CARD REUNIÃO ESTRUTURADO */
     .meet-card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.12);padding:20px 24px;margin-bottom:16px;}
     .meet-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px;}
     .meet-card-title-row{display:flex;align-items:center;gap:10px;}
@@ -179,20 +138,21 @@
     .meet-q-who.vinicius{color:#0277BD;}
     .meet-q-who.mavi{color:#6A1B9A;}
     .meet-q-text{font-size:12.5px;color:#2a3a5a;line-height:1.5;}
-
-    /* METAS — painel de pendências */
     .pendencias-modal{position:fixed;inset:0;background:rgba(0,32,85,0.3);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px;}
     .pendencias-panel{background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,32,85,0.18);width:100%;max-width:620px;max-height:88vh;display:flex;flex-direction:column;overflow:hidden;}
     .pendencias-head{padding:24px 28px 16px;border-bottom:1px solid rgba(0,53,128,0.1);}
     .pendencias-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:18px;color:#002055;margin-bottom:6px;}
     .pendencias-body{overflow-y:auto;padding:16px 28px 24px;flex:1;}
-    .pendencias-close{background:transparent;border:none;cursor:pointer;color:#5a6e8a;padding:4px;border-radius:6px;transition:all 0.15s;}
-    .pendencias-close:hover{background:#EBF2FF;color:#1565C0;}
+    .pendencias-close{background:transparent;border:none;cursor:pointer;color:#5a6e8a;padding:4px;border-radius:6px;}
     .pendencias-person-sel{display:flex;gap:8px;margin-bottom:12px;}
+    .filt-btn{background:transparent;border:1px solid rgba(21,101,192,0.2);border-radius:20px;padding:5px 13px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;color:#5a6e8a;cursor:pointer;transition:all 0.15s;}
+    .filt-btn:hover{background:#EBF2FF;color:#1565C0;}
+    .filt-btn.on{background:#1565C0;color:#fff;border-color:#1565C0;}
     .pend-item{background:#F4F7FB;border-radius:10px;padding:12px 14px;margin-bottom:8px;border-left:3px solid #1565C0;}
     .pend-item-week{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;margin-bottom:3px;}
     .pend-item-text{font-size:13px;color:#002055;font-weight:600;line-height:1.5;}
     .pend-empty{text-align:center;padding:32px;color:#5a6e8a;font-size:13px;}
+    .empty-dem{background:#fff;border-radius:14px;border:1px solid rgba(0,53,128,0.12);padding:40px;text-align:center;color:#5a6e8a;font-size:13.5px;}
 
     /* TREINAMENTOS */
     .trein-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-bottom:24px;}
@@ -207,346 +167,170 @@
     .trein-card-desc{font-size:12.5px;color:#5a6e8a;line-height:1.6;}
     .trein-card-footer{margin-top:12px;padding-top:10px;border-top:1px solid rgba(0,53,128,0.08);display:flex;align-items:center;justify-content:flex-end;}
 
-    /* LANÇAMENTOS */
-    @media(max-width:600px){.meet-q-answers{grid-template-columns:1fr;}}
-    .lanc-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:24px;align-items:start;}
-    .lanc-col{background:#fff;border-radius:16px;box-shadow:0 2px 16px rgba(0,53,128,0.07);border:1px solid rgba(0,53,128,0.12);overflow:hidden;}
-    .lanc-col-header{padding:18px 20px 14px;border-bottom:3px solid #1565C0;position:relative;}
-    .lanc-col-tipo{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;display:flex;align-items:center;gap:6px;}
-    .lanc-col-nome{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;color:#002055;line-height:1.2;margin-bottom:8px;}
-    .lanc-col-meta{font-size:11.5px;color:#5a6e8a;font-weight:600;font-style:italic;}
-    .lanc-progress-wrap{margin-top:10px;}
-    .lanc-progress-labels{display:flex;justify-content:space-between;margin-bottom:4px;}
-    .lanc-progress-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;}
-    .lanc-progress-pct{font-size:10px;font-weight:800;color:#1565C0;}
-    .lanc-progress-bar{background:rgba(21,101,192,0.12);border-radius:6px;height:5px;}
-    .lanc-progress-fill{background:#1565C0;border-radius:6px;height:5px;transition:width 0.4s;}
-    .lanc-col-body{padding:16px 20px 20px;}
-    /* status badge */
-    .lanc-status-badge{font-size:10px;font-weight:800;letter-spacing:0.5px;border-radius:20px;padding:3px 10px;display:inline-block;}
-    .lst-planejamento{background:#E3F2FD;color:#0277BD;}
-    .lst-producao{background:#FFF3E0;color:#E65100;}
-    .lst-lancamento{background:#FCE4EC;color:#C62828;}
-    .lst-pos{background:#E8F5E9;color:#2E7D32;}
-    .lst-encerrado{background:#EEEEEE;color:#616161;}
-    /* gargalo */
-    .lanc-gargalo{background:#FFF8E1;border:1px solid #FFD54F;border-radius:10px;padding:12px 14px;margin-bottom:14px;}
-    .lanc-gargalo-empty{background:#F4F7FB;border:1px dashed rgba(0,53,128,0.2);border-radius:10px;padding:10px 14px;margin-bottom:14px;cursor:pointer;transition:all 0.15s;}
-    .lanc-gargalo-empty:hover{border-color:#1565C0;background:#EBF2FF;}
-    .lanc-gargalo-title{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#F9A825;margin-bottom:4px;display:flex;align-items:center;gap:5px;}
-    .lanc-gargalo-desc{font-size:12.5px;color:#5a4c00;line-height:1.5;margin-bottom:6px;}
-    .lanc-gargalo-setor{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;border-radius:10px;padding:2px 8px;}
-    .setor-design{background:#FCE4EC;color:#C62828;}
-    .setor-copy{background:#EDE7F6;color:#4527A0;}
-    .setor-trafego{background:#E3F2FD;color:#0277BD;}
-    .setor-op{background:#E8F5E9;color:#2E7D32;}
-    .setor-cliente{background:#FFF3E0;color:#E65100;}
-    .setor-todos{background:#EBF2FF;color:#1565C0;}
-    /* checklist fases */
-    .lanc-fase{margin-bottom:12px;}
-    .lanc-fase-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 0;user-select:none;}
-    .lanc-fase-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#1565C0;}
-    .lanc-fase-pct{font-size:10px;font-weight:700;color:#5a6e8a;}
-    .lanc-fase-chevron{color:#5a6e8a;transition:transform 0.2s;font-size:10px;}
-    .lanc-fase-items{display:flex;flex-direction:column;gap:4px;overflow:hidden;max-height:0;transition:max-height 0.3s ease;}
-    .lanc-fase-items.open{max-height:2000px;}
-    .lanc-cl-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#2a3a5a;padding:5px 6px;border-radius:6px;cursor:pointer;transition:background 0.1s;}
-    .lanc-cl-item:hover{background:#F4F7FB;}
-    .lanc-cl-item.checked .lanc-cl-text{text-decoration:line-through;color:#90a4c0;}
-    .lanc-cl-chk{width:16px;height:16px;border-radius:4px;border:2px solid rgba(0,53,128,0.15);background:#fff;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
-    .lanc-cl-item.checked .lanc-cl-chk{background:#1565C0;border-color:#1565C0;}
-    .lanc-cl-text{flex:1;line-height:1.4;}
-    .lanc-cl-setor{font-size:9px;font-weight:800;text-transform:uppercase;border-radius:8px;padding:1px 6px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
-    /* tipo accent colors */
-    .tipo-semente .lanc-col-header{border-bottom-color:#2E7D32;}
-    .tipo-semente .lanc-fase-title{color:#2E7D32;}
-    .tipo-semente .lanc-progress-fill{background:#2E7D32;}
-    .tipo-semente .lanc-progress-pct{color:#2E7D32;}
-    .tipo-semente .lanc-cl-item.checked .lanc-cl-chk{background:#2E7D32;border-color:#2E7D32;}
-    .tipo-interno .lanc-col-header{border-bottom-color:#0277BD;}
-    .tipo-relampago .lanc-col-header{border-bottom-color:#C62828;}
-    .tipo-relampago .lanc-fase-title{color:#C62828;}
-    .tipo-relampago .lanc-progress-fill{background:#C62828;}
-    .tipo-relampago .lanc-progress-pct{color:#C62828;}
-    .tipo-relampago .lanc-cl-item.checked .lanc-cl-chk{background:#C62828;border-color:#C62828;}
-    .tipo-perpetuo .lanc-col-header{border-bottom-color:#6A1B9A;}
-    .tipo-perpetuo .lanc-fase-title{color:#6A1B9A;}
-    .tipo-perpetuo .lanc-progress-fill{background:#6A1B9A;}
-    .tipo-perpetuo .lanc-progress-pct{color:#6A1B9A;}
-    .tipo-perpetuo .lanc-cl-item.checked .lanc-cl-chk{background:#6A1B9A;border-color:#6A1B9A;}
+    /* SUGESTÃO DE TEMA */
+    .sug-card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,53,128,0.06);border:1.5px dashed rgba(21,101,192,0.3);padding:28px 32px;max-width:540px;margin:0 auto;}
+    .sug-card-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;color:#002055;margin-bottom:6px;}
+    .sug-card-sub{font-size:13px;color:#5a6e8a;margin-bottom:20px;line-height:1.6;}
+    .sug-tabs{display:flex;gap:6px;margin-bottom:18px;}
+    .sug-tab{flex:1;padding:9px;border-radius:8px;border:1.5px solid rgba(21,101,192,0.18);background:transparent;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:12px;color:#5a6e8a;cursor:pointer;transition:all 0.15s;text-align:center;}
+    .sug-tab.active{background:#1565C0;color:#fff;border-color:#1565C0;}
+    .sug-form{display:flex;flex-direction:column;gap:10px;}
+    .sug-inp{width:100%;border:1px solid rgba(0,53,128,0.12);border-radius:8px;padding:9px 12px;font-family:'Nunito Sans',sans-serif;font-size:13px;color:#002055;background:#F9FBFF;outline:none;}
+    .sug-inp:focus{border-color:#1565C0;}
+    .sug-textarea{width:100%;border:1px solid rgba(0,53,128,0.12);border-radius:8px;padding:9px 12px;font-family:'Nunito Sans',sans-serif;font-size:13px;color:#002055;background:#F9FBFF;outline:none;resize:vertical;min-height:80px;}
+    .sug-textarea:focus{border-color:#1565C0;}
+    .sug-success{background:#E8F5E9;border:1px solid #A5D6A7;border-radius:10px;padding:16px 18px;display:flex;align-items:center;gap:10px;font-size:13px;color:#2E7D32;font-weight:600;}
+    .sug-list{margin-top:24px;}
+    .sug-list-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+    .sug-list-title::after{content:'';flex:1;height:1px;background:rgba(0,53,128,0.1);}
+    .sug-item{background:#F4F7FB;border-radius:10px;padding:12px 14px;margin-bottom:8px;border-left:3px solid #1565C0;}
+    .sug-item-nome{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#5a6e8a;margin-bottom:2px;}
+    .sug-item-tema{font-size:13px;font-weight:700;color:#002055;margin-bottom:3px;}
+    .sug-item-desc{font-size:12px;color:#5a6e8a;line-height:1.5;}
+    .sug-item-date{font-size:11px;color:#90a4c0;margin-top:4px;}
+
+    @media(max-width:600px){.meet-q-answers{grid-template-columns:1fr;}.inp-row{grid-template-columns:1fr;}}
+
+    /* CENTRAL DE LINKS */
+    .links-page{display:flex;flex-direction:column;gap:28px;}
+    .links-block{background:#fff;border-radius:16px;box-shadow:0 2px 14px rgba(0,53,128,0.06);border:1px solid rgba(0,53,128,0.1);overflow:hidden;}
+    .links-block-header{padding:18px 24px 14px;border-bottom:1px solid rgba(0,53,128,0.08);display:flex;align-items:center;gap:12px;}
+    .links-block-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px;}
+    .links-block-icon.trein{background:#EBF2FF;}
+    .links-block-icon.gpt{background:#E8F5E9;}
+    .links-block-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;color:#002055;}
+    .links-block-sub{font-size:12px;color:#5a6e8a;font-weight:600;margin-top:1px;}
+    .links-list{display:flex;flex-direction:column;}
+    .link-row{display:flex;align-items:center;padding:14px 24px;gap:14px;border-bottom:1px solid rgba(0,53,128,0.06);transition:background 0.12s;text-decoration:none;}
+    .link-row:last-child{border-bottom:none;}
+    .link-row:hover{background:#F4F7FB;}
+    .link-row:hover .link-arrow{opacity:1;transform:translateX(2px);}
+    .link-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+    .link-dot.trein{background:#1565C0;}
+    .link-dot.gpt{background:#2E7D32;}
+    .link-dot.empty{background:#d0d8e8;}
+    .link-info{flex:1;min-width:0;}
+    .link-name{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:#002055;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .link-url{font-size:11.5px;color:#90a4c0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .link-badge{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;border-radius:20px;padding:3px 9px;white-space:nowrap;flex-shrink:0;}
+    .link-badge.trein{background:#EBF2FF;color:#1565C0;}
+    .link-badge.gpt-gem{background:#E3F2FD;color:#0277BD;}
+    .link-badge.gpt-chat{background:#E8F5E9;color:#2E7D32;}
+    .link-arrow{color:#90a4c0;flex-shrink:0;transition:all 0.15s;opacity:0;}
+    .link-row-empty{display:flex;align-items:center;padding:14px 24px;gap:14px;border-bottom:1px solid rgba(0,53,128,0.06);}
+    .link-row-empty:last-child{border-bottom:none;}
+    .link-name-empty{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:#b0bec5;}
+    .link-soon{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;border-radius:20px;padding:3px 9px;background:#F4F7FB;color:#90a4c0;white-space:nowrap;flex-shrink:0;}
   </style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
 
-const GOOGLE_CLIENT_ID = "723537364495-6ki6660lnkbbop6elvs2aljp7lfmd5nj.apps.googleusercontent.com";
-const SPREADSHEET_ID   = "1Sg687w5m7jfFoLtik7d6pVGUGgN4AUFHbDHsAKwFrsk";
-const SCOPES           = "https://www.googleapis.com/auth/spreadsheets";
-const SHEETS_BASE      = "https://sheets.googleapis.com/v4/spreadsheets";
+// ─── CONFIGURAÇÃO ────────────────────────────────────────────────────────────
+// Cole aqui a URL do seu Apps Script depois de publicar
+const SCRIPT_URL_KEY = "foco_script_url";
 
-const RESPONSAVEIS     = ["Todos","Vinícius","Mavi","Ana"];
-const PRIORIDADE       = {"🔴":"🔴 Urgente","🟡":"🟡 Média","🟢":"🟢 Baixa"};
-const STATUS_LIST      = ["Aberto","Em andamento","Aguardando","Concluído"];
-const STATUS_CLASS     = {"Aberto":"st-aberto","Em andamento":"st-andamento","Aguardando":"st-aguardando","Concluído":"st-concluido"};
-const TREIN_PUBLICO    = ["Só analistas","Toda equipe FOCO","Junto com outro setor"];
-const LANC_STATUS_LIST = ["Planejamento","Em produção","Em lançamento","Pós-lançamento","Encerrado"];
-const LANC_STATUS_CLASS= {"Planejamento":"lst-planejamento","Em produção":"lst-producao","Em lançamento":"lst-lancamento","Pós-lançamento":"lst-pos","Encerrado":"lst-encerrado"};
-const SETORES = ["todos","design","copy","trafego","op","cliente"];
-const SETOR_LABELS = {todos:"Todos",design:"Design",copy:"Copy",trafego:"Tráfego",op:"Operações",cliente:"Cliente"};
-const SETOR_CLASS = {todos:"setor-todos",design:"setor-design",copy:"setor-copy",trafego:"setor-trafego",op:"setor-op",cliente:"setor-cliente"};
-
-// Checklists específicos por tipo de lançamento (baseado em treinamento-lancamentos Foco)
-const CL_TIPOS = {
-  semente:{icon:"🌱",label:"Lançamento Semente",color:"#2E7D32",fases:[
-    {t:"📋 Estratégia",i:[
-      {t:"Definir nicho, avatar e dor principal",s:"todos"},
-      {t:"Estruturar oferta e definir preço de lançamento semente",s:"copy"},
-      {t:"Mapear principais objeções do avatar",s:"copy"},
-      {t:"Montar cronograma reverso do evento",s:"todos"},
-      {t:"Definir meta de vendas mínima para validar o produto",s:"todos"}
-    ]},
-    {t:"🎨 Design",i:[
-      {t:"Criar identidade visual mínima alinhada à comunicação do cliente",s:"design"},
-      {t:"Desenvolver LP de inscrição para o evento",s:"design"},
-      {t:"Criar criativos básicos para anúncios (3 variações)",s:"design"},
-      {t:"Aprovar todos os materiais com o cliente antes de publicar",s:"design"}
-    ]},
-    {t:"⚙️ Operações",i:[
-      {t:"Configurar plataforma do evento ao vivo (Zoom, Streamyard etc)",s:"op"},
-      {t:"Integrar LP com e-mail marketing e tags de segmentação",s:"op"},
-      {t:"Configurar checkout da oferta (Hotmart/Kiwify)",s:"op"},
-      {t:"Testar fluxo completo de compra antes do evento",s:"op"},
-      {t:"Preparar página de obrigado e acesso ao produto",s:"op"}
-    ]},
-    {t:"📢 Tráfego",i:[
-      {t:"Subir campanhas de captação com orçamento mínimo de teste",s:"trafego"},
-      {t:"Monitorar CPL diariamente e ajustar criativos",s:"trafego"},
-      {t:"Criar campanha de lembrete para inscritos",s:"trafego"}
-    ]},
-    {t:"✍️ Copy & CRM",i:[
-      {t:"Escrever copy da LP de inscrição",s:"copy"},
-      {t:"Preparar sequência de e-mail pré-evento (mínimo 3)",s:"copy"},
-      {t:"Roteirizar o evento ao vivo (conteúdo + pitch de vendas)",s:"copy"},
-      {t:"Criar e-mail de abertura de carrinho e escassez",s:"copy"}
-    ]},
-    {t:"🏁 Pós-Evento",i:[
-      {t:"Acompanhar conversões nas primeiras 24h",s:"todos"},
-      {t:"Disparar e-mail de recuperação para quem não comprou",s:"copy"},
-      {t:"Recuperar boletos e Pix não pagos",s:"op"},
-      {t:"Debriefing: produto validado? Próximos passos?",s:"todos"}
-    ]}
-  ]},
-  interno:{icon:"🚀",label:"Lançamento Interno",color:"#0277BD",fases:[
-    {t:"📋 Estratégia",i:[
-      {t:"Definir produto de transformação e ticket",s:"todos"},
-      {t:"Definir produto de melhoria para os CPLs (pequena vitória)",s:"copy"},
-      {t:"Mapear avatar, objeções e Big Idea (promessa central)",s:"copy"},
-      {t:"Montar cronograma reverso com datas de todos os setores",s:"todos"},
-      {t:"Definir divisão de verba: ~60% captação / ~30% vendas / ~10% remarketing",s:"trafego"},
-      {t:"Definir meta de leads e meta de faturamento",s:"todos"}
-    ]},
-    {t:"🎨 Design (antes do tráfego)",i:[
-      {t:"Criar identidade visual do evento alinhada ao cliente",s:"design"},
-      {t:"Aprovar identidade com o cliente antes de qualquer execução",s:"design"},
-      {t:"Desenvolver Landing Page de captação",s:"design"},
-      {t:"Criar criativos para anúncios de captação (mínimo 5 variações)",s:"design"},
-      {t:"Aprovar todos os criativos com o cliente",s:"design"},
-      {t:"Desenvolver página de vendas e Thank You Page",s:"design"},
-      {t:"Criar materiais de CPL (thumbnails, capas, stories)",s:"design"}
-    ]},
-    {t:"⚙️ Operações",i:[
-      {t:"Instalar Pixel Meta, Tag Google e API de Conversões",s:"op"},
-      {t:"Configurar UTMs em todos os links",s:"op"},
-      {t:"Publicar LP e testar formulário de inscrição",s:"op"},
-      {t:"Configurar automações de tags e segmentação no e-mail",s:"op"},
-      {t:"Configurar checkout com order bumps e cupons",s:"op"},
-      {t:"Testar compra real antes de abrir carrinho",s:"op"},
-      {t:"Configurar hospedagem dos vídeos dos CPLs",s:"op"}
-    ]},
-    {t:"✍️ Copy",i:[
-      {t:"Roteirizar CPL 1 — Identificação com o avatar",s:"copy"},
-      {t:"Roteirizar CPL 2 — Conteúdo + antecipação",s:"copy"},
-      {t:"Roteirizar CPL 3 — Oferta e abertura de carrinho",s:"copy"},
-      {t:"Escrever sequência completa de e-mails (pré + CPLs + carrinho)",s:"copy"},
-      {t:"Escrever copy da LP de captação",s:"copy"},
-      {t:"Escrever copy da página de vendas",s:"copy"},
-      {t:"Criar headlines e scripts de anúncios",s:"copy"}
-    ]},
-    {t:"📢 Tráfego (após LP aprovada)",i:[
-      {t:"Subir campanhas de captação (frio e lookalike)",s:"trafego"},
-      {t:"Monitorar CPL diariamente e otimizar criativos",s:"trafego"},
-      {t:"Criar campanhas de lembrete para os CPLs",s:"trafego"},
-      {t:"Ativar campanhas de vendas e remarketing na abertura do carrinho",s:"trafego"},
-      {t:"Aumentar verba nos últimos dias de fechamento",s:"trafego"}
-    ]},
-    {t:"🏁 Pós-Lançamento",i:[
-      {t:"Monitorar vendas em tempo real durante o carrinho",s:"todos"},
-      {t:"Recuperar boletos, Pix e cartões recusados",s:"op"},
-      {t:"Disparar e-mails de escassez nas últimas horas",s:"copy"},
-      {t:"Onboarding: enviar acesso ao produto",s:"op"},
-      {t:"Debriefing estratégico: ROAS, CPL real, próximo ciclo",s:"todos"}
-    ]}
-  ]},
-  relampago:{icon:"🔥",label:"Lançamento Relâmpago",color:"#C62828",fases:[
-    {t:"📋 Estratégia",i:[
-      {t:"Definir oferta específica e janela de 2–3 dias",s:"todos"},
-      {t:"Garantir que a oferta não concorra com o próximo lançamento interno",s:"todos"},
-      {t:"Definir canal principal: stories, e-mail ou ambos",s:"copy"}
-    ]},
-    {t:"🎨 Design",i:[
-      {t:"Criar stories de aquecimento e revelação da oferta",s:"design"},
-      {t:"Desenvolver página de vendas simples ou checkout direto",s:"design"},
-      {t:"Criar criativos de remarketing (banners e vídeos curtos)",s:"design"}
-    ]},
-    {t:"✍️ Copy",i:[
-      {t:"Escrever sequência de stories de aquecimento (2–3 dias antes)",s:"copy"},
-      {t:"Criar e-mail de lançamento com a oferta",s:"copy"},
-      {t:"Escrever e-mail de urgência (últimas horas)",s:"copy"},
-      {t:"Copy da página ou link de vendas",s:"copy"}
-    ]},
-    {t:"📢 Tráfego",i:[
-      {t:"Ativar campanha de remarketing para seguidores e lista de e-mail",s:"trafego"},
-      {t:"Aumentar verba nas últimas horas do carrinho",s:"trafego"}
-    ]},
-    {t:"⚙️ Operações",i:[
-      {t:"Configurar checkout e testar compra antes de publicar",s:"op"},
-      {t:"Monitorar vendas durante os dias ativos",s:"op"},
-      {t:"Recuperar boletos e Pix ao fechar",s:"op"}
-    ]}
-  ]},
-  perpetuo:{icon:"♾️",label:"Funil Perpétuo",color:"#6A1B9A",fases:[
-    {t:"📋 Estratégia",i:[
-      {t:"Validar CPL e taxa de conversão em lançamento anterior antes de perpetuar",s:"todos"},
-      {t:"Definir estrutura do funil: isca → aquecimento → pitch → oferta",s:"copy"},
-      {t:"Definir orçamento diário de manutenção",s:"trafego"},
-      {t:"Estabelecer ROAS mínimo aceitável para o funil ser viável",s:"todos"}
-    ]},
-    {t:"🎨 Design",i:[
-      {t:"Criar LP de captura (isca gratuita ou evento gravado)",s:"design"},
-      {t:"Desenvolver página de vendas otimizada para conversão",s:"design"},
-      {t:"Criar bateria inicial de criativos (mínimo 10 variações)",s:"design"},
-      {t:"Estabelecer processo de criação contínua de novos criativos",s:"design"}
-    ]},
-    {t:"⚙️ Automações",i:[
-      {t:"Configurar sequência de e-mail automática pós-inscrição (5–7 e-mails)",s:"op"},
-      {t:"Configurar automações de abandono de carrinho",s:"op"},
-      {t:"Instalar e validar todo o trackeamento",s:"op"},
-      {t:"Configurar checkout com upsell e order bump",s:"op"},
-      {t:"Criar segmentações: comprou / não comprou / abandonou",s:"op"}
-    ]},
-    {t:"✍️ Copy do Funil",i:[
-      {t:"Escrever copy da isca gratuita",s:"copy"},
-      {t:"Roteirizar vídeo/aula de aquecimento do funil",s:"copy"},
-      {t:"Escrever sequência completa de e-mails do funil",s:"copy"},
-      {t:"Escrever copy da página de vendas longa",s:"copy"}
-    ]},
-    {t:"📢 Tráfego Contínuo",i:[
-      {t:"Ativar campanhas de captação para topo de funil",s:"trafego"},
-      {t:"Criar campanha de remarketing para quem entrou e não comprou",s:"trafego"},
-      {t:"Estabelecer rotina semanal de análise e troca de criativos",s:"trafego"},
-      {t:"Pausar criativos com CPL alto e escalar os melhores",s:"trafego"}
-    ]},
-    {t:"📊 Manutenção Semanal",i:[
-      {t:"Analisar CPL, conversão e ROAS da semana",s:"trafego"},
-      {t:"Lançar 2–3 novos criativos (Batalha de Criativos)",s:"design"},
-      {t:"Verificar taxa de abertura e clique dos e-mails automáticos",s:"op"},
-      {t:"Verificar abandono de carrinho e acionar recuperação",s:"op"}
-    ]}
-  ]}
-};
-
-const LANCAMENTOS_INICIAIS = [
-  {id:"l1",nome:"Mentoria Ivan Rollemberg",tipo:"interno",status:"Em produção",obs:"Sem investimento em tráfego.",gargalo:"",gargaloSetor:"todos",checklist:{}},
-  {id:"l2",nome:"E-book Marcela Teixeira",tipo:"perpetuo",status:"Planejamento",obs:"Sem lives. Funil perpétuo com tráfego.",gargalo:"",gargaloSetor:"todos",checklist:{}},
-  {id:"l3",nome:"E-books Wenderson",tipo:"relampago",status:"Planejamento",obs:"Relâmpago sem tráfego. Após validação no orgânico, migra para perpétuo com tráfego.",gargalo:"",gargaloSetor:"todos",checklist:{}},
-  {id:"l4",nome:"Convenção Global Human",tipo:"interno",status:"Em produção",obs:"",gargalo:"",gargaloSetor:"todos",checklist:{}},
+const RESPONSAVEIS = ["Todos","Vinícius","Mavi","Ana"];
+const TREIN_PUBLICO = ["Só analistas","Toda equipe FOCO","Junto com outro setor"];
+const CAMPOS_SEGUNDA = [
+  {key:"desafios",    label:"Desafios da semana passada"},
+  {key:"problemas",   label:"Problemas identificados"},
+  {key:"metas_ant",   label:"Metas da semana passada — foram cumpridas?"},
+  {key:"metas_sem",   label:"Metas dessa semana"},
+];
+const CAMPOS_SEXTA = [
+  {key:"big_rocks",    label:"Status das Big Rocks"},
+  {key:"impedimentos", label:"Gestão de Impedimentos"},
+  {key:"crises",       label:"Monitoramento de Crises"},
+  {key:"partida",      label:"Ponto de Partida para segunda"},
 ];
 
-const { useState, useEffect, useCallback } = React;
+const { useState, useEffect, useCallback, useRef } = React;
 
-// ── Sheets ──────────────────────────────────────────────────────────────────
-async function sheetsGet(token, range) {
-  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}`,
-    {headers:{Authorization:`Bearer ${token}`}});
-  if (!r.ok) throw new Error(await r.text());
-  return (await r.json()).values || [];
-}
-async function sheetsUpdate(token, range, values) {
-  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}?valueInputOption=RAW`,
-    {method:"PUT",headers:{Authorization:`Bearer ${token}`,"Content-Type":"application/json"},
-     body:JSON.stringify({range,majorDimension:"ROWS",values})});
-  if (!r.ok) throw new Error(await r.text());
-}
-async function sheetsAppend(token, range, values) {
-  const r = await fetch(`${SHEETS_BASE}/${SPREADSHEET_ID}/values/${encodeURIComponent(range)}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,
-    {method:"POST",headers:{Authorization:`Bearer ${token}`,"Content-Type":"application/json"},
-     body:JSON.stringify({range,majorDimension:"ROWS",values})});
-  if (!r.ok) throw new Error(await r.text());
+// ─── API ─────────────────────────────────────────────────────────────────────
+async function apiGet(scriptUrl) {
+  const res = await fetch(`${scriptUrl}?action=readAll`);
+  if (!res.ok) throw new Error("Falha ao carregar dados");
+  return res.json();
 }
 
-// ── Parsers ──────────────────────────────────────────────────────────────────
+async function apiPost(scriptUrl, body) {
+  // Apps Script doPost não aceita CORS direto com JSON body,
+  // usamos no-cors + URLSearchParams workaround via fetch redirect
+  const res = await fetch(scriptUrl, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain" },
+    body: JSON.stringify(body),
+  });
+  // com redirect follow o Apps Script devolve o JSON mesmo via no-cors redirect
+  return res;
+}
+
+// ─── Parsers ──────────────────────────────────────────────────────────────────
 function parseTodasSemanas(rows) {
-  if (!rows.length) return [];
-  const data = rows.slice(1).filter(r => r[2]);
+  if (!rows || !rows.length) return [];
   const map = new Map();
-  data.forEach((r, i) => {
-    const s = r[0]||"";
-    if (!map.has(s)) map.set(s,{semana:s,descricao:r[1]||"",metas:[]});
+  // iterate from index 1 (skip header); sheetRow = index + 1 (1-indexed, header is row 1)
+  rows.slice(1).forEach((r, i) => {
+    if (!r[2]) return; // skip empty rows but preserve real row number
+    const sheetRow = i + 2; // +1 for 0-index, +1 for skipped header
+    const s = r[0] || "";
+    if (!map.has(s)) map.set(s, {semana:s, descricao:r[1]||"", metas:[]});
     const resp = (r[5]||"Todos").trim();
     map.get(s).metas.push({
-      id:`m${i}`, row:i+2,
+      id:`m${sheetRow}`, row:sheetRow,
       texto:r[2]||"",
-      vinicius:r[3]==="TRUE",
-      mavi:r[4]==="TRUE",
+      vinicius: String(r[3]).toUpperCase()==="TRUE",
+      mavi:     String(r[4]).toUpperCase()==="TRUE",
       responsavel:resp,
     });
   });
-  return Array.from(map.values()).reverse();
+  // Keep insertion order (= sheet row order = chronological),
+  // then reverse so the last week in the sheet (most recent) is index 0
+  const arr = Array.from(map.values());
+  arr.reverse();
+  return arr;
 }
 
-// Reunião estruturada
-// Colunas: A=id B=data C=titulo D=tipo(segunda/sexta) E=campo1_vin F=campo1_mav G=campo2_vin H=campo2_mav G2=campo3_vin H2=campo3_mav ...
-// Para simplificar: armazenamos JSON no campo E
 function parseReunioes(rows) {
-  if (!rows.length) return [];
-  return rows.slice(1).filter(r=>r[2]).map((r,i)=>({
-    id:r[0]||String(i), row:i+2, date:r[1]||"", title:r[2]||"",
-    tipo:r[3]||"segunda",
-    dados: (() => { try { return JSON.parse(r[4]||"{}"); } catch(e){ return {}; } })(),
-    combinados:(r[5]||"").split("|").map(s=>s.trim()).filter(Boolean),
-  }));
-}
-
-function parseDemandas(rows) {
-  if (!rows.length) return [];
-  return rows.slice(1).filter(r=>r[2]).map((r,i)=>({
-    id:r[0]||String(i), row:i+2,
-    cliente:r[1]||"", descricao:r[2]||"", prioridade:r[3]||"🟡",
-    status:r[4]||"Aberto", prazo:r[5]||"", obs:r[6]||"",
+  if (!rows || !rows.length) return [];
+  return rows.slice(1).filter(r => r[2]).map((r, i) => ({
+    id:    String(r[0]||i),
+    row:   i+2,
+    date:  String(r[1]||""),
+    title: String(r[2]||""),
+    tipo:  String(r[3]||"segunda"),
+    dados: (() => { try { return JSON.parse(String(r[4]||"{}")); } catch(e){ return {}; } })(),
+    combinados: String(r[5]||"").split("|").map(s=>s.trim()).filter(Boolean),
   }));
 }
 
 function parseTreinamentos(rows) {
-  if (!rows.length) return [];
-  return rows.slice(1).filter(r=>r[1]).map((r,i)=>({
-    id:r[0]||String(i), row:i+2,
-    data:r[1]||"", tema:r[2]||"", descricao:r[3]||"", publico:r[4]||"Toda equipe FOCO",
+  if (!rows || !rows.length) return [];
+  return rows.slice(1).filter(r => r[1]||r[2]).map((r, i) => ({
+    id:      String(r[0]||i),
+    row:     i+2,
+    data:    String(r[1]||""),
+    tema:    String(r[2]||""),
+    descricao: String(r[3]||""),
+    publico: String(r[4]||"Toda equipe FOCO"),
   }));
 }
 
-function parseLancamentos(rows) {
-  if (!rows.length) return null;
-  const result = rows.slice(1).filter(r=>r[1]).map((r,i)=>({
-    id:r[0]||String(i), row:i+2,
-    nome:r[1]||"", tipo:r[2]||"semente", status:r[3]||"Planejamento", obs:r[4]||"",
-    gargalo:r[5]||"", gargaloSetor:r[6]||"todos",
-    checklist: (() => { try { return JSON.parse(r[4]||"{}"); } catch(e){ return {}; } })(),
+function parseSugestoes(rows) {
+  if (!rows || !rows.length) return [];
+  return rows.slice(1).filter(r => r[1]).map((r, i) => ({
+    id:      String(r[0]||i),
+    row:     i+2,
+    nome:    String(r[1]||""),
+    tema:    String(r[2]||""),
+    desc:    String(r[3]||""),
+    data:    String(r[4]||""),
   }));
-  return result.length ? result : null;
 }
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 function normalizeResp(r) {
   if (!r) return "Todos";
   const s = r.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -558,51 +342,32 @@ function normalizeResp(r) {
 }
 function podeMarcar(responsavel, who) {
   const r = normalizeResp(responsavel);
-  if (r === "Todos") return true;
-  if (who === "vinicius" && r === "Vinícius") return true;
-  if (who === "mavi" && r === "Mavi") return true;
+  if (r==="Todos") return true;
+  if (who==="vinicius" && r==="Vinícius") return true;
+  if (who==="mavi"     && r==="Mavi")     return true;
+  // Handle compound values like "Ana e Vinícius", "Mavi e Ana", etc.
+  const lower = r.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+  if (who==="vinicius" && lower.includes("vinicius")) return true;
+  if (who==="mavi"     && lower.includes("mavi"))     return true;
   return false;
 }
 function respClass(r) {
   const n = normalizeResp(r);
-  if (n==="Todos") return "resp-todos";
+  if (n==="Todos")    return "resp-todos";
   if (n==="Vinícius") return "resp-vinicius";
-  if (n==="Mavi") return "resp-mavi";
+  if (n==="Mavi")     return "resp-mavi";
   return "resp-ana";
-}
-
-function prazoClass(prazo, status) {
-  if (!prazo||status==="Concluído") return "prazo-ok";
-  const diff=(new Date(prazo)-new Date())/86400000;
-  if (diff<0) return "prazo-late";
-  if (diff<=3) return "prazo-soon";
-  return "prazo-ok";
-}
-function formatPrazo(p) {
-  if (!p) return "—";
-  const pts=p.split("-");
-  return pts.length===3?`${pts[2]}/${pts[1]}/${pts[0]}`:p;
 }
 function formatData(p) {
   if (!p) return "—";
-  const pts=p.split("-");
-  return pts.length===3?`${pts[2]}/${pts[1]}/${pts[0]}`:p;
+  const pts = String(p).split("-");
+  return pts.length===3 ? `${pts[2]}/${pts[1]}/${pts[0]}` : p;
+}
+function today() {
+  return new Date().toISOString().split("T")[0];
 }
 
-const CAMPOS_SEGUNDA = [
-  {key:"desafios",   label:"Desafios da semana passada"},
-  {key:"problemas",  label:"Problemas identificados"},
-  {key:"metas_ant",  label:"Metas da semana passada — foram cumpridas?"},
-  {key:"metas_sem",  label:"Metas dessa semana"},
-];
-const CAMPOS_SEXTA = [
-  {key:"big_rocks",  label:"Status das Big Rocks: o que foi concluído das metas de segunda?"},
-  {key:"impedimentos",label:"Gestão de Impedimentos: algo travado que depende de aprovação?"},
-  {key:"crises",     label:"Monitoramento de Crises: orçamentos e condições especiais ok?"},
-  {key:"partida",    label:"Ponto de Partida: qual é a tarefa nº 1 para a manhã de segunda?"},
-];
-
-// ── Components ───────────────────────────────────────────────────────────────
+// ─── Components ───────────────────────────────────────────────────────────────
 function Chk({checked, onChange, readonly}) {
   return (
     <div className={`chk${checked?" on":""}${checked&&readonly?" hist-chk":""}${readonly?" readonly":""}`}
@@ -612,13 +377,16 @@ function Chk({checked, onChange, readonly}) {
     </div>
   );
 }
-function Modal({open,onClose,children}) {
+function Modal({open, onClose, children}) {
   if (!open) return null;
-  return <div className="modal-bg" onClick={e=>e.target===e.currentTarget&&onClose()}><div className="modal">{children}</div></div>;
+  return (
+    <div className="modal-bg" onClick={e=>e.target===e.currentTarget&&onClose()}>
+      <div className="modal">{children}</div>
+    </div>
+  );
 }
-function Toast({msg}) { return msg?<div className="toast">{msg}</div>:null; }
+function Toast({msg}) { return msg ? <div className="toast">{msg}</div> : null; }
 
-// ── Painel de Pendências ─────────────────────────────────────────────────────
 function PendenciasPanel({semanas, onClose}) {
   const [person, setPerson] = useState("vinicius");
   const pendencias = semanas.flatMap(s =>
@@ -637,7 +405,7 @@ function PendenciasPanel({semanas, onClose}) {
             </button>
           </div>
           <div className="pendencias-person-sel">
-            {[["vinicius","Vinícius","resp-vinicius"],["mavi","Mavi","resp-mavi"]].map(([id,label,cls])=>(
+            {[["vinicius","Vinícius"],["mavi","Mavi"]].map(([id,label])=>(
               <button key={id} className={`filt-btn${person===id?" on":""}`} onClick={()=>setPerson(id)}>{label}</button>
             ))}
           </div>
@@ -646,10 +414,10 @@ function PendenciasPanel({semanas, onClose}) {
           </div>
         </div>
         <div className="pendencias-body">
-          {pendencias.length===0?(
+          {pendencias.length===0 ? (
             <div className="pend-empty">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style={{margin:"0 auto 10px",display:"block"}}><circle cx="16" cy="16" r="14" stroke="#2E7D32" strokeWidth="2"/><polyline points="9,17 14,22 23,12" stroke="#2E7D32" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              Tudo em dia! Nenhuma tarefa pendente.
+              Tudo em dia!
             </div>
           ) : pendencias.map(m=>(
             <div key={m.id+m.semana} className="pend-item">
@@ -663,750 +431,638 @@ function PendenciasPanel({semanas, onClose}) {
   );
 }
 
-// ── App ───────────────────────────────────────────────────────────────────────
+// ─── App ─────────────────────────────────────────────────────────────────────
 function App() {
-  const [token,setToken]               = useState(null);
-  const [loading,setLoading]           = useState(false);
-  const [saving,setSaving]             = useState(false);
-  const [toast,setToast]               = useState("");
-  const [activeTab,setActiveTab]       = useState("metas");
-  const [semanas,setSemanas]           = useState([]);
-  const [semanaIdx,setSemanaIdx]       = useState(0);
-  const [meetings,setMeetings]         = useState([]);
-  const [showMeetModal,setShowMeetModal] = useState(false);
-  const [editingMeet,setEditingMeet]   = useState(null);
-  // meetForm para reunião estruturada
-  const [meetForm,setMeetForm]         = useState({title:"",date:"",tipo:"segunda",dados:{},combinados:""});
-  const [demandas,setDemandas]         = useState([]);
-  const [showDemModal,setShowDemModal] = useState(false);
-  const [editingDem,setEditingDem]     = useState(null);
-  const [demForm,setDemForm]           = useState({cliente:"",descricao:"",prioridade:"🟡",status:"Aberto",prazo:"",obs:""});
-  const [filtStatus,setFiltStatus]     = useState("todos");
-  const [filtPrio,setFiltPrio]         = useState("todos");
-  const [showPendencias,setShowPendencias] = useState(false);
+  const [scriptUrl, setScriptUrl] = useState(() => localStorage.getItem(SCRIPT_URL_KEY)||"https://script.google.com/macros/s/AKfycbxgeNqc63QmqDyS5GmYpSbX_71tzSneGdi9cbBI-ZOG80HEobDc8lt_i9yXaB4-JVEI/exec");
+  const [scriptInput, setScriptInput] = useState("");
+  const [loading, setLoading]   = useState(false);
+  const [saving, setSaving]     = useState(false);
+  const [toast, setToast]       = useState("");
+  const [activeTab, setActiveTab] = useState("metas");
 
-  // Treinamentos
-  const [treinamentos,setTreinamentos] = useState([]);
-  const [showTreinModal,setShowTreinModal] = useState(false);
-  const [editingTrein,setEditingTrein] = useState(null);
-  const [treinForm,setTreinForm]       = useState({data:"",tema:"",descricao:"",publico:"Toda equipe FOCO"});
+  // dados
+  const [semanas, setSemanas]           = useState([]);
+  const [semanasCompletas, setSemanasCompletas] = useState([]); // metas + historico_metas
+  const [semanaIdx, setSemanaIdx]       = useState(0);
+  const [meetings, setMeetings]         = useState([]);
+  const [treinamentos, setTreinamentos] = useState([]);
+  const [sugestoes, setSugestoes]       = useState([]);
 
-  // Lançamentos
-  const [lancamentos,setLancamentos]   = useState(LANCAMENTOS_INICIAIS);
-  const [showLancModal,setShowLancModal] = useState(false);
-  const [editingLanc,setEditingLanc]   = useState(null);
-  const [lancForm,setLancForm]         = useState({nome:"",tipo:"semente",status:"Planejamento",obs:"",gargalo:"",gargaloSetor:"todos",checklist:{}});
-  const [fasesAbertas,setFasesAbertas] = useState({});
+  // metas
+  const [showPendencias, setShowPendencias] = useState(false);
+
+  // reuniões
+  const [showMeetModal, setShowMeetModal] = useState(false);
+  const [editingMeet, setEditingMeet]     = useState(null);
+  const [meetForm, setMeetForm]           = useState({title:"",date:"",tipo:"segunda",dados:{},combinados:""});
+
+  // treinamentos
+  const [showTreinModal, setShowTreinModal] = useState(false);
+  const [editingTrein, setEditingTrein]     = useState(null);
+  const [treinForm, setTreinForm]           = useState({data:"",tema:"",descricao:"",publico:"Toda equipe FOCO"});
+
+  // sugestão de tema
+  const [sugTab, setSugTab]       = useState("sugerir"); // "sugerir" | "ver"
+  const [sugNome, setSugNome]     = useState("");
+  const [sugTema, setSugTema]     = useState("");
+  const [sugDesc, setSugDesc]     = useState("");
+  const [sugSent, setSugSent]     = useState(false);
+  const [sugSaving, setSugSaving] = useState(false);
 
   const notify = msg => { setToast(msg); setTimeout(()=>setToast(""),3000); };
 
-  useEffect(()=>{
-    const hash=window.location.hash;
-    if (hash.includes("access_token")) {
-      const t=new URLSearchParams(hash.slice(1)).get("access_token");
-      if (t){setToken(t);window.history.replaceState(null,"",window.location.pathname);return;}
-    }
-    const saved=sessionStorage.getItem("foco_token");
-    if (saved) setToken(saved);
-  },[]);
-  useEffect(()=>{ if(token) sessionStorage.setItem("foco_token",token); },[token]);
-
-  const signIn=()=>{
-    const p=new URLSearchParams({client_id:GOOGLE_CLIENT_ID,redirect_uri:window.location.origin+window.location.pathname,response_type:"token",scope:SCOPES,prompt:"consent"});
-    window.location.href=`https://accounts.google.com/o/oauth2/v2/auth?${p}`;
-  };
-
-  const loadAll=useCallback(async t=>{
+  // ── carregamento ────────────────────────────────────────────────────────────
+  const loadAll = useCallback(async (url) => {
+    if (!url) return;
     setLoading(true);
     try {
-      const [mr,rr,dr,tr,lr]=await Promise.all([
-        sheetsGet(t,"metas!A:F"),
-        sheetsGet(t,"reunioes!A:F"),
-        sheetsGet(t,"demandas!A:G"),
-        sheetsGet(t,"treinamentos!A:E").catch(()=>[]),
-        sheetsGet(t,"lancamentos!A:G").catch(()=>[]),
-      ]);
-      setSemanas(parseTodasSemanas(mr));
+      const data = await apiGet(url);
+      // metas normais (aba "metas") — usadas na tabela principal
+      setSemanas(parseTodasSemanas(data.metas));
       setSemanaIdx(0);
-      setMeetings(parseReunioes(rr));
-      setDemandas(parseDemandas(dr));
-      if (tr.length > 0) setTreinamentos(parseTreinamentos(tr));
-      const lancData = parseLancamentos(lr);
-      if (lancData) setLancamentos(lancData);
-    } catch(e){
-      if(e.message.includes("401")){setToken(null);sessionStorage.removeItem("foco_token");}
-      else notify("Erro ao carregar: "+e.message);
-    } finally{setLoading(false);}
-  },[]);
-  useEffect(()=>{ if(token) loadAll(token); },[token]);
-
-  // ── Metas ────────────────────────────────────────────────────────────────
-  const semanaAtual = semanas[semanaIdx]||{semana:"",descricao:"",metas:[]};
-  const isCurrentWk = semanaIdx===0;
-  const vinTotal  = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"vinicius")).length;
-  const mavTotal  = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"mavi")).length;
-  const vinDone   = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"vinicius")&&m.vinicius).length;
-  const mavDone   = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"mavi")&&m.mavi).length;
-  const vinPct    = vinTotal?Math.round(vinDone/vinTotal*100):0;
-  const mavPct    = mavTotal?Math.round(mavDone/mavTotal*100):0;
-
-  const toggleCheck=async(m,who)=>{
-    if (!isCurrentWk||!podeMarcar(m.responsavel,who)) return;
-    const nv=!m[who];
-    setSemanas(prev=>prev.map((s,si)=>si!==0?s:{...s,metas:s.metas.map(x=>x.id===m.id?{...x,[who]:nv}:x)}));
-    setSaving(true);
-    try{
-      await sheetsUpdate(token,`metas!${who==="vinicius"?"D":"E"}${m.row}`,[[nv?"TRUE":"FALSE"]]);
-      notify("Salvo ✓");
-    }catch(e){
-      notify("Erro: "+e.message);
-      setSemanas(prev=>prev.map((s,si)=>si!==0?s:{...s,metas:s.metas.map(x=>x.id===m.id?{...x,[who]:!nv}:x)}));
-    }finally{setSaving(false);}
-  };
-
-  // ── Reuniões estruturadas ─────────────────────────────────────────────────
-  const openNewMeet=()=>{
-    setEditingMeet(null);
-    setMeetForm({title:"",date:"",tipo:"segunda",dados:{},combinados:""});
-    setShowMeetModal(true);
-  };
-  const openEditMeet=m=>{
-    setEditingMeet(m);
-    setMeetForm({title:m.title,date:m.date,tipo:m.tipo||"segunda",dados:m.dados||{},combinados:m.combinados.join("\n")});
-    setShowMeetModal(true);
-  };
-
-  const setDado=(campo,pessoa,val)=>{
-    setMeetForm(f=>({...f,dados:{...f.dados,[campo]:{...(f.dados[campo]||{}),[pessoa]:val}}}));
-  };
-
-  const saveMeeting=async()=>{
-    if(!meetForm.title||!meetForm.date) return;
-    const comb=meetForm.combinados.split("\n").map(s=>s.trim()).filter(Boolean).join("|");
-    const dadosJson=JSON.stringify(meetForm.dados);
-    setSaving(true);
-    try{
-      if(editingMeet) await sheetsUpdate(token,`reunioes!A${editingMeet.row}:F${editingMeet.row}`,[[editingMeet.id,meetForm.date,meetForm.title,meetForm.tipo,dadosJson,comb]]);
-      else await sheetsAppend(token,"reunioes!A:F",[[Date.now().toString(),meetForm.date,meetForm.title,meetForm.tipo,dadosJson,comb]]);
-
-      // Se tipo=segunda e tiver metas, enviar para aba metas
-      const camposMetas = meetForm.tipo==="segunda" ? ["metas_sem"] : ["partida"];
-      for (const campo of camposMetas) {
-        const vText = (meetForm.dados[campo]?.vinicius||"").trim();
-        const mText = (meetForm.dados[campo]?.mavi||"").trim();
-        const semanaStr = meetForm.date;
-        if (vText) {
-          const vinRows = vText.split("\n").filter(Boolean).map(l=>
-            [semanaStr, `Reunião ${meetForm.tipo==="segunda"?"Segunda":"Sexta"} - ${meetForm.date}`, l, "FALSE", "FALSE", "Vinícius"]
-          );
-          if (vinRows.length) await sheetsAppend(token,"metas!A:F", vinRows).catch(()=>{});
-        }
-        if (mText) {
-          const mavRows = mText.split("\n").filter(Boolean).map(l=>
-            [semanaStr, `Reunião ${meetForm.tipo==="segunda"?"Segunda":"Sexta"} - ${meetForm.date}`, l, "FALSE", "FALSE", "Mavi"]
-          );
-          if (mavRows.length) await sheetsAppend(token,"metas!A:F", mavRows).catch(()=>{});
-        }
-      }
-
-      notify(editingMeet?"Reunião atualizada ✓":"Reunião salva ✓");
-      setShowMeetModal(false); await loadAll(token);
-    }catch(e){notify("Erro: "+e.message);}
-    finally{setSaving(false);}
-  };
-
-  // ── Demandas ─────────────────────────────────────────────────────────────
-  const openNewDem=()=>{setEditingDem(null);setDemForm({cliente:"",descricao:"",prioridade:"🟡",status:"Aberto",prazo:"",obs:""});setShowDemModal(true);};
-  const openEditDem=d=>{setEditingDem(d);setDemForm({cliente:d.cliente,descricao:d.descricao,prioridade:d.prioridade,status:d.status,prazo:d.prazo,obs:d.obs});setShowDemModal(true);};
-  const saveDemanda=async()=>{
-    if(!demForm.descricao) return;
-    const row=[null,demForm.cliente,demForm.descricao,demForm.prioridade,demForm.status,demForm.prazo,demForm.obs];
-    setSaving(true);
-    try{
-      if(editingDem){row[0]=editingDem.id;await sheetsUpdate(token,`demandas!A${editingDem.row}:G${editingDem.row}`,[row]);}
-      else{row[0]=Date.now().toString();await sheetsAppend(token,"demandas!A:G",[row]);}
-      notify(editingDem?"Demanda atualizada ✓":"Demanda salva ✓");
-      setShowDemModal(false); await loadAll(token);
-    }catch(e){notify("Erro: "+e.message);}
-    finally{setSaving(false);}
-  };
-  const deleteDemanda=async()=>{
-    if(!editingDem||!confirm("Remover esta demanda?")) return;
-    setSaving(true);
-    try{
-      await sheetsUpdate(token,`demandas!A${editingDem.row}:G${editingDem.row}`,[["","","","","","",""]]);
-      notify("Demanda removida");
-      setShowDemModal(false); await loadAll(token);
-    }catch(e){notify("Erro: "+e.message);}
-    finally{setSaving(false);}
-  };
-
-  // ── Treinamentos ─────────────────────────────────────────────────────────
-  const openNewTrein=()=>{setEditingTrein(null);setTreinForm({data:"",tema:"",descricao:"",publico:"Toda equipe FOCO"});setShowTreinModal(true);};
-  const openEditTrein=t=>{setEditingTrein(t);setTreinForm({data:t.data,tema:t.tema,descricao:t.descricao,publico:t.publico});setShowTreinModal(true);};
-  const saveTrein=async()=>{
-    if(!treinForm.tema) return;
-    const row=[null,treinForm.data,treinForm.tema,treinForm.descricao,treinForm.publico];
-    setSaving(true);
-    try{
-      if(editingTrein){row[0]=editingTrein.id;await sheetsUpdate(token,`treinamentos!A${editingTrein.row}:E${editingTrein.row}`,[row]);}
-      else{row[0]=Date.now().toString();await sheetsAppend(token,"treinamentos!A:E",[row]);}
-      notify(editingTrein?"Treinamento atualizado ✓":"Treinamento salvo ✓");
-      setShowTreinModal(false); await loadAll(token);
-    }catch(e){notify("Erro: "+e.message);}
-    finally{setSaving(false);}
-  };
-  const deleteTrein=async()=>{
-    if(!editingTrein||!confirm("Remover este treinamento?")) return;
-    setSaving(true);
-    try{
-      await sheetsUpdate(token,`treinamentos!A${editingTrein.row}:E${editingTrein.row}`,[["","","","",""]]);
-      notify("Treinamento removido");
-      setShowTreinModal(false); await loadAll(token);
-    }catch(e){notify("Erro: "+e.message);}
-    finally{setSaving(false);}
-  };
-
-  // ── Lançamentos ───────────────────────────────────────────────────────────
-  const openNewLanc=()=>{setEditingLanc(null);setLancForm({nome:"",tipo:"semente",status:"Planejamento",obs:"",gargalo:"",gargaloSetor:"todos",checklist:{}});setShowLancModal(true);};
-  const openEditLanc=l=>{setEditingLanc(l);setLancForm({nome:l.nome,tipo:l.tipo||"semente",status:l.status,obs:l.obs,gargalo:l.gargalo||"",gargaloSetor:l.gargaloSetor||"todos",checklist:{...l.checklist}});setShowLancModal(true);};
-  const saveLanc=async()=>{
-    if(!lancForm.nome) return;
-    const checkJson=JSON.stringify(lancForm.checklist);
-    const row=[null,lancForm.nome,lancForm.tipo,lancForm.status,lancForm.obs,lancForm.gargalo,lancForm.gargaloSetor,checkJson];
-    setSaving(true);
-    try{
-      if(editingLanc){
-        row[0]=editingLanc.id;
-        await sheetsUpdate(token,`lancamentos!A${editingLanc.row}:H${editingLanc.row}`,[row]).catch(()=>{});
-        setLancamentos(prev=>prev.map(l=>l.id===editingLanc.id?{...l,...lancForm}:l));
-      } else {
-        const newId=Date.now().toString();
-        row[0]=newId;
-        await sheetsAppend(token,"lancamentos!A:H",[row]).catch(()=>{});
-        setLancamentos(prev=>[...prev,{id:newId,row:prev.length+2,...lancForm}]);
-      }
-      notify(editingLanc?"Lançamento atualizado ✓":"Lançamento salvo ✓");
-      setShowLancModal(false);
-    }catch(e){notify("Erro: "+e.message);}
-    finally{setSaving(false);}
-  };
-  const deleteLanc=async()=>{
-    if(!editingLanc||!confirm("Remover este lançamento?")) return;
-    setSaving(true);
-    try{
-      await sheetsUpdate(token,`lancamentos!A${editingLanc.row}:E${editingLanc.row}`,[["","","","",""]]).catch(()=>{});
-      setLancamentos(prev=>prev.filter(l=>l.id!==editingLanc.id));
-      notify("Lançamento removido");
-      setShowLancModal(false);
-    }catch(e){notify("Erro: "+e.message);}
-    finally{setSaving(false);}
-  };
-  const toggleLancCheck=(item)=>{
-    setLancForm(f=>({...f,checklist:{...f.checklist,[item]:!f.checklist[item]}}));
-  };
-  const toggleFaseAberta=(lancId,faseIdx)=>{
-    const key=lancId+"-"+faseIdx;
-    setFasesAbertas(prev=>({...prev,[key]:!prev[key]}));
-  };
-  const toggleLancCheckDirect=async(lanc,itemKey,val)=>{
-    const newCl={...lanc.checklist,[itemKey]:val};
-    setLancamentos(prev=>prev.map(l=>l.id===lanc.id?{...l,checklist:newCl}:l));
-    const checkJson=JSON.stringify(newCl);
-    // persist to sheet asynchronously
-    if(token&&lanc.row){
-      sheetsUpdate(token,`lancamentos!H${lanc.row}`,[[checkJson]]).catch(()=>{});
+      // pendências: junta "metas" + "historico_metas" (mesmas colunas)
+      // remove o cabeçalho duplicado do histórico antes de concatenar
+      const metasRows = data.metas || [];
+      const histRows  = (data.historico_metas || []).slice(1); // pula cabeçalho
+      const todasRows = metasRows.length ? [...metasRows, ...histRows] : [];
+      setSemanasCompletas(parseTodasSemanas(todasRows));
+      setMeetings(parseReunioes(data.reunioes));
+      setTreinamentos(parseTreinamentos(data.treinamentos));
+      setSugestoes(parseSugestoes(data.sugestoes||[]));
+    } catch(e) {
+      notify("Erro ao carregar: "+e.message);
+    } finally {
+      setLoading(false);
     }
-  };
-  const calcLancProgress=(lanc)=>{
-    const tipo=lanc.tipo||"semente";
-    const clData=CL_TIPOS[tipo];
-    if(!clData) return {total:0,done:0,pct:0};
-    let total=0,done=0;
-    clData.fases.forEach((fase,fi)=>fase.i.forEach((item,ii)=>{
-      total++;
-      const key=fi+"-"+ii;
-      if(lanc.checklist[key]) done++;
-    }));
-    return {total,done,pct:total?Math.round(done/total*100):0};
+  }, []);
+
+  useEffect(() => { if (scriptUrl) loadAll(scriptUrl); }, [scriptUrl]);
+
+  const saveScriptUrl = () => {
+    const url = scriptInput.trim();
+    if (!url) return;
+    localStorage.setItem(SCRIPT_URL_KEY, url);
+    setScriptUrl(url);
   };
 
-  const historicoList=demandas.filter(d=>d.status==="Concluído");
-  const demandasAtivas=demandas.filter(d=>d.status!=="Concluído");
-  const demandasFiltradas=demandasAtivas.filter(d=>{
-    if(filtStatus!=="todos"&&d.status!==filtStatus) return false;
-    if(filtPrio!=="todos"&&d.prioridade!==filtPrio) return false;
-    return true;
-  });
-  const ativas=demandasFiltradas;
-  const demAbertasCount=demandasAtivas.length;
-  const histCount=historicoList.length;
+  // ── Metas ────────────────────────────────────────────────────────────────────
+  const semanaAtual = semanas[semanaIdx] || {semana:"",descricao:"",metas:[]};
+  const isCurrentWk = semanaIdx===0;
+  const vinTotal = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"vinicius")).length;
+  const mavTotal = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"mavi")).length;
+  const vinDone  = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"vinicius")&&m.vinicius).length;
+  const mavDone  = semanaAtual.metas.filter(m=>podeMarcar(m.responsavel,"mavi")&&m.mavi).length;
+  const vinPct   = vinTotal ? Math.round(vinDone/vinTotal*100) : 0;
+  const mavPct   = mavTotal ? Math.round(mavDone/mavTotal*100) : 0;
+
+  const toggleCheck = async (m, who) => {
+    if (!isCurrentWk || !podeMarcar(m.responsavel, who)) return;
+    const nv = !m[who];
+    setSemanas(prev => prev.map((s,si) => si!==semanaIdx ? s : {
+      ...s, metas: s.metas.map(x => x.id===m.id ? {...x,[who]:nv} : x)
+    }));
+    setSaving(true);
+    try {
+      // Atualiza APENAS a célula do checkbox — coluna 4 (D=vinicius) ou 5 (E=mavi)
+      const col = who==="vinicius" ? 4 : 5;
+      await apiPost(scriptUrl, {
+        action:"updateCell",
+        sheet:"metas",
+        row: m.row,
+        col: col,
+        value: nv,
+      });
+      notify("Salvo ✓");
+    } catch(e) {
+      notify("Erro: "+e.message);
+      setSemanas(prev => prev.map((s,si) => si!==semanaIdx ? s : {
+        ...s, metas: s.metas.map(x => x.id===m.id ? {...x,[who]:!nv} : x)
+      }));
+    } finally { setSaving(false); }
+  };
+
+  // ── Reuniões ─────────────────────────────────────────────────────────────────
+  const openNewMeet = () => {
+    setEditingMeet(null);
+    setMeetForm({title:"",date:today(),tipo:"segunda",dados:{},combinados:""});
+    setShowMeetModal(true);
+  };
+  const openEditMeet = m => {
+    setEditingMeet(m);
+    setMeetForm({title:m.title,date:m.date,tipo:m.tipo||"segunda",dados:{...m.dados},combinados:m.combinados.join("\n")});
+    setShowMeetModal(true);
+  };
+  const setDado = (campo, pessoa, val) => {
+    setMeetForm(f => ({...f, dados:{...f.dados,[campo]:{...(f.dados[campo]||{}),[pessoa]:val}}}));
+  };
+
+  const saveMeeting = async () => {
+    if (!meetForm.title || !meetForm.date) { notify("Preencha título e data"); return; }
+    const comb    = meetForm.combinados.split("\n").map(s=>s.trim()).filter(Boolean).join("|");
+    const dadosJson = JSON.stringify(meetForm.dados);
+    const id      = editingMeet ? editingMeet.id : String(Date.now());
+    const values  = [id, meetForm.date, meetForm.title, meetForm.tipo, dadosJson, comb];
+
+    setSaving(true);
+    try {
+      if (editingMeet) {
+        await apiPost(scriptUrl, {action:"update", sheet:"reunioes", row:editingMeet.row, values});
+      } else {
+        await apiPost(scriptUrl, {action:"append", sheet:"reunioes", values});
+      }
+      notify(editingMeet ? "Reunião atualizada ✓" : "Reunião salva ✓");
+      setShowMeetModal(false);
+      // Aguarda um momento antes de recarregar (Apps Script pode ser lento)
+      setTimeout(() => loadAll(scriptUrl), 1200);
+    } catch(e) {
+      notify("Erro: "+e.message);
+    } finally { setSaving(false); }
+  };
+
+  const deleteMeeting = async () => {
+    if (!editingMeet || !confirm("Remover esta reunião?")) return;
+    setSaving(true);
+    try {
+      await apiPost(scriptUrl, {action:"delete", sheet:"reunioes", row:editingMeet.row});
+      notify("Reunião removida");
+      setShowMeetModal(false);
+      setTimeout(() => loadAll(scriptUrl), 1200);
+    } catch(e) { notify("Erro: "+e.message); }
+    finally { setSaving(false); }
+  };
+
+  // ── Treinamentos ─────────────────────────────────────────────────────────────
+  const openNewTrein = () => {
+    setEditingTrein(null);
+    setTreinForm({data:"",tema:"",descricao:"",publico:"Toda equipe FOCO"});
+    setShowTreinModal(true);
+  };
+  const openEditTrein = t => {
+    setEditingTrein(t);
+    setTreinForm({data:t.data,tema:t.tema,descricao:t.descricao,publico:t.publico});
+    setShowTreinModal(true);
+  };
+  const saveTrein = async () => {
+    if (!treinForm.tema) return;
+    const id     = editingTrein ? editingTrein.id : String(Date.now());
+    const values = [id, treinForm.data, treinForm.tema, treinForm.descricao, treinForm.publico];
+    setSaving(true);
+    try {
+      if (editingTrein) {
+        await apiPost(scriptUrl, {action:"update", sheet:"treinamentos", row:editingTrein.row, values});
+      } else {
+        await apiPost(scriptUrl, {action:"append", sheet:"treinamentos", values});
+      }
+      notify(editingTrein ? "Treinamento atualizado ✓" : "Treinamento salvo ✓");
+      setShowTreinModal(false);
+      setTimeout(() => loadAll(scriptUrl), 1200);
+    } catch(e) { notify("Erro: "+e.message); }
+    finally { setSaving(false); }
+  };
+  const deleteTrein = async () => {
+    if (!editingTrein || !confirm("Remover este treinamento?")) return;
+    setSaving(true);
+    try {
+      await apiPost(scriptUrl, {action:"delete", sheet:"treinamentos", row:editingTrein.row});
+      notify("Treinamento removido");
+      setShowTreinModal(false);
+      setTimeout(() => loadAll(scriptUrl), 1200);
+    } catch(e) { notify("Erro: "+e.message); }
+    finally { setSaving(false); }
+  };
+
+  // ── Sugestão de Tema ─────────────────────────────────────────────────────────
+  const enviarSugestao = async () => {
+    if (!sugNome.trim() || !sugTema.trim()) { notify("Preencha seu nome e o tema"); return; }
+    setSugSaving(true);
+    try {
+      const values = [String(Date.now()), sugNome.trim(), sugTema.trim(), sugDesc.trim(), today()];
+      await apiPost(scriptUrl, {action:"append", sheet:"sugestoes", values});
+      setSugSent(true);
+      setSugNome(""); setSugTema(""); setSugDesc("");
+      // atualiza lista local
+      setSugestoes(prev => [{id:values[0],row:prev.length+2,nome:values[1],tema:values[2],desc:values[3],data:values[4]},...prev]);
+      notify("Sugestão enviada ✓");
+    } catch(e) { notify("Erro: "+e.message); }
+    finally { setSugSaving(false); }
+  };
 
   const campos = meetForm.tipo==="segunda" ? CAMPOS_SEGUNDA : CAMPOS_SEXTA;
 
   return (
     <div className="app">
+      {/* HEADER */}
       <div className="header">
         <div className="header-sq"/><div className="header-arc"/><div className="header-arc2"/>
         <div>
           <div className="h-title">Board do Time</div>
-          <div className="h-sub">Foco Marketing — reuniões, metas, demandas, treinamentos e lançamentos</div>
+          <div className="h-sub">Foco Marketing — reuniões, metas e treinamentos</div>
         </div>
         <div className="logo-wrap"><div className="lsq"/><div className="lsq2"/></div>
       </div>
 
-      {!token&&(
-        <div className="auth-box">
-          <div className="auth-title">Conectar ao Google Sheets</div>
-          <div className="auth-sub">Autorize o acesso para que o board leia e salve<br/>os dados diretamente na sua planilha.</div>
-          <button className="btn" onClick={signIn}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-            </svg>
-            Entrar com Google
+      {/* BANNER DE CONFIGURAÇÃO (só aparece se não tiver URL salva) */}
+      {!scriptUrl && (
+        <div className="setup-banner">
+          <div className="setup-banner-icon">⚙️</div>
+          <div style={{flex:1}}>
+            <div className="setup-banner-title">Configure a URL do Apps Script</div>
+            <div className="setup-banner-text">
+              Depois de publicar o Apps Script na planilha (<strong>Extensões → Apps Script → Implantar → Novo Implantação → App da Web → Qualquer pessoa</strong>), cole a URL aqui. Essa configuração fica salva no seu navegador.
+            </div>
+            <input
+              className="setup-inp"
+              placeholder="https://script.google.com/macros/s/..."
+              value={scriptInput}
+              onChange={e=>setScriptInput(e.target.value)}
+              onKeyDown={e=>e.key==="Enter"&&saveScriptUrl()}
+            />
+            <br/>
+            <button className="setup-save-btn" onClick={saveScriptUrl}>Salvar e conectar</button>
+          </div>
+        </div>
+      )}
+
+      {scriptUrl && loading && (
+        <div className="loading"><span className="loading-spin"/>Carregando...</div>
+      )}
+
+      {/* Se tiver URL mas ainda não carregou nada — mostra botão recarregar */}
+      {scriptUrl && !loading && semanas.length===0 && meetings.length===0 && treinamentos.length===0 && (
+        <div style={{textAlign:"center",padding:"30px 0 20px"}}>
+          <div style={{fontSize:13,color:"#5a6e8a",marginBottom:12}}>Nenhum dado carregado. Verifique se a URL do script está correta.</div>
+          <button className="ghost" onClick={()=>loadAll(scriptUrl)}>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6a5 5 0 1 0 1-3" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/><path d="M1 2v3h3" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            Tentar novamente
+          </button>
+          <button className="ghost" style={{marginLeft:8}} onClick={()=>{localStorage.removeItem(SCRIPT_URL_KEY);setScriptUrl("");setScriptInput("");}}>
+            Alterar URL
           </button>
         </div>
       )}
 
-      {token&&loading&&<div className="loading"><span className="loading-spin"/>Carregando...</div>}
-
-      {token&&!loading&&(<>
-        <div className="tabs">
-          {[
-            {id:"metas",label:"Metas da Semana",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
-            {id:"reunioes",label:"Reuniões",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
-            {id:"demandas",label:"Demandas",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3h10M2 7h7M2 11h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,count:demAbertasCount},
-            {id:"treinamentos",label:"Treinamentos",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11V5l5-3 5 3v6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/><rect x="5" y="7" width="4" height="4" rx="1" stroke="currentColor" strokeWidth="1.4"/></svg>},
-            {id:"lancamentos",label:"Lançamentos",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4.5H13L9.5 8l1.5 4.5L7 10l-4 2.5L4.5 8 1 5.5h4.5L7 1z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/></svg>},
-            {id:"historico",label:"Histórico",icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a6 6 0 1 0 0 12A6 6 0 0 0 7 1z" stroke="currentColor" strokeWidth="1.4"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>},
-          ].map(t=>(
-            <button key={t.id} className={`tab${activeTab===t.id?" active":""}`} onClick={()=>setActiveTab(t.id)}>
-              {t.icon}{t.label}
-              {t.count>0&&<span className="tab-badge">{t.count}</span>}
-            </button>
-          ))}
-        </div>
-
-        {/* ══ METAS ══ */}
-        {activeTab==="metas"&&(
-          <div className="meta-card">
-            {semanas.length>1&&(
-              <div className="week-nav">
-                <span className="week-lbl">Semana:</span>
-                {semanas.map((s,i)=>(
-                  <button key={s.semana} className={`week-btn${semanaIdx===i?" active":""}`} onClick={()=>setSemanaIdx(i)}>
-                    {s.semana}{i===0&&<span className="current-dot"/>}
-                  </button>
-                ))}
-              </div>
-            )}
-            {!isCurrentWk&&(
-              <div className="hist-banner">
-                <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#5a6e8a" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="#5a6e8a" strokeWidth="1.5" strokeLinecap="round"/></svg>
-                Histórico da semana <strong style={{margin:"0 4px"}}>{semanaAtual.semana}</strong> — somente leitura.
-              </div>
-            )}
-            <div className="meta-hd">
-              <div>
-                <div className="meta-title">Semana {semanaAtual.semana}</div>
-                <div className="meta-week">{semanaAtual.descricao}</div>
-              </div>
-              <div className="prog-area">
-                {[{name:"Vinícius",pct:vinPct,done:vinDone,tot:vinTotal},{name:"Mavi",pct:mavPct,done:mavDone,tot:mavTotal}].map(p=>(
-                  <div className="prog" key={p.name}>
-                    <div className="prog-name">{p.name}</div>
-                    <div className="prog-track"><div className={`prog-fill${!isCurrentWk?" hist":""}`} style={{width:`${p.pct}%`}}/></div>
-                    <div className="prog-pct">{p.pct}%</div>
-                    <div className="prog-frac">{p.done} de {p.tot} concluídas</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Botão pendências */}
-            <div style={{marginBottom:14}}>
-              <button className="ghost" onClick={()=>setShowPendencias(true)}>
-                <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 3h10M2 7h6M2 11h4" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/><circle cx="11" cy="11" r="2.5" fill="#C62828"/></svg>
-                Ver tarefas pendentes por analista
+      {/* ABAS — só mostra se tiver URL */}
+      {scriptUrl && !loading && (
+        <>
+          <div className="tabs">
+            {[
+              {id:"metas",    label:"Metas da Semana",  icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
+              {id:"reunioes", label:"Reuniões",          icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
+              {id:"treinamentos", label:"Treinamentos",  icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11V5l5-3 5 3v6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/><rect x="5" y="7" width="4" height="4" rx="1" stroke="currentColor" strokeWidth="1.4"/></svg>},
+              {id:"sugestao", label:"Sugerir Tema",      icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5.5" r="3" stroke="currentColor" strokeWidth="1.4"/><path d="M5.5 9.5c0 0-.5 3 1.5 3s1.5-3 1.5-3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>},
+              {id:"links",    label:"Central de Links",   icon:<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5.5 8.5a3.5 3.5 0 0 0 5 0l1.5-1.5a3.5 3.5 0 0 0-5-5L6 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8.5 5.5a3.5 3.5 0 0 0-5 0L2 7a3.5 3.5 0 0 0 5 5L8 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>},
+            ].map(t => (
+              <button key={t.id} className={`tab${activeTab===t.id?" active":""}`} onClick={()=>setActiveTab(t.id)}>
+                {t.icon}{t.label}
               </button>
-            </div>
-            {semanaAtual.metas.length===0?(
-              <div style={{textAlign:"center",padding:"20px 0",color:"#5a6e8a",fontSize:13}}>Nenhuma meta. Adicione na aba <strong>metas</strong> da planilha.</div>
-            ):(
-              <table className="tbl">
-                <thead>
-                  <tr>
-                    <th>Meta</th>
-                    <th style={{width:110}}>Responsável</th>
-                    <th className="ctr">Vinícius</th>
-                    <th className="ctr">Mavi</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {semanaAtual.metas.map(m=>{
-                    const vinOk=podeMarcar(m.responsavel,"vinicius");
-                    const mavOk=podeMarcar(m.responsavel,"mavi");
-                    const allDone=(vinOk&&mavOk)?(m.vinicius&&m.mavi):vinOk?m.vinicius:mavOk?m.mavi:false;
-                    return (
-                      <tr key={m.id}>
-                        <td><span className={allDone?"done":""}>{m.texto}</span></td>
-                        <td><span className={`resp-tag ${respClass(m.responsavel)}`}>{m.responsavel||"Todos"}</span></td>
-                        <td className="ctr">
-                          <div className="chk-w">
-                            <Chk checked={m.vinicius} onChange={()=>toggleCheck(m,"vinicius")} readonly={!isCurrentWk||!vinOk}/>
-                          </div>
-                        </td>
-                        <td className="ctr">
-                          <div className="chk-w">
-                            <Chk checked={m.mavi} onChange={()=>toggleCheck(m,"mavi")} readonly={!isCurrentWk||!mavOk}/>
-                          </div>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            )}
-            <div style={{marginTop:14,display:"flex",gap:8,justifyContent:"flex-end"}}>
-              <button className="ghost" onClick={()=>loadAll(token)} disabled={saving}>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6a5 5 0 1 0 1-3" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/><path d="M1 2v3h3" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                Atualizar
-              </button>
-              <button className="ghost" onClick={()=>{setToken(null);sessionStorage.removeItem("foco_token");}}>Sair</button>
-            </div>
+            ))}
           </div>
-        )}
 
-        {/* ══ REUNIÕES ══ */}
-        {activeTab==="reunioes"&&(<>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
-            <div className="badge" style={{margin:0}}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="#1565C0" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/></svg>
-              Reuniões
-            </div>
-            <button className="btn" onClick={openNewMeet} disabled={saving}>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
-              Nova Reunião
-            </button>
-          </div>
-          {meetings.length===0?(
-            <div className="empty-dem">Nenhuma reunião ainda. Clique em <strong>Nova Reunião</strong>.</div>
-          ):(
-            <div style={{display:"flex",flexDirection:"column",gap:14}}>
-              {meetings.map(m=>{
-                const campos = m.tipo==="segunda" ? CAMPOS_SEGUNDA : CAMPOS_SEXTA;
-                return (
-                  <div className="meet-card" key={m.id}>
-                    <div className="meet-card-header">
-                      <div className="meet-card-title-row">
-                        <span className={`meet-type-badge ${m.tipo==="segunda"?"meet-type-seg":"meet-type-sex"}`}>
-                          {m.tipo==="segunda"?"Segunda-feira":"Sexta-feira"}
-                        </span>
-                        <span style={{fontFamily:"'Nunito',sans-serif",fontWeight:800,fontSize:15,color:"#002055"}}>{m.title}</span>
-                      </div>
-                      <div style={{display:"flex",alignItems:"center",gap:10}}>
-                        <span className="meet-card-date">{m.date}</span>
-                        <button className="ghost" style={{padding:"5px 10px",fontSize:11}} onClick={()=>openEditMeet(m)}>
-                          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
-                          Editar
-                        </button>
-                      </div>
+          {/* ══ METAS ══ */}
+          {activeTab==="metas" && (
+            <div className="meta-card">
+              {semanas.length > 1 && (
+                <div className="week-nav">
+                  <span className="week-lbl">Semana:</span>
+                  {semanas.slice(0,2).map((s,i) => (
+                    <button key={s.semana} className={`week-btn${semanaIdx===i?" active":""}`} onClick={()=>setSemanaIdx(i)}>
+                      {s.semana}{i===0 && <span className="current-dot"/>}
+                    </button>
+                  ))}
+                </div>
+              )}
+              {!isCurrentWk && (
+                <div className="hist-banner">
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#5a6e8a" strokeWidth="1.5"/><path d="M7 4v3l2 1.5" stroke="#5a6e8a" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                  Histórico — <strong style={{margin:"0 4px"}}>{semanaAtual.semana}</strong> — somente leitura.
+                </div>
+              )}
+              <div className="meta-hd">
+                <div>
+                  <div className="meta-title">{semanaAtual.semana}</div>
+                  <div className="meta-week">{semanaAtual.descricao}</div>
+                </div>
+                <div className="prog-area">
+                  {[
+                    {name:"Vinícius",pct:vinPct,done:vinDone,tot:vinTotal},
+                    {name:"Mavi",    pct:mavPct,done:mavDone,tot:mavTotal},
+                  ].map(p => (
+                    <div className="prog" key={p.name}>
+                      <div className="prog-name">{p.name}</div>
+                      <div className="prog-track"><div className={`prog-fill${!isCurrentWk?" hist":""}`} style={{width:`${p.pct}%`}}/></div>
+                      <div className="prog-pct">{p.pct}%</div>
+                      <div className="prog-frac">{p.done} de {p.tot} concluídas</div>
                     </div>
-                    {campos.map(c=>{
-                      const vinResp=(m.dados?.[c.key]?.vinicius||"").trim();
-                      const mavResp=(m.dados?.[c.key]?.mavi||"").trim();
-                      if(!vinResp&&!mavResp) return null;
+                  ))}
+                </div>
+              </div>
+              <div style={{marginBottom:14}}>
+                <button className="ghost" onClick={()=>setShowPendencias(true)}>
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 3h10M2 7h6M2 11h4" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/><circle cx="11" cy="11" r="2.5" fill="#C62828"/></svg>
+                  Ver tarefas pendentes por analista
+                </button>
+              </div>
+              {semanaAtual.metas.length===0 ? (
+                <div style={{textAlign:"center",padding:"20px 0",color:"#5a6e8a",fontSize:13}}>Nenhuma meta cadastrada para essa semana.</div>
+              ) : (
+                <table className="tbl">
+                  <thead>
+                    <tr>
+                      <th>Meta</th>
+                      <th style={{width:110}}>Responsável</th>
+                      <th className="ctr">Vinícius</th>
+                      <th className="ctr">Mavi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {semanaAtual.metas.map(m => {
+                      const vinOk = podeMarcar(m.responsavel,"vinicius");
+                      const mavOk = podeMarcar(m.responsavel,"mavi");
+                      const allDone = (vinOk&&mavOk)?(m.vinicius&&m.mavi):vinOk?m.vinicius:mavOk?m.mavi:false;
                       return (
-                        <div className="meet-q" key={c.key}>
-                          <div className="meet-q-title">{c.label}</div>
-                          <div className="meet-q-answers">
-                            <div className="meet-q-ans">
-                              <div className="meet-q-who vinicius">Vinícius</div>
-                              <div className="meet-q-text">{vinResp||<span style={{color:"#bbb",fontStyle:"italic"}}>—</span>}</div>
-                            </div>
-                            <div className="meet-q-ans">
-                              <div className="meet-q-who mavi">Mavi</div>
-                              <div className="meet-q-text">{mavResp||<span style={{color:"#bbb",fontStyle:"italic"}}>—</span>}</div>
-                            </div>
-                          </div>
-                        </div>
+                        <tr key={m.id}>
+                          <td><span className={allDone?"done":""}>{m.texto}</span></td>
+                          <td><span className={`resp-tag ${respClass(m.responsavel)}`}>{m.responsavel||"Todos"}</span></td>
+                          <td className="ctr"><div className="chk-w"><Chk checked={m.vinicius} onChange={()=>toggleCheck(m,"vinicius")} readonly={!isCurrentWk||!vinOk}/></div></td>
+                          <td className="ctr"><div className="chk-w"><Chk checked={m.mavi}     onChange={()=>toggleCheck(m,"mavi")}     readonly={!isCurrentWk||!mavOk}/></div></td>
+                        </tr>
                       );
                     })}
-                    {m.combinados.length>0&&(
-                      <>
-                        <div className="divider"/>
-                        <div className="sec">Combinados</div>
-                        <ul className="items">{m.combinados.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
-                      </>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </>)}
-
-        {/* ══ HISTÓRICO ══ */}
-        {activeTab==="historico"&&(
-          <>
-            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
-              <div className="badge" style={{margin:0}}>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1a6 6 0 1 0 0 12A6 6 0 0 0 7 1z" stroke="#1565C0" strokeWidth="1.4"/><path d="M7 4v3l2 1.5" stroke="#1565C0" strokeWidth="1.4" strokeLinecap="round"/></svg>
-                Histórico de Demandas
+                  </tbody>
+                </table>
+              )}
+              <div style={{marginTop:14,display:"flex",gap:8,justifyContent:"flex-end"}}>
+                <button className="ghost" onClick={()=>loadAll(scriptUrl)} disabled={saving}>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6a5 5 0 1 0 1-3" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/><path d="M1 2v3h3" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  Atualizar
+                </button>
+                <button className="ghost" onClick={()=>{localStorage.removeItem(SCRIPT_URL_KEY);setScriptUrl("");setScriptInput("");}}>
+                  Alterar URL
+                </button>
               </div>
-              <span style={{fontSize:13,color:"#5a6e8a",fontWeight:600}}>{histCount} {histCount===1?"demanda concluída":"demandas concluídas"}</span>
             </div>
-            {historicoList.length===0?(
-              <div className="empty-dem">Nenhuma demanda concluída ainda.</div>
-            ):(
-              <div className="dem-grid">
-                {historicoList.map(d=>{
-                  const pc=d.prioridade==="🔴"?"prio-r":d.prioridade==="🟡"?"prio-y":"prio-g";
-                  return (
-                    <div key={d.id} className="dem-card concluida" onClick={()=>openEditDem(d)}>
-                      <div className={`dem-card-accent ${pc}`}/>
-                      <div className="dem-card-top">
-                        <div>
-                          {d.cliente&&<div className="dem-card-cliente">{d.cliente}</div>}
-                          <div className="dem-card-desc riscado">{d.descricao}</div>
-                        </div>
-                        <span className="prio">{d.prioridade}</span>
-                      </div>
-                      {d.obs&&<div className="dem-card-obs">{d.obs}</div>}
-                      <div className="dem-card-footer">
-                        <span className={`status-badge ${STATUS_CLASS[d.status]}`}>{d.status}</span>
-                        {d.prazo&&<span className="dem-prazo prazo-ok"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>{formatPrazo(d.prazo)}</span>}
-                      </div>
-                    </div>
-                  );
-                })}
+          )}
+
+          {/* ══ REUNIÕES ══ */}
+          {activeTab==="reunioes" && (
+            <>
+              <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
+                <div className="badge" style={{margin:0}}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="2.5" width="11" height="9.5" rx="2" stroke="#1565C0" strokeWidth="1.5"/><path d="M4.5 1v3M9.5 1v3M1.5 6h11" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                  Reuniões
+                </div>
+                <button className="btn" onClick={openNewMeet} disabled={saving}>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+                  Nova Reunião
+                </button>
               </div>
-            )}
-          </>
-        )}
-
-        {/* ══ DEMANDAS ══ */}
-        {activeTab==="demandas"&&(<>
-          <div className="dem-toolbar">
-            <div className="dem-filters">
-              <button className={`filt-btn${filtStatus==="todos"?" on":""}`} onClick={()=>setFiltStatus("todos")}>Todos</button>
-              {STATUS_LIST.filter(s=>s!=="Concluído").map(s=>(
-                <button key={s} className={`filt-btn${filtStatus===s?" on":""}`} onClick={()=>setFiltStatus(filtStatus===s?"todos":s)}>{s}</button>
-              ))}
-              <span style={{width:1,background:"rgba(0,53,128,0.12)",margin:"0 4px",alignSelf:"stretch",display:"inline-block"}}/>
-              {Object.keys(PRIORIDADE).map(p=>(
-                <button key={p} className={`filt-btn${filtPrio===p?" on":""}`} onClick={()=>setFiltPrio(filtPrio===p?"todos":p)}>{p}</button>
-              ))}
-            </div>
-            <button className="btn" onClick={openNewDem} disabled={saving}>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
-              Nova Demanda
-            </button>
-          </div>
-          {ativas.length===0&&<div className="empty-dem">Nenhuma demanda ativa com este filtro.</div>}
-          {ativas.length>0&&(
-            <div className="dem-grid">
-              {ativas.map(d=>{
-                const pc=d.prioridade==="🔴"?"prio-r":d.prioridade==="🟡"?"prio-y":"prio-g";
-                const pc2=prazoClass(d.prazo,d.status);
-                return (
-                  <div key={d.id} className="dem-card" onClick={()=>openEditDem(d)}>
-                    <div className={`dem-card-accent ${pc}`}/>
-                    <div className="dem-card-top">
-                      <div>
-                        {d.cliente&&<div className="dem-card-cliente">{d.cliente}</div>}
-                        <div className="dem-card-desc">{d.descricao}</div>
-                      </div>
-                      <span className="prio">{d.prioridade}</span>
-                    </div>
-                    {d.obs&&<div className="dem-card-obs">{d.obs}</div>}
-                    <div className="dem-card-footer">
-                      <span className={`status-badge ${STATUS_CLASS[d.status]||""}`}>{d.status}</span>
-                      {d.prazo&&(
-                        <span className={`dem-prazo ${pc2}`}>
-                          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>
-                          {formatPrazo(d.prazo)}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </>)}
-
-        {/* ══ TREINAMENTOS ══ */}
-        {activeTab==="treinamentos"&&(<>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
-            <div className="badge" style={{margin:0}}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11V5l5-3 5 3v6" stroke="#1565C0" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/><rect x="5" y="7" width="4" height="4" rx="1" stroke="#1565C0" strokeWidth="1.4"/></svg>
-              Próximos Treinamentos
-            </div>
-            <button className="btn" onClick={openNewTrein} disabled={saving}>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
-              Novo Treinamento
-            </button>
-          </div>
-          {treinamentos.length===0?(
-            <div className="empty-dem">Nenhum treinamento cadastrado. Clique em <strong>Novo Treinamento</strong>.</div>
-          ):(
-            <div className="trein-grid">
-              {treinamentos.map(t=>{
-                const pubCls=t.publico==="Só analistas"?"pub-analistas":t.publico==="Toda equipe FOCO"?"pub-equipe":"pub-multi";
-                const accent=t.publico==="Só analistas"?"#0277BD":t.publico==="Toda equipe FOCO"?"#2E7D32":"#E65100";
-                return (
-                  <div key={t.id} className="trein-card">
-                    <div className="trein-card-accent" style={{background:accent}}/>
-                    <span className={`trein-publico-badge ${pubCls}`}>
-                      <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="4" r="2.5" stroke="currentColor" strokeWidth="1.4"/><path d="M1 11c0-2.2 2.2-4 5-4s5 1.8 5 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
-                      {t.publico}
-                    </span>
-                    {t.data&&<div className="trein-card-data">
-                      <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>
-                      {formatData(t.data)}
-                    </div>}
-                    <div className="trein-card-tema">{t.tema}</div>
-                    {t.descricao&&<div className="trein-card-desc">{t.descricao}</div>}
-                    <div className="trein-card-footer">
-                      <button className="ghost" style={{padding:"5px 10px",fontSize:11}} onClick={()=>openEditTrein(t)}>
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
-                        Editar
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </>)}
-
-        {/* ══ LANÇAMENTOS ══ */}
-        {activeTab==="lancamentos"&&(<>
-          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
-            <div className="badge" style={{margin:0}}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4.5H13L9.5 8l1.5 4.5L7 10l-4 2.5L4.5 8 1 5.5h4.5L7 1z" stroke="#1565C0" strokeWidth="1.3" strokeLinejoin="round"/></svg>
-              Lançamentos em Andamento
-            </div>
-            <button className="btn" onClick={openNewLanc} disabled={saving}>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
-              Novo Lançamento
-            </button>
-          </div>
-          {lancamentos.length===0?(
-            <div className="empty-dem">Nenhum lançamento cadastrado.</div>
-          ):(
-            <div className="lanc-columns">
-              {lancamentos.map(l=>{
-                const tipo=l.tipo||"semente";
-                const tipoData=CL_TIPOS[tipo]||CL_TIPOS.semente;
-                const {total,done,pct}=calcLancProgress(l);
-                return (
-                  <div key={l.id} className={`lanc-col tipo-${tipo}`}>
-                    {/* HEADER */}
-                    <div className="lanc-col-header">
-                      <div className="lanc-col-tipo" style={{color:tipoData.color}}>
-                        <span>{tipoData.icon}</span>
-                        <span>{tipoData.label}</span>
-                      </div>
-                      <div className="lanc-col-nome">{l.nome}</div>
-                      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:6}}>
-                        <span className={`lanc-status-badge ${LANC_STATUS_CLASS[l.status]||""}`}>{l.status}</span>
-                        <button className="ghost" style={{padding:"4px 9px",fontSize:10}} onClick={()=>openEditLanc(l)}>
-                          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/></svg>
-                          Editar
-                        </button>
-                      </div>
-                      {l.obs&&<div className="lanc-col-meta">{l.obs}</div>}
-                      <div className="lanc-progress-wrap">
-                        <div className="lanc-progress-labels">
-                          <span className="lanc-progress-lbl">Progresso geral</span>
-                          <span className="lanc-progress-pct">{done}/{total} — {pct}%</span>
-                        </div>
-                        <div className="lanc-progress-bar">
-                          <div className="lanc-progress-fill" style={{width:pct+"%"}}/>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* BODY */}
-                    <div className="lanc-col-body">
-
-                      {/* GARGALO */}
-                      {l.gargalo?(
-                        <div className="lanc-gargalo">
-                          <div className="lanc-gargalo-title">
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L1 11h10L6 1z" stroke="#F9A825" strokeWidth="1.4" strokeLinejoin="round"/><path d="M6 5v3M6 9.5v.5" stroke="#F9A825" strokeWidth="1.4" strokeLinecap="round"/></svg>
-                            Gargalo atual
+              {meetings.length===0 ? (
+                <div className="empty-dem">Nenhuma reunião ainda. Clique em <strong>Nova Reunião</strong>.</div>
+              ) : (
+                <div style={{display:"flex",flexDirection:"column",gap:14}}>
+                  {meetings.map(m => {
+                    const camposM = m.tipo==="segunda" ? CAMPOS_SEGUNDA : CAMPOS_SEXTA;
+                    return (
+                      <div className="meet-card" key={m.id}>
+                        <div className="meet-card-header">
+                          <div className="meet-card-title-row">
+                            <span className={`meet-type-badge ${m.tipo==="segunda"?"meet-type-seg":"meet-type-sex"}`}>
+                              {m.tipo==="segunda"?"Segunda-feira":"Sexta-feira"}
+                            </span>
+                            <span style={{fontFamily:"'Nunito',sans-serif",fontWeight:800,fontSize:15,color:"#002055"}}>{m.title}</span>
                           </div>
-                          <div className="lanc-gargalo-desc">{l.gargalo}</div>
-                          <span className={`lanc-gargalo-setor ${SETOR_CLASS[l.gargaloSetor||"todos"]}`}>
-                            🔧 {SETOR_LABELS[l.gargaloSetor||"todos"]}
-                          </span>
-                        </div>
-                      ):(
-                        <div className="lanc-gargalo-empty" onClick={()=>openEditLanc(l)}>
-                          <div style={{fontSize:11,color:"#5a6e8a",fontWeight:700,display:"flex",alignItems:"center",gap:5}}>
-                            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
-                            Registrar gargalo / bloqueio
+                          <div style={{display:"flex",alignItems:"center",gap:10}}>
+                            <span className="meet-card-date">{formatData(m.date)}</span>
+                            <button className="ghost" style={{padding:"5px 10px",fontSize:11}} onClick={()=>openEditMeet(m)}>
+                              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+                              Editar
+                            </button>
                           </div>
                         </div>
-                      )}
-
-                      {/* CHECKLIST POR FASE */}
-                      {tipoData.fases.map((fase,fi)=>{
-                        const faseKey=l.id+"-"+fi;
-                        const isOpen=fasesAbertas[faseKey]!==false; // default open
-                        const faseDone=fase.i.filter((_,ii)=>l.checklist[fi+"-"+ii]).length;
-                        return (
-                          <div key={fi} className="lanc-fase">
-                            <div className="lanc-fase-header" onClick={()=>toggleFaseAberta(l.id,fi)}>
-                              <span className="lanc-fase-title">{fase.t}</span>
-                              <div style={{display:"flex",alignItems:"center",gap:6}}>
-                                <span className="lanc-fase-pct">{faseDone}/{fase.i.length}</span>
-                                <span className="lanc-fase-chevron" style={{transform:isOpen?"rotate(180deg)":"rotate(0deg)"}}>▼</span>
+                        {camposM.map(c => {
+                          const vinResp = (m.dados?.[c.key]?.vinicius||"").trim();
+                          const mavResp = (m.dados?.[c.key]?.mavi||"").trim();
+                          if (!vinResp && !mavResp) return null;
+                          return (
+                            <div className="meet-q" key={c.key}>
+                              <div className="meet-q-title">{c.label}</div>
+                              <div className="meet-q-answers">
+                                <div className="meet-q-ans">
+                                  <div className="meet-q-who vinicius">Vinícius</div>
+                                  <div className="meet-q-text">{vinResp||<span style={{color:"#bbb",fontStyle:"italic"}}>—</span>}</div>
+                                </div>
+                                <div className="meet-q-ans">
+                                  <div className="meet-q-who mavi">Mavi</div>
+                                  <div className="meet-q-text">{mavResp||<span style={{color:"#bbb",fontStyle:"italic"}}>—</span>}</div>
+                                </div>
                               </div>
                             </div>
-                            <div className={`lanc-fase-items${isOpen?" open":""}`}>
-                              {fase.i.map((item,ii)=>{
-                                const key=fi+"-"+ii;
-                                const checked=!!l.checklist[key];
-                                return (
-                                  <div key={ii} className={`lanc-cl-item${checked?" checked":""}`}
-                                    onClick={()=>toggleLancCheckDirect(l,key,!checked)}>
-                                    <div className="lanc-cl-chk">
-                                      {checked&&<svg width="9" height="9" viewBox="0 0 13 13" fill="none"><polyline points="2,7 5.5,10.5 11,3" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                                    </div>
-                                    <span className="lanc-cl-text">{item.t}</span>
-                                    <span className={`lanc-cl-setor ${SETOR_CLASS[item.s]}`}>{SETOR_LABELS[item.s]}</span>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                            {fi<tipoData.fases.length-1&&<div style={{height:1,background:"rgba(0,53,128,0.07)",margin:"8px 0"}}/>}
-                          </div>
-                        );
-                      })}
-                    </div>
+                          );
+                        })}
+                        {m.combinados.length>0 && (
+                          <>
+                            <div className="divider"/>
+                            <div className="sec">Combinados</div>
+                            <ul className="items">{m.combinados.map((it,i)=><li key={i}><span className="arr">→</span>{it}</li>)}</ul>
+                          </>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </>
+          )}
+
+          {/* ══ TREINAMENTOS ══ */}
+          {activeTab==="treinamentos" && (
+            <>
+              <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16,flexWrap:"wrap",gap:10}}>
+                <div className="badge" style={{margin:0}}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 11V5l5-3 5 3v6" stroke="#1565C0" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/><rect x="5" y="7" width="4" height="4" rx="1" stroke="#1565C0" strokeWidth="1.4"/></svg>
+                  Próximos Treinamentos
+                </div>
+                <button className="btn" onClick={openNewTrein} disabled={saving}>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+                  Novo Treinamento
+                </button>
+              </div>
+              {treinamentos.length===0 ? (
+                <div className="empty-dem">Nenhum treinamento cadastrado.</div>
+              ) : (
+                <div className="trein-grid">
+                  {treinamentos.map(t => {
+                    const pubCls  = t.publico==="Só analistas"?"pub-analistas":t.publico==="Toda equipe FOCO"?"pub-equipe":"pub-multi";
+                    const accent  = t.publico==="Só analistas"?"#0277BD":t.publico==="Toda equipe FOCO"?"#2E7D32":"#E65100";
+                    return (
+                      <div key={t.id} className="trein-card">
+                        <div className="trein-card-accent" style={{background:accent}}/>
+                        <span className={`trein-publico-badge ${pubCls}`}>
+                          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="4" r="2.5" stroke="currentColor" strokeWidth="1.4"/><path d="M1 11c0-2.2 2.2-4 5-4s5 1.8 5 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
+                          {t.publico}
+                        </span>
+                        {t.data && <div className="trein-card-data">
+                          <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3"/><path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>
+                          {formatData(t.data)}
+                        </div>}
+                        <div className="trein-card-tema">{t.tema}</div>
+                        {t.descricao && <div className="trein-card-desc">{t.descricao}</div>}
+                        <div className="trein-card-footer">
+                          <button className="ghost" style={{padding:"5px 10px",fontSize:11}} onClick={()=>openEditTrein(t)}>
+                            <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" stroke="#1565C0" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+                            Editar
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </>
+          )}
+
+          {/* ══ SUGERIR TEMA ══ */}
+          {activeTab==="sugestao" && (
+            <div style={{maxWidth:600,margin:"0 auto"}}>
+              <div className="sug-card">
+                <div className="sug-card-title">💡 Sugerir tema de treinamento</div>
+                <div className="sug-card-sub">Tem algum assunto que gostaria de ver numa capacitação? Deixa aqui a sua ideia — a gestão vai revisar e pode incluir no calendário.</div>
+                <div className="sug-tabs">
+                  <button className={`sug-tab${sugTab==="sugerir"?" active":""}`} onClick={()=>{setSugTab("sugerir");setSugSent(false);}}>Enviar sugestão</button>
+                  <button className={`sug-tab${sugTab==="ver"?" active":""}`} onClick={()=>setSugTab("ver")}>
+                    Ver sugestões {sugestoes.length>0&&`(${sugestoes.length})`}
+                  </button>
+                </div>
+
+                {sugTab==="sugerir" && (
+                  <>
+                    {sugSent ? (
+                      <div className="sug-success">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#2E7D32" strokeWidth="1.8"/><polyline points="6,11 9,14 14,8" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        Sugestão enviada! Obrigado pela contribuição.
+                        <button className="ghost" style={{marginLeft:"auto",fontSize:11,padding:"4px 10px"}} onClick={()=>setSugSent(false)}>Enviar outra</button>
+                      </div>
+                    ) : (
+                      <div className="sug-form">
+                        <div>
+                          <label className="lbl" style={{marginBottom:4}}>Seu nome</label>
+                          <input className="sug-inp" placeholder="Ex: Ana Lima" value={sugNome} onChange={e=>setSugNome(e.target.value)}/>
+                        </div>
+                        <div>
+                          <label className="lbl" style={{marginBottom:4}}>Tema sugerido</label>
+                          <input className="sug-inp" placeholder="Ex: Como usar o Google Analytics 4" value={sugTema} onChange={e=>setSugTema(e.target.value)}/>
+                        </div>
+                        <div>
+                          <label className="lbl" style={{marginBottom:4}}>Contexto / por que é importante <span style={{fontWeight:400,textTransform:"none",letterSpacing:0}}>(opcional)</span></label>
+                          <textarea className="sug-textarea" placeholder="Descreva um pouco mais sobre o tema e por que seria útil para o time..." value={sugDesc} onChange={e=>setSugDesc(e.target.value)} rows={3}/>
+                        </div>
+                        <button className="btn" onClick={enviarSugestao} disabled={sugSaving||!scriptUrl}>
+                          {sugSaving ? <><span className="spin"/>Enviando...</> : "Enviar sugestão"}
+                        </button>
+                      </div>
+                    )}
+                  </>
+                )}
+
+                {sugTab==="ver" && (
+                  <div className="sug-list">
+                    <div className="sug-list-title">Sugestões do time</div>
+                    {sugestoes.length===0 ? (
+                      <div className="pend-empty" style={{padding:"20px 0"}}>Nenhuma sugestão ainda. Seja o primeiro!</div>
+                    ) : sugestoes.map(s => (
+                      <div key={s.id} className="sug-item">
+                        <div className="sug-item-nome">{s.nome}</div>
+                        <div className="sug-item-tema">{s.tema}</div>
+                        {s.desc && <div className="sug-item-desc">{s.desc}</div>}
+                        <div className="sug-item-date">{formatData(s.data)}</div>
+                      </div>
+                    ))}
                   </div>
-                );
-              })}
+                )}
+              </div>
             </div>
           )}
-        </>)}
+        </>
+      )}
 
-      </>)}
 
-      {/* ══ MODAL REUNIÃO ESTRUTURADA ══ */}
+          {/* ══ CENTRAL DE LINKS ══ */}
+          {activeTab==="links" && (
+            <div className="links-page">
+
+              {/* BLOCO TREINAMENTOS */}
+              <div className="links-block">
+                <div className="links-block-header">
+                  <div className="links-block-icon trein">📚</div>
+                  <div>
+                    <div className="links-block-title">Materiais de Treinamento</div>
+                    <div className="links-block-sub">Acesse os materiais dos treinamentos realizados pelo time</div>
+                  </div>
+                </div>
+                <div className="links-list">
+                  <a className="link-row" href="https://anamoutinhofoco.github.io/treinamento-lancamentos/" target="_blank" rel="noopener noreferrer">
+                    <div className="link-dot trein"/>
+                    <div className="link-info">
+                      <div className="link-name">Treinamento Lançamentos</div>
+                      <div className="link-url">anamoutinhofoco.github.io/treinamento-lancamentos</div>
+                    </div>
+                    <span className="link-badge trein">Lançamentos</span>
+                    <svg className="link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </a>
+                  <div className="link-row-empty">
+                    <div className="link-dot empty"/>
+                    <div className="link-info">
+                      <div className="link-name-empty">Treinamento Ano Eleitoral</div>
+                    </div>
+                    <span className="link-soon">Em breve</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* BLOCO AGENTES GPT */}
+              <div className="links-block">
+                <div className="links-block-header">
+                  <div className="links-block-icon gpt">🤖</div>
+                  <div>
+                    <div className="links-block-title">Agentes de IA</div>
+                    <div className="links-block-sub">GPTs e Gems personalizados para o trabalho do time</div>
+                  </div>
+                </div>
+                <div className="links-list">
+                  {[
+                    {name:"Planejamento Estratégico",    url:"https://gemini.google.com/gem/10tSpGAxh5djKiqVIzrtdVN2gyG97X2CH?usp=sharing",                                     display:"gemini.google.com",                          badge:"Gemini", badgeCls:"gpt-gem"},
+                    {name:"Planejar Criativos Estáticos",url:"https://chatgpt.com/g/g-6a22254f0034819194acdb24d1b66e3a-solicitar-criativos-estaticos",                          display:"chatgpt.com — Solicitar Criativos Estáticos",  badge:"GPT",    badgeCls:"gpt-chat"},
+                    {name:"Desenvolver Artes Estáticas", url:"https://chatgpt.com/g/g-6a22220858a881919826cfb15475f28c-maquina-de-criativos",                                    display:"chatgpt.com — Máquina de Criativos",           badge:"GPT",    badgeCls:"gpt-chat"},
+                    {name:"Roteiros de Vídeos",          url:"https://chatgpt.com/g/g-6a22d1982fd88191ab97a1ddf5f6934b-roteiros-de-videos",                                     display:"chatgpt.com — Roteiros de Vídeos",             badge:"GPT",    badgeCls:"gpt-chat"},
+                  ].map(l => (
+                    <a key={l.name} className="link-row" href={l.url} target="_blank" rel="noopener noreferrer">
+                      <div className="link-dot gpt"/>
+                      <div className="link-info">
+                        <div className="link-name">{l.name}</div>
+                        <div className="link-url">{l.display}</div>
+                      </div>
+                      <span className={`link-badge ${l.badgeCls}`}>{l.badge}</span>
+                      <svg className="link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          )}
+
+      {/* MODAL REUNIÃO */}
       <Modal open={showMeetModal} onClose={()=>setShowMeetModal(false)}>
         <div className="modal-title">{editingMeet?"Editar Reunião":"Nova Reunião"}</div>
         <div className="inp-row" style={{marginBottom:13}}>
-          <div><label className="lbl">Título</label>
-            <input className="inp" style={{marginBottom:0}} value={meetForm.title} onChange={e=>setMeetForm(f=>({...f,title:e.target.value}))} placeholder="Ex: Alinhamento 19/05"/></div>
-          <div><label className="lbl">Data</label>
-            <input className="inp" style={{marginBottom:0}} type="date" value={meetForm.date} onChange={e=>setMeetForm(f=>({...f,date:e.target.value}))}/></div>
+          <div>
+            <label className="lbl">Título</label>
+            <input className="inp" style={{marginBottom:0}} value={meetForm.title} onChange={e=>setMeetForm(f=>({...f,title:e.target.value}))} placeholder="Ex: Alinhamento 19/05"/>
+          </div>
+          <div>
+            <label className="lbl">Data</label>
+            <input className="inp" style={{marginBottom:0}} type="date" value={meetForm.date} onChange={e=>setMeetForm(f=>({...f,date:e.target.value}))}/>
+          </div>
         </div>
         <label className="lbl">Tipo de reunião</label>
         <div className="meet-type-sel" style={{marginBottom:16}}>
@@ -1416,10 +1072,10 @@ function App() {
             </button>
           ))}
         </div>
-        {(meetForm.tipo==="segunda"?CAMPOS_SEGUNDA:CAMPOS_SEXTA).map(c=>(
+        {(meetForm.tipo==="segunda" ? CAMPOS_SEGUNDA : CAMPOS_SEXTA).map(c => (
           <div className="meet-section" key={c.key}>
             <div className="meet-section-title">{c.label}</div>
-            {["vinicius","mavi"].map(pessoa=>(
+            {["vinicius","mavi"].map(pessoa => (
               <div className="person-block" key={pessoa}>
                 <div className={`person-label ${pessoa}`}>{pessoa==="vinicius"?"Vinícius":"Mavi"}</div>
                 <textarea
@@ -1433,46 +1089,12 @@ function App() {
             ))}
           </div>
         ))}
-        {(meetForm.tipo==="segunda")&&(
-          <div style={{background:"#EBF2FF",borderRadius:8,padding:"8px 12px",marginBottom:13,fontSize:12,color:"#1565C0",fontWeight:600}}>
-            💡 As metas listadas no campo "Metas dessa semana" serão adicionadas automaticamente à aba de Metas.
-          </div>
-        )}
         <label className="lbl">Combinados (uma por linha, opcional)</label>
         <textarea className="inp" rows={3} value={meetForm.combinados} onChange={e=>setMeetForm(f=>({...f,combinados:e.target.value}))} placeholder={"Combinado 1\nCombinado 2"} style={{resize:"vertical"}}/>
         <div className="form-row">
+          {editingMeet && <button className="del-btn" onClick={deleteMeeting}>Remover</button>}
           <button className="cancel" onClick={()=>setShowMeetModal(false)}>Cancelar</button>
           <button className="btn" onClick={saveMeeting} disabled={saving}>{saving?<><span className="spin"/>Salvando...</>:"Salvar"}</button>
-        </div>
-      </Modal>
-
-      {/* MODAL DEMANDA */}
-      <Modal open={showDemModal} onClose={()=>setShowDemModal(false)}>
-        <div className="modal-title">{editingDem?"Editar Demanda":"Nova Demanda"}</div>
-        <div className="inp-row">
-          <div><label className="lbl">Cliente / Projeto</label>
-          <input className="inp" value={demForm.cliente} onChange={e=>setDemForm(f=>({...f,cliente:e.target.value}))} placeholder="Ex: Cliente X"/></div>
-          <div><label className="lbl">Prazo</label>
-          <input className="inp" type="date" value={demForm.prazo} onChange={e=>setDemForm(f=>({...f,prazo:e.target.value}))}/></div>
-        </div>
-        <label className="lbl">Descrição da demanda</label>
-        <input className="inp" value={demForm.descricao} onChange={e=>setDemForm(f=>({...f,descricao:e.target.value}))} placeholder="Ex: Entregar relatório mensal"/>
-        <div className="inp-row">
-          <div><label className="lbl">Prioridade</label>
-          <select className="inp" value={demForm.prioridade} onChange={e=>setDemForm(f=>({...f,prioridade:e.target.value}))}>
-            {Object.entries(PRIORIDADE).map(([k,v])=><option key={k} value={k}>{v}</option>)}
-          </select></div>
-          <div><label className="lbl">Status</label>
-          <select className="inp" value={demForm.status} onChange={e=>setDemForm(f=>({...f,status:e.target.value}))}>
-            {STATUS_LIST.map(s=><option key={s} value={s}>{s}</option>)}
-          </select></div>
-        </div>
-        <label className="lbl">Observação (opcional)</label>
-        <textarea className="inp" rows={3} value={demForm.obs} onChange={e=>setDemForm(f=>({...f,obs:e.target.value}))} placeholder="Contexto, dependências, próximos passos..." style={{resize:"vertical"}}/>
-        <div className="form-row">
-          {editingDem&&<button className="del-btn" onClick={deleteDemanda}>Remover</button>}
-          <button className="cancel" onClick={()=>setShowDemModal(false)}>Cancelar</button>
-          <button className="btn" onClick={saveDemanda} disabled={saving}>{saving?<><span className="spin"/>Salvando...</>:"Salvar"}</button>
         </div>
       </Modal>
 
@@ -1480,70 +1102,30 @@ function App() {
       <Modal open={showTreinModal} onClose={()=>setShowTreinModal(false)}>
         <div className="modal-title">{editingTrein?"Editar Treinamento":"Novo Treinamento"}</div>
         <div className="inp-row">
-          <div><label className="lbl">Data</label>
-          <input className="inp" type="date" value={treinForm.data} onChange={e=>setTreinForm(f=>({...f,data:e.target.value}))}/></div>
-          <div><label className="lbl">Público-alvo</label>
-          <select className="inp" value={treinForm.publico} onChange={e=>setTreinForm(f=>({...f,publico:e.target.value}))}>
-            {TREIN_PUBLICO.map(p=><option key={p} value={p}>{p}</option>)}
-          </select></div>
+          <div>
+            <label className="lbl">Data</label>
+            <input className="inp" type="date" value={treinForm.data} onChange={e=>setTreinForm(f=>({...f,data:e.target.value}))}/>
+          </div>
+          <div>
+            <label className="lbl">Público-alvo</label>
+            <select className="inp" value={treinForm.publico} onChange={e=>setTreinForm(f=>({...f,publico:e.target.value}))}>
+              {TREIN_PUBLICO.map(p=><option key={p} value={p}>{p}</option>)}
+            </select>
+          </div>
         </div>
         <label className="lbl">Tema</label>
         <input className="inp" value={treinForm.tema} onChange={e=>setTreinForm(f=>({...f,tema:e.target.value}))} placeholder="Ex: Gestão de tráfego pago"/>
         <label className="lbl">Descrição</label>
         <textarea className="inp" rows={4} value={treinForm.descricao} onChange={e=>setTreinForm(f=>({...f,descricao:e.target.value}))} placeholder="Objetivos, formato, duração estimada..." style={{resize:"vertical"}}/>
         <div className="form-row">
-          {editingTrein&&<button className="del-btn" onClick={deleteTrein}>Remover</button>}
+          {editingTrein && <button className="del-btn" onClick={deleteTrein}>Remover</button>}
           <button className="cancel" onClick={()=>setShowTreinModal(false)}>Cancelar</button>
           <button className="btn" onClick={saveTrein} disabled={saving}>{saving?<><span className="spin"/>Salvando...</>:"Salvar"}</button>
         </div>
       </Modal>
 
-      {/* MODAL LANÇAMENTO */}
-      <Modal open={showLancModal} onClose={()=>setShowLancModal(false)}>
-        <div className="modal-title">{editingLanc?"Editar Lançamento":"Novo Lançamento"}</div>
-        <label className="lbl">Nome do lançamento</label>
-        <input className="inp" value={lancForm.nome} onChange={e=>setLancForm(f=>({...f,nome:e.target.value}))} placeholder="Ex: Mentoria João Silva"/>
-        <div className="inp-row">
-          <div>
-            <label className="lbl">Tipo</label>
-            <select className="inp" value={lancForm.tipo} onChange={e=>setLancForm(f=>({...f,tipo:e.target.value}))}>
-              {Object.entries(CL_TIPOS).map(([k,v])=><option key={k} value={k}>{v.icon} {v.label}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="lbl">Status</label>
-            <select className="inp" value={lancForm.status} onChange={e=>setLancForm(f=>({...f,status:e.target.value}))}>
-              {LANC_STATUS_LIST.map(s=><option key={s} value={s}>{s}</option>)}
-            </select>
-          </div>
-        </div>
-        <label className="lbl">Observações / contexto</label>
-        <textarea className="inp" rows={2} value={lancForm.obs} onChange={e=>setLancForm(f=>({...f,obs:e.target.value}))} placeholder="Contexto do lançamento, restrições, observações estratégicas..." style={{resize:"vertical"}}/>
-        <div style={{background:"#FFF8E1",border:"1px solid #FFD54F",borderRadius:10,padding:"12px 14px",marginBottom:13}}>
-          <div style={{fontSize:11,fontWeight:800,textTransform:"uppercase",letterSpacing:1,color:"#F9A825",marginBottom:8,display:"flex",alignItems:"center",gap:5}}>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L1 11h10L6 1z" stroke="#F9A825" strokeWidth="1.4" strokeLinejoin="round"/><path d="M6 5v3M6 9.5v.5" stroke="#F9A825" strokeWidth="1.4" strokeLinecap="round"/></svg>
-            Gargalo atual / bloqueio
-          </div>
-          <textarea className="inp" rows={2} style={{marginBottom:8,resize:"vertical"}} value={lancForm.gargalo} onChange={e=>setLancForm(f=>({...f,gargalo:e.target.value}))} placeholder="Descreva o que está travado ou bloqueando o progresso..."/>
-          <label className="lbl">Setor responsável por desbloquear</label>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6}}>
-            {SETORES.map(s=>(
-              <div key={s} style={{display:"flex",alignItems:"center",gap:6,background:lancForm.gargaloSetor===s?"#EBF2FF":"#F9FBFF",border:`1px solid ${lancForm.gargaloSetor===s?"#1565C0":"rgba(0,53,128,0.1)"}`,borderRadius:8,padding:"7px 10px",cursor:"pointer",transition:"all 0.15s"}}
-                onClick={()=>setLancForm(f=>({...f,gargaloSetor:s}))}>
-                <span className={`lanc-gargalo-setor ${SETOR_CLASS[s]}`} style={{padding:"1px 6px"}}>{SETOR_LABELS[s]}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="form-row">
-          {editingLanc&&<button className="del-btn" onClick={deleteLanc}>Remover</button>}
-          <button className="cancel" onClick={()=>setShowLancModal(false)}>Cancelar</button>
-          <button className="btn" onClick={saveLanc} disabled={saving}>{saving?<><span className="spin"/>Salvando...</>:"Salvar"}</button>
-        </div>
-      </Modal>
-
-            {/* PAINEL PENDÊNCIAS */}
-      {showPendencias&&<PendenciasPanel semanas={semanas} onClose={()=>setShowPendencias(false)}/>}
+      {/* PAINEL PENDÊNCIAS */}
+      {showPendencias && <PendenciasPanel semanas={semanasCompletas} onClose={()=>setShowPendencias(false)}/>}
 
       <Toast msg={toast}/>
     </div>
